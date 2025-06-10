@@ -1,3 +1,3 @@
-<div class="container bg-dark">
+<footer class="container bg-black">
 
-</div>
+</footer>
