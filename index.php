@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program East</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- arquivo css do bootstrap -->
 </head>
+
 <body>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam suscipit aut iste est, maxime cum! Vitae doloribus, facere totam dicta veritatis ducimus quam nihil, velit illum voluptas autem, facilis tenetur?
+    <?php require 'menu.php'; ?>
+
+    <?php require 'rodape.php'; ?>
 </body>
+
+<script src="js/bootstrap.min.js"></script> <!-- arquivo js do bootstrap -->
+
 </html>
