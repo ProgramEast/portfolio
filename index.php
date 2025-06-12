@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> <!-- icones do bootstrap -->
 </head>
 
-<body>
+<body class="bg-light">
     <?php require 'menu.php'; ?>
+    
+    <?php require 'cards.php'; ?>
 
     <?php require 'rodape.php'; ?>
 </body>
