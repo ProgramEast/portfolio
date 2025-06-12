@@ -4,7 +4,7 @@
 
         <div class="collapse navbar-collapse d-flex justify-content-end">
             <a href="#" class="text-light link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem Somos</a>
-            <a href="#" class="text-light link-offset-2 link-underline link-underline-opacity-0 mx-3">Projetos</a>
+            <a href="#projetos" class="text-light link-offset-2 link-underline link-underline-opacity-0 mx-3">Projetos</a>
         </div>
     </div>
 </div>
