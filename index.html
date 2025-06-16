@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program East</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- arquivo css do bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- icones do bootstrap -->
+
+    <style>
+        .bi {
+            font-size: 30px;
+        }
+
+        .bi-instagram {
+            color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+        }
+
+        .bi:hover {
+            zoom: 150%;
+            /* transform: scale(2.2); */
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="navbar navbar-expand-lg position-static" style="background-color:darkblue">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#"><img class="rounded float-end" src="img/logo_program_east.png"
+                    height="80px" width="80px" alt="Program East"></a>
+
+            <div class="collapse navbar-collapse d-flex justify-content-end">
+                <a href="#" class="text-light link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem Somos</a>
+                <a href="#projetos"
+                    class="text-light link-offset-2 link-underline link-underline-opacity-0 mx-3">Projetos</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container alert alert-primary mt-5 d-flex justify-content-center" role="alert">
+        <p class="fs-1 fw-bold mx-auto">Projetos</p>
+    </div>
+
+    <div class="container row row-cols-1 row-cols-md-2 g-4 mx-auto my-5" id="projetos">
+        <div class="col">
+            <div class="card text-bg-primary border-primary">
+                <img src="img/web_stayfit.png" class="card-img-top " alt="..." height="">
+                <div class="card-body">
+                    <h5 class="card-title">Site de Academia</h5>
+                    <p class="card-text">Site que facilita seus alunos pagarem os planos e verem os seus treinos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card text-bg-primary border-primary">
+                <img src="img/desk_stayfit.png" class="card-img-top " alt="..." height="">
+                <div class="card-body">
+                    <h5 class="card-title">Sistema de Gestão de Academia</h5>
+                    <p class="card-text">Sistema feito para gerenciar os alunos e funcionários da sua academia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card text-bg-primary border-primary">
+                <img src="img/web_chuleta.png" class="card-img-top " alt="..." height="">
+                <div class="card-body">
+                    <h5 class="card-title">Site de Churrascaria</h5>
+                    <p class="card-text">Site perfeito para divulgar o cardápio do seu restaurante e gerenciar reservas
+                        de mesas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-black" style="height: 20vh;">
+        <div class="row">
+            <div class="col-6">
+                <!-- Logo -->
+                <a href="#"><img class="rounded float-end mt-3" src="img/logo_program_east.png" height="100px"
+                        width="100px" alt="Program East"></a>
+            </div>
+            <div class="col-6">
+                <p class="text-light fs-5 mt-2">Contato:</p>
+
+                <!-- icones para o contato -->
+                <div>
+                    <a href="https://instagram.com/program_east/" target="_blank"><i
+                            class="bi bi-instagram me-2"></i></a>
+                    <a href="https://github.com/ProgramEast" target="_blank"><i class="bi bi-github text-white"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="js/bootstrap.min.js"></script> <!-- arquivo js do bootstrap -->
+
+</html>
