@@ -1,5 +1,5 @@
 <div class="container alert alert-primary mt-5 d-flex justify-content-center" role="alert">
-    <p class="fs-2 fw-bold mx-auto">Projetos</p>
+    <p class="fs-1 fw-bold mx-auto">Projetos</p>
 </div>
 
 <div class="container row row-cols-1 row-cols-md-2 g-4 mx-auto my-5" id="projetos">
