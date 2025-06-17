@@ -10,7 +10,7 @@
     <!-- icones do bootstrap -->
 
     <style>
-        .bi {
+        .icones{
             font-size: 30px;
         }
 
@@ -20,7 +20,7 @@
             background-image: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
         }
 
-        .bi:hover {
+        .icones:hover {
             zoom: 150%;
             /* transform: scale(2.2); */
             transition: 0.5s;
@@ -28,16 +28,18 @@
     </style>
 </head>
 
-<body class="bg-light">
-    <div class="navbar navbar-expand-lg position-static" style="background-color:darkblue">
+<body class="bg-white">
+    <div class="navbar navbar-expand-lg bg-white position-static mx-5">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="#"><img class="rounded float-end" src="img/logo_program_east.png"
                     height="80px" width="80px" alt="Program East"></a>
 
             <div class="collapse navbar-collapse d-flex justify-content-end">
-                <a href="#" class="text-light link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem Somos</a>
-                <a href="#projetos"
-                    class="text-light link-offset-2 link-underline link-underline-opacity-0 mx-3">Projetos</a>
+                <a href="#" class="text-dark link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem Somos</a>
+                <a href="#projetos" class="mx-3">
+                    <button type="button" class="btn btn-outline-dark rounded-5">Projetos <i class="bi bi-arrow-right"></i></button>
+                    
+                </a>
             </div>
         </div>
     </div>
@@ -92,8 +94,8 @@
                 <!-- icones para o contato -->
                 <div>
                     <a href="https://instagram.com/program_east/" target="_blank"><i
-                            class="bi bi-instagram me-2"></i></a>
-                    <a href="https://github.com/ProgramEast" target="_blank"><i class="bi bi-github text-white"></i></a>
+                            class="bi bi-instagram me-2 icones"></i></a>
+                    <a href="https://github.com/ProgramEast" target="_blank"><i class="bi bi-github text-white icones"></i></a>
                 </div>
             </div>
         </div>
