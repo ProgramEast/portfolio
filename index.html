@@ -11,21 +11,25 @@
     <link rel="stylesheet" href="css/style.css"> <!-- arquivo style css-->
 
     <style>
-        
+
     </style>
 </head>
 
 <body class="bg-white">
-    <div class="navbar navbar-expand-lg bg-white position-static mx-5">
+
+    <!-- INICIO MENU -->
+
+    <div class="navbar navbar-expand-lg bg-black position-static px-5">
         <div class="container-fluid">
-            <a class="navbar-brand text-black d-flex justify-content-center" href="#">
+            <a class="navbar-brand text-white d-flex justify-content-center" href="#">
                 <p id="program"> Program</p>&nbsp;<p id="east"> EAST</p>
             </a>
 
             <div class="collapse navbar-collapse d-flex justify-content-end">
-                <a href="#" class="text-dark link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem Somos</a>
+                <a href="#Quem-somos" class="text-white link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem
+                    Somos</a>
                 <a href="#projetos" class="mx-3">
-                    <button type="button" class="btn btn-outline-dark rounded-5">Projetos <i
+                    <button type="button" class="btn btn-outline-light rounded-5">Projetos <i
                             class="bi bi-arrow-right"></i></button>
 
                 </a>
@@ -33,40 +37,82 @@
         </div>
     </div>
 
-    
+    <!-- FIM MENU -->
 
-    <div class="container row row-cols-1 row-cols-md-2 g-4 mx-auto my-5" id="projetos">
-        <div class="col">
-            <div class="card text-bg-primary border-primary">
-                <img src="img/web_stayfit.png" class="card-img-top " alt="..." height="">
-                <div class="card-body">
-                    <h5 class="card-title">Site de Academia</h5>
-                    <p class="card-text">Site que facilita seus alunos pagarem os planos e verem os seus treinos.</p>
-                </div>
+
+
+    <div class="container my-5" id="projetos">
+        <div class="row mb-3">
+
+            <div class="col-5 d-flex justify-content-center align-items-center">
+                <div class="bg-black rounded-circle h-50 w-50"></div>
             </div>
+
+            <div class="col-7">
+                <img class="img-fluid rounded mb-3" src="img/web_stayfit.png" alt="">
+
+
+
+                <div class="card border-dark">
+                    <div class="card-body text-bg-light">
+                        <p class="fs-2">Site de Academia</p>
+                    </div>
+                </div>
+
+
+            </div>
+
         </div>
 
-        <div class="col">
-            <div class="card text-bg-primary border-primary">
-                <img src="img/desk_stayfit.png" class="card-img-top " alt="..." height="">
-                <div class="card-body">
-                    <h5 class="card-title">Sistema de Gestão de Academia</h5>
-                    <p class="card-text">Sistema feito para gerenciar os alunos e funcionários da sua academia.</p>
+        <div class="row mb-3">
+
+            <div class="col-7">
+                <img class="img-fluid rounded mb-3" src="img/web_stayfit.png" alt="">
+
+
+
+                <div class="card border-dark">
+                    <div class="card-body text-bg-light">
+                        <p class="fs-2">Site de Academia</p>
+                    </div>
                 </div>
+
+
             </div>
+
+            <div class="col-5 d-flex justify-content-center align-items-center">
+                <div class="bg-black rounded-circle h-50 w-50"></div>
+            </div>
+
+
+
         </div>
 
-        <div class="col">
-            <div class="card text-bg-primary border-primary">
-                <img src="img/web_chuleta.png" class="card-img-top " alt="..." height="">
-                <div class="card-body">
-                    <h5 class="card-title">Site de Churrascaria</h5>
-                    <p class="card-text">Site perfeito para divulgar o cardápio do seu restaurante e gerenciar reservas
-                        de mesas.</p>
-                </div>
+        <div class="row mb-3">
+
+            <div class="col-5 d-flex justify-content-center align-items-center">
+                <div class="bg-black rounded-circle h-50 w-50"></div>
             </div>
+
+            <div class="col-7">
+                <img class="img-fluid rounded mb-3" src="img/web_stayfit.png" alt="">
+
+
+
+                <div class="card border-dark">
+                    <div class="card-body text-bg-light">
+                        <p class="fs-2">Site de Academia</p>
+                    </div>
+                </div>
+
+
+            </div>
+
         </div>
     </div>
+
+
+    <!-- INICIO RODAPE -->
 
     <div class="container-fluid bg-black d-flex justify-content-between px-5" style="height: 20vh;">
 
@@ -74,7 +120,7 @@
             <!-- Logo -->
             <a href="#" class="navbar-brand text-white d-flex justify-content-center">
                 <p id="program"> Program</p>&nbsp;<p id="east"> EAST</p>
-            </a>                    
+            </a>
         </div>
 
         <div class="w-50">
@@ -91,8 +137,43 @@
         </div>
 
     </div>
+
+    <!-- FIM RODAPE -->
+
 </body>
 
 <script src="js/bootstrap.min.js"></script> <!-- arquivo js do bootstrap -->
+
+<!-- cards dos sistemas -->
+<!-- <div class="col">
+    <div class="card text-bg-primary border-primary">
+        <img src="img/web_stayfit.png" class="card-img-top " alt="..." height="">
+        <div class="card-body">
+            <h5 class="card-title">Site de Academia</h5>
+            <p class="card-text">Site que facilita seus alunos pagarem os planos e verem os seus treinos.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card text-bg-primary border-primary">
+        <img src="img/desk_stayfit.png" class="card-img-top " alt="..." height="">
+        <div class="card-body">
+            <h5 class="card-title">Sistema de Gestão de Academia</h5>
+            <p class="card-text">Sistema feito para gerenciar os alunos e funcionários da sua academia.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card text-bg-primary border-primary">
+        <img src="img/web_chuleta.png" class="card-img-top " alt="..." height="">
+        <div class="card-body">
+            <h5 class="card-title">Site de Churrascaria</h5>
+            <p class="card-text">Site perfeito para divulgar o cardápio do seu restaurante e gerenciar reservas
+                de mesas.</p>
+        </div>
+    </div>
+</div> -->
 
 </html>
