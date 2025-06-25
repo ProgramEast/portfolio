@@ -9,7 +9,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- icones do bootstrap -->
     <link rel="stylesheet" href="css/style.css"> <!-- arquivo style css-->
+    <!-- estilo CSS -->
     <style>
+        /* importando texto em Open Sans */
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+        .area_inicial {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .imagem_principal {
+            background-color: #844feb;
+            width: 100%;
+            height: 100%;
+        }
+
+        .texto_ini {
+            text-transform: uppercase;
+
+        }
+
+        .h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+        }
     </style>
 </head>
 
@@ -32,12 +59,21 @@
         </div>
     </div>
     <!-- FIM MENU -->
-    
-    
-        <!-- INICIO ÁREA INICIAL -->
-        <div class="container-fluid vh-100"></div>
-        <!-- FIM ÁREA INICIAL -->
-    
+
+
+    <!-- INICIO ÁREA INICIAL -->
+    <section class="area_inicial">
+        <div class="texto_ini">
+            <h2 class="h2">a<span style="color:#3954a3;"> program east</span></h2>
+            <h2 class="h2">desenvolve um código que transforma de maneira fácil, prático e profissional.</h2>
+        </div>
+        <!-- SEPARAÇÃO DENTRE TEXTO E IMAGEM -->
+        <div class="imagem_principal">
+            <img src="#" alt="#">
+        </div>
+    </section>
+    <!-- FIM ÁREA INICIAL -->
+
 
     <!-- INICIO FAIXA 1 -->
     <div class="container-fluid bg-black d-flex justify-content-between px-5" style="height: 20vh;">
