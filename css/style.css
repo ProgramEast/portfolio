@@ -43,3 +43,34 @@
 .bree-serif {
     font-family: 'Bree serif';
 }
+
+/* importando texto em Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.area_inicial {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.imagem_principal {
+    background-color: #844feb;
+    width: 100%;
+    height: 100%;
+}
+
+.texto_ini {
+    text-transform: uppercase;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
