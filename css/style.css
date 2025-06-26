@@ -8,18 +8,36 @@
     src: url(../fonts/BreeSerif-Regular.ttf);
 }
 
+@font-face {
+    font-family: "Open sans medium";
+    src: url(../fonts/static/OpenSans-Medium.ttf);
+}
+
 #program {
-    font-family: 'Sunborn';
     font-size: 30px;
 }
 
 #east {
-    font-family: 'Bree serif';
     font-size: 26px;
+}
+
+/* FONTES */ 
+
+.sunborn {
+    font-family: 'Sunborn';
+}
+
+.bree-serif {
+    font-family: 'Bree serif';
+}
+
+.open-sans-medium{
+    font-family: 'Open sans medium';
 }
 
 
 /* Icones do rodapé */
+
 .icones {
     font-size: 30px;
 }
@@ -36,13 +54,7 @@
     transition: 0.5s;
 }
 
-.sunborn {
-    font-family: 'Sunborn';
-}
 
-.bree-serif {
-    font-family: 'Bree serif';
-}
 
 /* importando texto em Open Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
@@ -74,3 +86,5 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 700 !important;
 }
+
+
