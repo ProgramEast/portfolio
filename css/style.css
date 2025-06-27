@@ -55,11 +55,6 @@
     transition: 0.5s;
 }
 
-
-
-/* importando texto em Open Sans */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
 .area_inicial {
     height: 90vh;
     display: grid;
@@ -85,8 +80,9 @@
 }
 
 .h2 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700 !important;
+    font-family: 'Bree Serif';
+    /* font-weight: 700 !important; */
+    font-size: 10px;
 }
 
 
