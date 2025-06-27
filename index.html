@@ -2,245 +2,191 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Program East</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- arquivo style css-->
-    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- arquivo css do bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- icones do bootstrap -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program East</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- arquivo style css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- arquivo css do bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <!-- ícones do bootstrap -->
 </head>
 
 <body class="bg-white">
 
-
-    <!-- INICIO MENU -->
-    <div class="navbar navbar-expand-lg bg-black position-static px-5">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white d-flex justify-content-center" href="#">
-                <p class="sunborn fs-3 my-auto"> Program</p>&nbsp;<p class="bree-serif fs-4 my-auto"> EAST</p>
-            </a>
-            <div class="collapse navbar-collapse d-flex justify-content-end">
-                <a href="#sobre-nos" class="text-white link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem
-                    Somos</a>
-                <a href="#projetos" class="mx-3">
-                    <button type="button" class="btn btn-outline-light rounded-5">Projetos <i
-                            class="bi bi-arrow-right"></i></button>
-                </a>
-            </div>
-        </div>
+  <!-- INICIO MENU -->
+  <nav class="navbar navbar-expand-lg bg-black px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white d-flex justify-content-center" href="#">
+        <p class="sunborn fs-3 my-auto">Program</p>&nbsp;<p class="bree-serif fs-4 my-auto">EAST</p>
+      </a>
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <a href="#sobre-nos" class="text-white link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem Somos</a>
+        <a href="#projetos" class="mx-3">
+          <button type="button" class="btn btn-outline-light rounded-5">Projetos <i class="bi bi-arrow-right"></i></button>
+        </a>
+      </div>
     </div>
-    <!-- FIM MENU -->
+  </nav>
+  <!-- FIM MENU -->
 
-
-    <!-- INICIO ÁREA INICIAL -->
-    <section class="area_inicial">
-        <div class="texto_ini">
-            <h2 class="h2">a<span style="color:#3954a3;"> program east</span></h2>
-            <h2 class="h2">desenvolve um código que transforma de maneira fácil, prático e profissional.</h2>
-        </div>
-        <!-- SEPARAÇÃO DENTRE TEXTO E IMAGEM -->
-        <div class="imagem_principal">
-            <img src="img/imagem_principal.jpg" alt="Imagem Principal" class="img-fluid w-100 h-100">
-        </div>
-    </section>
-    <!-- FIM ÁREA INICIAL -->
-
-
-
-    <!-- INICIO FAIXA 1 -->
-    <div class="container-fluid bg-black d-flex justify-content-between px-5" style="height: 20vh;">
-        <div class="w-100 d-flex justify-content-center my-auto">
-            <h2 class="bree-serif text-white text-center">
-                UM SITE OU SISTEMA DA SUA PRÓPRIA EMPRESA! <br>
-                DA FORMA QUE VOCÊ ESCOLHER!
-            </h2>
-        </div>
+  <!-- INICIO ÁREA INICIAL -->
+  <section class="area_inicial container-fluid px-3 py-4">
+    <div class="row align-items-center">
+      <!-- Texto -->
+      <div class="col-12 col-md-6 mb-4">
+        <p class="apresentacao-texto">
+          A <span class="program-east">PROGRAM EAST</span><br>
+          DESENVOLVE UM CÓDIGO<br>
+          QUE TRANSFORMA DE<br>
+          MANEIRA FÁCIL, PRÁTICO E<br>
+          PROFISSIONAL.
+        </p>
+      </div>
+      <!-- Imagem -->
+      <div class="col-12 col-md-6">
+        <img src="img/imagem_principal.jpg" alt="Imagem Principal" class="img-fluid imagem-ajustada rounded">
+      </div>
     </div>
-    <!-- FIM FAIXA 1 -->
+  </section>
+  <!-- FIM ÁREA INICIAL -->
 
+  <!-- INICIO FAIXA 1 -->
+  <div class="container-fluid bg-black text-center py-5">
+    <h2 class="bree-serif text-white">
+      UM SITE OU SISTEMA DA SUA PRÓPRIA EMPRESA! <br>
+      DA FORMA QUE VOCÊ ESCOLHER!
+    </h2>
+  </div>
+  <!-- FIM FAIXA 1 -->
 
+  <!-- SOBRE NÓS -->
+  <div class="container my-5" id="sobre-nos">
+    <div class="row align-items-center">
+      <!-- Texto -->
+      <div class="col-12 col-lg-5 ps-lg-5 mb-4">
+        <h1 class="sunborn mb-4">SOBRE NÓS</h1>
 
-    <!-- SOBRE NÓS -->
-
-    <div class="container my-5 d-flex justify-content-around align-items-center" id="sobre-nos">
-
-        <!-- Bloco esquerdo: texto -->
-        <div class="w-25 ps-5">
-            <h1 class="sunborn mb-5">SOBRE NÓS</h1>
-
-            <!-- Visão -->
-            <div class="d-flex mb-5">
-                <div class="me-3">
-                    <h1>01</h1>
-                </div>
-                <div>
-                    <h4 class="bree-serif">Visão</h4>
-                    <p class="open-sans-light">Somos uma empresa de Desenvolvimento Web e Desktop que busca desenvolver sites de acordo com a
-                        requisição dos clientes.</p>
-                </div>
-            </div>
-
-            <!-- Solução -->
-            <div class="d-flex">
-                <div class="me-3">
-                    <h1>02</h1>
-                </div>
-                <div>
-                    <h4 class="bree-serif">Solução</h4>
-                    <p class="open-sans-light">Através de soluções sob medida, com integridade, comprometimento e disponibilidade, desenvolvemos
-                        o melhor produto à você.</p>
-                </div>
-            </div>
+        <div class="d-flex mb-4">
+          <div class="me-3">
+            <h1>01</h1>
+          </div>
+          <div>
+            <h4 class="bree-serif">Visão</h4>
+            <p class="open-sans-light">Somos uma empresa de Desenvolvimento Web e Desktop que busca desenvolver sites de acordo com a requisição dos clientes.</p>
+          </div>
         </div>
 
-        <!-- Bloco direito: imagem do computador -->
-        <div class="w-50 text-center">
-            <img src="img/Protótipo_Portfolio.png" alt="Computador com logo da Program East" class="img-fluid"
-                style="max-height: 1500px; width: 1200px;">
+        <div class="d-flex">
+          <div class="me-3">
+            <h1>02</h1>
+          </div>
+          <div>
+            <h4 class="bree-serif">Solução</h4>
+            <p class="open-sans-light">Através de soluções sob medida, com integridade, comprometimento e disponibilidade, desenvolvemos o melhor produto à você.</p>
+          </div>
         </div>
+      </div>
 
+      <!-- Imagem -->
+      <div class="col-12 col-lg-7 text-center">
+        <img src="img/Protótipo_Portfolio.png" alt="Computador com logo da Program East" class="img-fluid rounded">
+      </div>
     </div>
+  </div>
+  <!-- FIM SOBRE NÓS -->
 
-    <!-- FIM SOBRE NÓS -->
+  <!-- PROJETOS -->
+  <div class="container my-5" id="projetos">
 
-
-
-    <!-- PROJETOS -->
-
-    <!-- Site Stayfit -->
-    <div class="container my-5" id="projetos">
-
-        <!-- título do projeto -->
-        <div class="row mb-5 py-5">
-            <div class="card d-flex" style="background-color: #844feb; height: 100px;">
-                <h2 class="bree-serif text-black text-center my-auto">Site de Academia</h2>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-
-            <!-- descrição do projeto -->
-            <div class="col-5 d-flex justify-content-center align-items-center">
-                <div class="card border w-100 h-100">
-                    <div class="card-body text-bg-light px-5" style="background-color: #e8e8e8 !important;">
-                        <p class="open-sans-medium fs-3">Site de academia com plataforma integrada para interação entre alunos,
-                            professores e administradores, oferecendo soluções completas para login, matrícula e
-                            pagamento.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- imagem do projeto -->
-            <div class="col-7">
-                <img class="img-fluid rounded mb-3" src="img/web_stayfit.png" alt="">
-            </div>
-
-        </div>
+    <!-- StayFit Web -->
+    <div class="row mb-5">
+      <div class="card d-flex bg-primary-subtle text-center p-3">
+        <h2 class="bree-serif text-black m-auto">Site de Academia</h2>
+      </div>
     </div>
 
-    <!-- Desktop Stay Fit -->
-
-    <div class="container my-5 py-5">
-
-        <!-- título do projeto -->
-        <div class="row mb-5">
-            <div class="card text-bg-info" style="height: 100px;">
-                <h2 class="bree-serif text-center my-auto">Sistema Administrativo de Academia</h2>
-            </div>
+    <div class="row align-items-center mb-5">
+      <!-- Texto -->
+      <div class="col-12 col-md-5 mb-3">
+        <div class="card bg-light p-3 h-100">
+          <p class="open-sans-medium fs-5">Site de academia com plataforma integrada para interação entre alunos, professores e administradores, oferecendo soluções completas para login, matrícula e pagamento.</p>
         </div>
-
-        <div class="row mb-3">
-
-            <!-- imagem do projeto -->
-            <div class="col-7">
-                <img class="img-fluid rounded mb-3" src="img/desk_stayfit.png" alt="">
-            </div>
-
-            <!-- descrição do projeto -->
-
-            <div class="col-5 d-flex justify-content-center align-items-center">
-                <div class="card border w-100 h-100">
-                    <div class="card-body text-bg-light px-5" style="background-color: #e8e8e8 !important;">
-                        <p class=" open-sans-medium fs-3">Esse é um sistema de computador que faz toda a parte de gestão de alunos e
-                            funcionários da academia.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+      </div>
+      <!-- Imagem -->
+      <div class="col-12 col-md-7">
+        <img class="img-fluid rounded" src="img/web_stayfit.png" alt="">
+      </div>
     </div>
 
-    <!-- Chuleta -->
-
-    <div class="container my-5 py-5">
-
-        <!-- título do projeto -->
-        <div class="row mb-5">
-            <div class="card text-bg-warning" style="height: 100px;">
-                <h2 class="bree-serif text-center my-auto">Site de Churrascaria</h2>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-
-            <!-- descrição do projeto -->
-            <div class="col-5">
-                <div class="card bg-light rounded-4 w-100 h-100">
-                    <div class="card-body px-5" style="background-color: #e8e8e8 !important;">
-                        <p class="open-sans-medium fs-3">Site baseado em uma Churrascaria, cujo seu foco é a exposição da
-                            marca e itens a venda, com o serviço de agendamento de mesas com cadastro de clientes e
-                            login.<s></s></p>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- imagem do projeto -->
-            <div class="col-7">
-                <img class="img-fluid rounded mb-3" src="img/web_chuleta.png" alt="">
-            </div>
-
-        </div>
-
+    <!-- StayFit Desktop -->
+    <div class="row mb-5">
+      <div class="card bg-info text-center p-3">
+        <h2 class="bree-serif m-auto">Sistema Administrativo de Academia</h2>
+      </div>
     </div>
 
-    <!-- FIM PROJETOS -->
-
-
-
-    <!-- INICIO RODAPE -->
-
-    <div class="container-fluid bg-black d-flex justify-content-between px-5" style="height: 20vh;">
-
-        <div class="w-50 d-flex align-items-start py-5">
-            <!-- Logo -->
-            <a href="#" class="navbar-brand text-white d-flex justify-content-center">
-                <p class="sunborn fs-3 my-auto"> Program</p>&nbsp;<p class="bree-serif fs-4 my-auto"> EAST</p>
-            </a>
+    <div class="row align-items-center mb-5">
+      <!-- Imagem -->
+      <div class="col-12 col-md-7 mb-3">
+        <img class="img-fluid rounded" src="img/desk_stayfit.png" alt="">
+      </div>
+      <!-- Texto -->
+      <div class="col-12 col-md-5">
+        <div class="card bg-light p-3 h-100">
+          <p class="open-sans-medium fs-5">Esse é um sistema de computador que faz toda a parte de gestão de alunos e funcionários da academia.</p>
         </div>
-
-        <div class="w-50">
-            <div class="d-flex h-100 justify-content-end align-items-center me-5">
-                <p class="text-light fs-6 mb-0 me-2">Contatos:</p>
-                <a href="https://instagram.com/program_east/" target="_blank">
-                    <i class="bi bi-instagram mx-1 icones fs-5"></i>
-                </a>
-                <a href="https://github.com/ProgramEast" target="_blank">
-                    <i class="bi bi-github mx-1 text-white icones fs-5"></i>
-                </a>
-                <a href="mailto:programeast0206@gmail.com">
-                    <i class="bi bi-envelope mx-1 text-white icones fs-5"></i>
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <!-- FIM RODAPE -->
+    <!-- Churrascaria -->
+    <div class="row mb-5">
+      <div class="card text-bg-warning text-center p-3">
+        <h2 class="bree-serif m-auto">Site de Churrascaria</h2>
+      </div>
+    </div>
 
+    <div class="row align-items-center">
+      <!-- Texto -->
+      <div class="col-12 col-md-5 mb-3">
+        <div class="card bg-light p-3 h-100">
+          <p class="open-sans-medium fs-5">Site baseado em uma Churrascaria, cujo seu foco é a exposição da marca e itens à venda, com o serviço de agendamento de mesas com cadastro de clientes e login.</p>
+        </div>
+      </div>
+      <!-- Imagem -->
+      <div class="col-12 col-md-7">
+        <img class="img-fluid rounded" src="img/web_chuleta.png" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- FIM PROJETOS -->
+
+  <!-- INICIO RODAPE -->
+  <div class="container-fluid bg-black px-4 py-4 d-flex flex-column flex-md-row justify-content-between">
+    <div class="mb-3 mb-md-0">
+      <!-- Logo -->
+      <a href="#" class="navbar-brand text-white d-flex align-items-center">
+        <p class="sunborn fs-3 my-auto">Program</p>&nbsp;<p class="bree-serif fs-4 my-auto">EAST</p>
+      </a>
+    </div>
+    <div class="d-flex align-items-center justify-content-start justify-content-md-end">
+      <p class="text-light fs-6 mb-0 me-2">Contatos:</p>
+      <a href="https://instagram.com/program_east/" target="_blank">
+        <i class="bi bi-instagram mx-1 icones fs-5"></i>
+      </a>
+      <a href="https://github.com/ProgramEast" target="_blank">
+        <i class="bi bi-github mx-1 text-white icones fs-5"></i>
+      </a>
+      <a href="mailto:programeast0206@gmail.com">
+        <i class="bi bi-envelope mx-1 text-white icones fs-5"></i>
+      </a>
+    </div>
+  </div>
+  <!-- FIM RODAPE -->
+
+  <script src="js/bootstrap.min.js"></script> <!-- arquivo js do bootstrap -->
 </body>
-
-<script src="js/bootstrap.min.js"></script> <!-- arquivo js do bootstrap -->
 
 </html>
