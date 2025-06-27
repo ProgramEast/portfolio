@@ -1,99 +1,88 @@
-/* Fontes */
+/* FONTES */ 
+
 @font-face {
-  font-family: "Sunborn";
-  src: url(../fonts/sunborn-sans-one.otf);
+    font-family: "Sunborn";
+    src: url(../fonts/sunborn-sans-one.otf);
 }
 
 @font-face {
-  font-family: "Bree serif";
-  src: url(../fonts/BreeSerif-Regular.ttf);
+    font-family: "Bree serif";
+    src: url(../fonts/BreeSerif-Regular.ttf);
 }
 
 @font-face {
-  font-family: "Open sans medium";
-  src: url(../fonts/static/OpenSans-Medium.ttf);
+    font-family: "Open sans medium";
+    src: url(../fonts/static/OpenSans-Medium.ttf);
 }
 
 @font-face {
-  font-family: "Open sans light";
-  src: url(../fonts/static/OpenSans-Medium.ttf);
+    font-family: "Open sans light";
+    src: url(../fonts/static/OpenSans-Medium.ttf);
 }
 
 .sunborn {
-  font-family: 'Sunborn';
+    font-family: 'Sunborn';
 }
 
 .bree-serif {
-  font-family: 'Bree serif';
+    font-family: 'Bree serif';
 }
 
-.open-sans-medium {
-  font-family: 'Open sans medium';
+.open-sans-medium{
+    font-family: 'Open sans medium';
 }
 
-.open-sans-light {
-  font-family: 'Open sans light';
+.open-sans-light{
+    font-family: 'Open sans light';
 }
 
-/* Ícones do rodapé */
+
+/* Icones do rodapé */
+
 .icones {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 .bi-instagram {
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
 }
 
 .icones:hover {
-  zoom: 150%;
-  transition: 0.5s;
+    zoom: 150%;
+    /* transform: scale(2.2); */
+    transition: 0.5s;
 }
 
-/* Import Google Fonts (fallback) */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
-
-/* Títulos da seção inicial */
-.h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700 !important;
-}
-
-/* Área inicial ocupa a altura total da tela */
 .area_inicial {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.imagem_principal {
+    background-color: #844feb;
+    width: 100%;
+    height: 100%;
+}
+
+.texto_ini {
+    text-transform: uppercase;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.h2 {
+    font-family: 'Bree Serif';
+    /* font-weight: 700 !important; */
+    font-size: 10px;
 }
 
 
-.apresentacao-texto {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  line-height: 1.4;
-  color: #1a1a1a;
-}
-
-.apresentacao-texto .program-east {
-  color: #3954a3;
-}
-
-
-.imagem-ajustada {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0;
-}
-
-
-@media (max-width: 768px) {
-  .apresentacao-texto {
-    font-size: 1.4rem;
-  }
-}
