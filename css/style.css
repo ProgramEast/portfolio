@@ -73,6 +73,7 @@
         /*Isso deixa o menu visivelmente sem ocupar muito espaço*/
     }
 }
+
 /* CELULARES COM LARGURA MENOR (≤ 412 px) */
 @media (max-width: 500px) {
     .area_inicial {
@@ -82,27 +83,24 @@
         /*tera duas linhas com a altura automatica*/
         height: auto;
         /*conteiner cresce junto do conteudo*/
-        gap: 2rem;
+        gap: 1rem;
         /*adiciona espaço dentre os itens*/
 
     }
 
     .texto_ini {
-        align-items: center;
-        /*alinha o conteudo para esquerda*/
-        padding: 0;
-        /*zera o padding*/
-        padding-inline: 1rem;
+        text-transform: uppercase;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-inline: 2rem;
         /*adiciona padding nas margens laterais*/
     }
 
-    .imagem_principal {
-        display: none;
-    }
+    .imagem_principal {}
 
-    .imagem_principal img {
-        display: none;
-    }
+    .imagem_principal img {}
 
 
     .h2 {
