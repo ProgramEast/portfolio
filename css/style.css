@@ -73,6 +73,52 @@
         /*Isso deixa o menu visivelmente sem ocupar muito espaço*/
     }
 }
+/* CELULARES COM LARGURA MENOR (≤ 412 px) */
+@media (max-width: 500px) {
+    .area_inicial {
+        grid-template-columns: 1fr;
+        /*coloca tudo em uma só coluna*/
+        grid-template-rows: auto auto;
+        /*tera duas linhas com a altura automatica*/
+        height: auto;
+        /*conteiner cresce junto do conteudo*/
+        gap: 2rem;
+        /*adiciona espaço dentre os itens*/
+
+    }
+
+    .texto_ini {
+        align-items: center;
+        /*alinha o conteudo para esquerda*/
+        padding: 0;
+        /*zera o padding*/
+        padding-inline: 1rem;
+        /*adiciona padding nas margens laterais*/
+    }
+
+    .imagem_principal {
+        display: none;
+    }
+
+    .imagem_principal img {
+        display: none;
+    }
+
+
+    .h2 {
+        font-size: clamp(1.125rem, 4vw, 1.5rem);
+        /*Define um tamanho de fonte que:
+           * nunca será menor que 1.125rem
+           * cresce com a tela (até 4vw)
+           * mas nunca passa de 1.5rem
+        */
+    }
+
+    #menu {
+        height: 12vh;
+        /*Isso deixa o menu visivelmente sem ocupar muito espaço*/
+    }
+}
 
 /* FONTES */
 
@@ -143,6 +189,9 @@
     background-color: #844feb;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transform-origin: left center;
+    transition: transform 0.4s ease-in-out;
 }
 
 .texto_ini {
@@ -151,6 +200,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-inline: 2rem;
+    /*adiciona padding nas margens laterais*/
 }
 
 .h2 {
