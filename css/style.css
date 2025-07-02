@@ -112,7 +112,7 @@
 
 
     .h2 {
-        font-size: clamp(1.125rem, 4vw, 1.5rem);
+        /* font-size: clamp(1.125rem, 4vw, 1.5rem); */
         /*Define um tamanho de fonte que:
            * nunca será menor que 1.125rem
            * cresce com a tela (até 4vw)
