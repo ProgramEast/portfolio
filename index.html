@@ -16,7 +16,7 @@
 
     <!-- INICIO MENU -->
 
-    <nav class="navbar navbar-expand-md bg-black position-static px-xs-3 px-md-5" id="menu">
+    <nav class="navbar navbar-expand-md bg-black position-static px-xs-3 px-md-5 h-auto" id="menu">
         <div class="container-fluid d-flex justify-content-between">
 
             <!-- logo -->
@@ -26,21 +26,21 @@
 
             <!-- dropdown responsivo -->
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                data-bs-target="#dropdown-menu" aria-controls="dropdown-menu" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- opções menu -->
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="dropdown-menu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+                    <li class="nav-item ms-auto">
                         <a href="#sobre-nos"
                             class="nav-link text-white link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem
                             Somos</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item ms-auto">
                         <a href="#projetos" class="mx-3">
                             <button type="button" class="btn btn-outline-light rounded-5">Projetos <i
                                     class="bi bi-arrow-right"></i>
