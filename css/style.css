@@ -98,9 +98,17 @@
         /*adiciona padding nas margens laterais*/
     }
 
-    .imagem_principal {}
+    #h2-sub {
+        font-size: 15px;
+    }
 
-    .imagem_principal img {}
+    .imagem_principal {
+        
+    }
+
+    .imagem_principal img {
+        
+    }
 
 
     .h2 {
