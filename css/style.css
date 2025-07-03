@@ -98,10 +98,6 @@
         /*adiciona padding nas margens laterais*/
     }
 
-    #h2-sub {
-        font-size: 15px;
-    }
-
     .imagem_principal {
         
     }
@@ -110,19 +106,13 @@
         
     }
 
-
-    .h2 {
-        /* font-size: clamp(1.125rem, 4vw, 1.5rem); */
-        /*Define um tamanho de fonte que:
-           * nunca será menor que 1.125rem
-           * cresce com a tela (até 4vw)
-           * mas nunca passa de 1.5rem
-        */
-    }
-
     #menu {
         height: 12vh;
         /*Isso deixa o menu visivelmente sem ocupar muito espaço*/
+    }
+
+    .titulo{
+        font-size: 10px !important;
     }
 }
 
@@ -210,10 +200,10 @@
     /*adiciona padding nas margens laterais*/
 }
 
-.h2 {
+.titulo {
     font-family: 'Bree Serif';
     /* font-weight: 700 !important; */
-    font-size: 10px;
+    font-size: 30px !important;
 }
 
 #menu {
