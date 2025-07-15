@@ -98,21 +98,17 @@
         /*adiciona padding nas margens laterais*/
     }
 
-    .imagem_principal {
-        
-    }
+    .imagem_principal {}
 
-    .imagem_principal img {
-        
-    }
+    .imagem_principal img {}
 
     #menu {
         height: 12vh;
         /*Isso deixa o menu visivelmente sem ocupar muito espaço*/
     }
 
-    .titulo{
-      font-size: clamp(1.125rem, 5vw, 2rem);
+    .titulo {
+        font-size: clamp(1.125rem, 5vw, 2rem);
     }
 }
 
@@ -213,23 +209,50 @@
 /*card da stay fit !!!*/
 /* ---------------------------------------------------------------- */
 
-.div-card-one{
+.div-card-one {
     display: flex;
     justify-content: center;
-    align-items:center ;
-      
+    align-items: center;
+
 }
-.background-color-one{
+
+.background-color-one {
     display: grid;
-    grid-template-rows: 1fr, 1fr ,1fr; 
+    grid-template-rows: 1fr 1fr 1fr;
     justify-content: center;
-    align-items: center;
-    background-color: rgb(204, 204, 204);
-    
+    background-color: rgb(233, 233, 233);
+    height: 300px;
+    border-radius: 10px;
 }
-.title-card-one{
+
+.title-card-one {
+    text-align: center;
+    background-color: #844feb;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 60px;
+}
+.h2-card-one{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #833ab4;
+}
+
+.botao-card-one {
+    background-color: #844feb;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 60px;
+}
+
+.botao-card-one:hover {
+    background-color: #693ec0;
+}
+
+.button-card-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
