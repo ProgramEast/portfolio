@@ -217,7 +217,8 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    margin: 50px;
+    margin-left: 10%;
+    margin-top: 20%;
 
 }
 
@@ -275,7 +276,7 @@
 }
 .img-card{
     width: 250px;;
-    height: 250px;
+    height: 230px;
 }
 #ver-mais {
     height: 50px;
