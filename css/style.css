@@ -215,10 +215,9 @@
 
 .div-card-one {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    margin-left: 10%;
-    margin-top: 20%;
+    
 
 }
 
