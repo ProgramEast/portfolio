@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* TABLETS (≤ 991 px) */
@@ -212,18 +212,20 @@
 
 /*card da stay fit !!!*/
 /* ---------------------------------------------------------------- */
-.container-principal{
+.container-principal {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-left: 50px;
+    justify-content: flex-start;
+    margin: 50px 58px;
+    gap: 80px;
+
 }
 
 .div-card-one {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 
 }
 
@@ -279,17 +281,42 @@
     justify-content: center;
     align-items: center;
 }
-.img-card{
-    width: 250px;;
+
+.img-card {
+    width: 250px;
     height: 230px;
 }
 
-.section-carrossel-direito{
+.section-conteudo-direito {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: flex-start;
+    width: 820px;
+    height: 400px;
 }
 
+.divisão-card {
+    width: 50px;
+    height: 150px;
+}
+.foto-card{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    height: 25vh;
+}
+.descricao-card{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.img-card-two{
+    width: 700px;
+    height: 300px;
+    
+}
+/**/
 #ver-mais {
     height: 50px;
 }
