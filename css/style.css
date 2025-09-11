@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* TABLETS (≤ 991 px) */
@@ -173,43 +175,18 @@
     transition: 0.5s;
 }
 
-.area_inicial {
-    height: 600px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    justify-content: center;
+/* area inicial */
+.section_inicial{
+    background-image: url("../img/imagem_area_inicial.png");
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-.imagem_principal {
-    background-color: #844feb;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform-origin: left center;
-    transition: transform 0.4s ease-in-out;
+.card-inicial{
+    background-color: #693ec0;
+    width: auto;
 }
-
-.texto_ini {
-    text-transform: uppercase;
-    align-items: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-inline: 2rem;
-    /*adiciona padding nas margens laterais*/
-}
-
-.titulo {
-    font-family: 'Bree Serif';
-    font-size: clamp(1.2rem, 4vw, 2rem);
-    text-transform: uppercase;
-}
-
-#menu {
-    height: 10dvh;
-}
-
 /*card da stay fit !!!*/
 /* ---------------------------------------------------------------- */
 .container-principal {

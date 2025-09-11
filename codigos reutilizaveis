@@ -1,0 +1,50 @@
+  <!-- INICIO ÁREA INICIAL -->
+<!-- HTML -->
+    <section class="area_inicial">
+        <div class="texto_ini">
+            <h2 class="titulo mb-0">a<span style="color:#3954a3;"> program east</span></h2>
+            <h2 class="titulo" id="h2-sub">desenvolve um código que transforma de maneira fácil, prática e profissional.
+            </h2>
+        </div>
+        <!-- SEPARAÇÃO ENTRE TEXTO E IMAGEM -->
+        <div class="imagem_principal">
+            <img src="img/imagem_principal.jpg" alt="Imagem Principal" class="img-fluid w-100 h-100">
+        </div>
+    </section>
+.area_inicial {
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+}
+
+.imagem_principal {
+    background-color: #844feb;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: left center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.texto_ini {
+    text-transform: uppercase;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 2rem;
+    /*adiciona padding nas margens laterais*/
+}
+
+.titulo {
+    font-family: 'Bree Serif';
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    text-transform: uppercase;
+}
+
+#menu {
+    height: 10dvh;
+}
+    <!-- FIM ÁREA INICIAL -->
