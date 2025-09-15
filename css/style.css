@@ -182,12 +182,55 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /*  */
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    
 }
-.card-inicial{
-    background-color: #693ec0;
-    width: auto;
+.div-cards{
+    height:auto;
+    
+    
+
+}
+/* card 1 da parte inicial */
+.card-1{
+width: 320px;
+height: 140px;
+background-color: #315483;
+border-radius: 25px;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+
+
+}
+/* texto 1 card 1 */
+#p-card-1{
+margin: 0;
+text-align: center;
+font-size: 27px;
+font-weight: 900;
+color: #ffffff;
+}
+/* texto 2 card 1 */
+#p2-card-1{
+margin: 0;
+text-align: left;
+font-size: 15px;
+}
+
+
+.card-2{
+width: 100px;
+height: 100px;
+background-color: #000000;
+border-radius: 25px;
 }
 /*card da stay fit !!!*/
+
 /* ---------------------------------------------------------------- */
 .container-principal {
     display: flex;
