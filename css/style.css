@@ -190,20 +190,20 @@
 }
 .div-cards{
     height:auto;
-    
-    
-
-}
-/* card 1 da parte inicial */
-.card-1{
-width: 320px;
-height: 140px;
-background-color: #315483;
-border-radius: 25px;
-display: flex;
+    display: flex;
 align-items: center;
 flex-direction: column;
 justify-content: center;
+}
+
+/* card 1 da parte inicial */
+.card-1{
+width: 410px;
+height: 200px;
+background-color: #315483;
+border-radius: 25px;
+justify-self: center;
+align-items: center;
 
 
 }
@@ -211,26 +211,46 @@ justify-content: center;
 #p-card-1{
 margin: 0;
 text-align: center;
-font-size: 27px;
-font-weight: 900;
+font-size: 30px;
+font-weight: 649;
 color: #ffffff;
+text-transform: uppercase;
 }
 /* texto 2 card 1 */
 #p2-card-1{
+color: #000000;
 margin: 0;
-text-align: left;
-font-size: 15px;
+font-size: 20px;
+font-weight: 700;
+text-align: center;
 }
-
-
+#espaco-cards{
+    height: 20px;
+}
+/* card 2 */
 .card-2{
-width: 100px;
-height: 100px;
+width:410px;
+height: auto;
 background-color: #000000;
-border-radius: 25px;
-}
-/*card da stay fit !!!*/
+border-radius: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
 
+}
+#img-card2{
+    width: 40px;
+    height: 40px;
+}
+#p-card-2{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+/*card da stay fit !!!*/
 /* ---------------------------------------------------------------- */
 .container-principal {
     display: flex;
