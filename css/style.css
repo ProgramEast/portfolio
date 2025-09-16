@@ -176,7 +176,7 @@
 }
 
 /* area inicial */
-.section_inicial{
+.section_inicial {
     background-image: url("../img/imagem_area_inicial.png");
     height: 90vh;
     background-size: cover;
@@ -186,67 +186,82 @@
     display: flex;
     align-items: center;
     padding-left: 20px;
-    
+
 }
-.div-cards{
-    height:auto;
+
+.div-cards {
+    height: auto;
     display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* card 1 da parte inicial */
-.card-1{
-width: 410px;
-height: 200px;
-background-color: #315483;
-border-radius: 25px;
-justify-self: center;
-align-items: center;
+.card-1 {
+    width: 410px;
+    height: 180px;
+    background-color: #315483;
+    border-radius: 25px;
+    justify-self: center;
+    align-items: center;
 
 
 }
+
 /* texto 1 card 1 */
-#p-card-1{
-margin: 0;
-text-align: center;
-font-size: 30px;
-font-weight: 649;
-color: #ffffff;
-text-transform: uppercase;
+#p-card-1 {
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Bree Serif';
 }
+
 /* texto 2 card 1 */
-#p2-card-1{
-color: #000000;
-margin: 0;
-font-size: 20px;
-font-weight: 700;
-text-align: center;
+#p2-card-1 {
+    color: #000000;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 550;
+    text-align: left;
+    font-family: 'Bree Serif';
+    padding: 10px 0px 0px 10px;
 }
-#espaco-cards{
+
+#espaco-cards {
     height: 20px;
 }
+
+button {
+    border: none;
+    background: none;
+}
+
 /* card 2 */
-.card-2{
-width:410px;
-height: auto;
-background-color: #000000;
-border-radius: 30px;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 20px;
+.card-2 {
+    width: 310px;
+    height: 50px;
+    background-color: #000000;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 
 }
-#img-card2{
-    width: 40px;
-    height: 40px;
+
+#img-card2 {
+    width: 30px;
+    height: 30px;
 }
-#p-card-2{
+
+#p-card-2 {
     color: #ffffff;
     font-weight: 600;
-    font-size: 35px;
+    font-size: 25px;
     text-transform: uppercase;
 }
 
@@ -339,23 +354,27 @@ gap: 20px;
     width: 50px;
     height: 150px;
 }
-.foto-card{
+
+.foto-card {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    
+
     height: 25vh;
 }
-.descricao-card{
+
+.descricao-card {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
 }
-.img-card-two{
+
+.img-card-two {
     width: 700px;
     height: 300px;
-    
+
 }
+
 /**/
 #ver-mais {
     height: 50px;
