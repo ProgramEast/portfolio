@@ -185,7 +185,7 @@
     /*  */
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    
 
 }
 
@@ -199,10 +199,10 @@
 
 /* card 1 da parte inicial */
 .card-1 {
-    width: 410px;
+    width: 415px;
     height: 180px;
     background-color: #315483;
-    border-radius: 25px;
+    border-radius: 0px 25px 25px 0px;
     justify-self: center;
     align-items: center;
 
@@ -212,12 +212,13 @@
 /* texto 1 card 1 */
 #p-card-1 {
     margin: 0;
-    text-align: center;
+    text-align:start;
     font-size: 30px;
     font-weight: 500;
     color: #ffffff;
     text-transform: uppercase;
     font-family: 'Bree Serif';
+    padding: 0px 0px 0px 30px;
 }
 
 /* texto 2 card 1 */
@@ -228,7 +229,7 @@
     font-weight: 550;
     text-align: left;
     font-family: 'Bree Serif';
-    padding: 10px 0px 0px 10px;
+    padding: 10px 0px 0px 30px;
 }
 
 #espaco-cards {
@@ -242,27 +243,29 @@ button {
 
 /* card 2 */
 .card-2 {
-    width: 310px;
+    width: 350px;
     height: 50px;
     background-color: #000000;
     border-radius: 30px;
     display: flex;
+    padding-left: 20px;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    gap: 29px;
 
 }
 
 #img-card2 {
+    
     width: 30px;
     height: 30px;
 }
 
 #p-card-2 {
     color: #ffffff;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 25px;
     text-transform: uppercase;
+    font-family: 'Bree Serif';
 }
 
 /*card da stay fit !!!*/
