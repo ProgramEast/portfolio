@@ -176,40 +176,30 @@
 }
 
 /* area inicial */
-.section_inicial {
-    /* background-image: url("../img/imagem_area_inicial.jpg"); */
-    height: 90vh;
+.section_inicial{
+    background-image: url('../img/imagem_inicial.png');
+    width: 100%;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /*  */
-    display: flex;
-    align-items: center;
-    
-
 }
-
-.div-cards {
-    height: auto;
+.div-cards{
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     flex-direction: column;
+    height: 100vh;
     justify-content: center;
+    align-items: flex-start;
+}
+.div_separacao{
+    padding-top: 20px;
+}
+#h2_part-inicial{
+    font-size: 45px;
 }
 
-/* card 1 da parte inicial */
-.card-1 {
-    width: 415px;
-    height: 180px;
-    background-color: #315483;
-    border-radius: 0px 25px 25px 0px;
-    justify-self: center;
-    align-items: center;
-
-
-}
-
-/* texto 1 card 1 */
+/* FIM PARTE INICIAL */
 
 /*card da stay fit !!!*/
 /* ---------------------------------------------------------------- */
