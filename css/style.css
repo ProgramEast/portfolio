@@ -6,116 +6,7 @@
 
 /* TABLETS (≤ 991 px) */
 @media (max-width: 991px) {
-    .area_inicial {
-        gap: 1rem;
-        /* menos espaço entre colunas */
-        height: auto;
 
-    }
-
-    .texto_ini {
-        padding-inline: 1.5rem;
-        /* deixa padding só no lado esquerdo do texto */
-
-    }
-}
-
-/* CELULARES (≤ 767 px) */
-@media (max-width: 767px) {
-    .area_inicial {
-        grid-template-columns: 1fr;
-        /*coloca tudo em uma só coluna*/
-        grid-template-rows: auto auto;
-        /*tera duas linhas com a altura automatica*/
-        height: auto;
-        /*conteiner cresce junto do conteudo*/
-        gap: 2rem;
-        /*adiciona espaço dentre os itens*/
-
-    }
-
-    .texto_ini {
-        align-items: flex-start;
-        /*alinha o conteudo para esquerda*/
-        padding: 0;
-        /*zera o padding*/
-        padding-inline: 1rem;
-        /*adiciona padding nas margens laterais*/
-    }
-
-    .imagem_principal {
-        overflow: hidden;
-        /*corta as partes da imagem que ultrapasse a area visivel*/
-        height: 50vh;
-        /*altura da imagem em 50% da altura da janela*/
-    }
-
-    .imagem_principal img {
-        width: 100%;
-        height: 100%;
-        /*a imagem preenche totalmente o contêiner*/
-        object-fit: cover;
-        /*A imagem fica ajustada no contêiner sem distorção e corta se preciso*/
-        transform: scale(1.05);
-        /*zoom de uns 5% na imagem*/
-        transform-origin: left center;
-        /*o zoom foca no lado esquerdo da imagem*/
-        transition: transform 0.4s ease-in-out;
-        /*adiciona uma suavidade no zoom*/
-    }
-
-
-    .h2 {
-        font-size: clamp(1.125rem, 4vw, 1.5rem);
-        /*Define um tamanho de fonte que:
-           * nunca será menor que 1.125rem
-           * cresce com a tela (até 4vw)
-           * mas nunca passa de 1.5rem
-        */
-    }
-
-    #menu {
-        height: 12vh;
-        /*Isso deixa o menu visivelmente sem ocupar muito espaço*/
-    }
-}
-
-/* CELULARES COM LARGURA MENOR (≤ 412 px) */
-@media (max-width: 500px) {
-    .area_inicial {
-        grid-template-columns: 1fr;
-        /*coloca tudo em uma só coluna*/
-        grid-template-rows: auto auto;
-        /*tera duas linhas com a altura automatica*/
-        height: auto;
-        /*conteiner cresce junto do conteudo*/
-        gap: 1rem;
-        /*adiciona espaço dentre os itens*/
-
-    }
-
-    .texto_ini {
-        text-transform: uppercase;
-        align-items: start;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-inline: 2rem;
-        /*adiciona padding nas margens laterais*/
-    }
-
-    .imagem_principal {}
-
-    .imagem_principal img {}
-
-    #menu {
-        height: 12vh;
-        /*Isso deixa o menu visivelmente sem ocupar muito espaço*/
-    }
-
-    .titulo {
-        font-size: clamp(1.125rem, 5vw, 2rem);
-    }
 }
 
 /* FONTES */
@@ -217,11 +108,12 @@
     background-color: #3851db;
 }
 .div_part-button{
-    margin:100px 0px 0px 30px;
+    margin:30% 0px 0px 30px;
     width: 350px;
+    height: 60px;
     display: flex;
     justify-content:center;
-    gap: 20px;
+    gap: 5%;
     align-items: center;
     font-size: 25px;
     font-family: 'Bree Serif';
@@ -232,8 +124,8 @@
     cursor: pointer;
 }
 #img-part-inicial{
-    width: 45px;
-    height:45px;
+    max-width: 45px;
+    max-height:45px;
 }
 
 /* FIM PARTE INICIAL */
