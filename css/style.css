@@ -5,9 +5,7 @@
 }
 
 /* TABLETS (≤ 991 px) */
-@media (max-width: 991px) {
-
-}
+@media (max-width: 991px) {}
 
 /* FONTES */
 
@@ -67,55 +65,82 @@
 }
 
 /* area inicial */
-.section_inicial{
+.section_inicial {
     background-image: url('../img/imagem_inicial.png');
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-.div-cards{
+
+.div-cards {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     height: 100vh;
     justify-content: center;
     align-items: flex-start;
+    padding: 0px 2vw;
 }
-.div_separacao{
+
+.div_separacao {
     padding-top: 20px;
 }
-#h2_part-inicial{
-    font-size: 50px;
+
+#h2_part-inicial {
+    font-size: 3rem;
     font-family: 'Bree Serif';
-    padding: 90px 0px 0px 30px;
+    padding: 5vh 0px 0px 2vw;
+    cursor: context-menu;
 }
-.div_part-p{
-    width: 400px;
-    padding-left: 30px;
+#span-h2-inicial:active {
+   background-color: #0866ff;   
+   color: #ffffff;
 }
-#p_part-inicial{
-    font-size: 25px;
+#span-h2-inicial:hover {
+    transition: all 0.5s ease;
+}
+
+#span-h2-inicial {
+    color: #0866ff;
+    cursor: pointer;
+    transition: all 0.5s ;
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+.div_part-p {
+    max-width: 30%;
+    padding-left: 2vw;
+    cursor: context-menu;
+}
+
+#p_part-inicial {
+    font-size: 1.5rem;
     font-family: 'Bree Serif';
+    line-height: 1.5;
 }
-.div_part-button:hover{
+
+.div_part-button:hover {
     transition: all 0.5s;
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px #95a5ff;
+    background-color: #040e4b;
 }
-.div_part-button:active{
+
+.div_part-button:active {
     background-color: #3851db;
 }
-.div_part-button{
-    margin:30% 0px 0px 30px;
-    width: 350px;
-    height: 60px;
+
+.div_part-button {
+    margin: 15vh 0px 0px 2vw;
+    padding: 0.2rem 1rem;
     display: flex;
-    justify-content:center;
-    gap: 5%;
+    justify-content: center;
+    gap: 0.8rem;
     align-items: center;
-    font-size: 25px;
+    font-size: 1.2rem;
     font-family: 'Bree Serif';
     border-radius: 50px;
     background-color: #000000;
@@ -123,9 +148,10 @@
     border: none;
     cursor: pointer;
 }
-#img-part-inicial{
-    max-width: 45px;
-    max-height:45px;
+
+#img-part-inicial {
+    max-width: 2.5rem;
+    max-height: 2.5rem;
 }
 
 /* FIM PARTE INICIAL */
