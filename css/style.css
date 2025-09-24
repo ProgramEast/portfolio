@@ -191,12 +191,15 @@
     align-items: center
 }
 #icon-proj{
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #ffffff;
     width: 150px;
     height: 150px;
     border-radius: 100%;
 }
+
 /* FIM PARTE INICIAL */
 
 /*card da stay fit !!!*/
