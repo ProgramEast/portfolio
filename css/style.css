@@ -45,7 +45,9 @@
     font-family: 'Open sans light';
 }
 
-
+.logo_programEast:hover{
+    transition: all 0.5s ease;
+}
 /* Icones do rodapé */
 
 .icones {
@@ -63,7 +65,10 @@
     /* transform: scale(2.2); */
     transition: 0.5s;
 }
-
+#logo_programEast{
+    transition: all 0.5s;
+    transform: scale(1.1);
+}
 /* area inicial */
 .section_inicial {
     background-image: url('../img/imagem_inicial.png');
@@ -190,7 +195,7 @@
     justify-content: space-around;
     align-items: center
 }
-#icon-proj{
+.icon-proj{
     display: flex;
     justify-content: center;
     align-items: center;
