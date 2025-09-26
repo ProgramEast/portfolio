@@ -229,6 +229,24 @@
 }
 
 /* FIM PARTE INICIAL */
+.detalhes-projetos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b9b9b9;
+}
+#detalhe-Stayfit{
+    display: flex;
+}
+.display-projetos{
+
+}
+.h2-card-1{
+
+}
+/* explicação projetos */
+
+/* final explicação */
 
 /*card da stay fit !!!*/
 /* ---------------------------------------------------------------- */
