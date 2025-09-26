@@ -28,7 +28,6 @@
     font-family: "Open sans light";
     src: url(../fonts/static/OpenSans-Medium.ttf);
 }
-
 .sunborn {
     font-family: 'Sunborn';
 }
@@ -45,9 +44,10 @@
     font-family: 'Open sans light';
 }
 
-.logo_programEast:hover{
+.logo_programEast:hover {
     transition: all 0.5s ease;
 }
+
 /* Icones do rodapé */
 
 .icones {
@@ -65,10 +65,12 @@
     /* transform: scale(2.2); */
     transition: 0.5s;
 }
-#logo_programEast{
+
+#logo_programEast {
     transition: all 0.5s;
     transform: scale(1.1);
 }
+
 /* area inicial */
 .section_inicial {
     background-image: url('../img/imagem_inicial.png');
@@ -92,16 +94,24 @@
     padding-top: 20px;
 }
 
+#span-h2-inicial:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+    margin-left: 30px;
+}
+
 #h2_part-inicial {
     font-size: 3rem;
     font-family: 'Bree Serif';
     padding: 5vh 0px 0px 2vw;
     cursor: context-menu;
 }
+
 #span-h2-inicial:active {
-   background-color: #0866ff;   
-   color: #ffffff;
+    background-color: #0866ff;
+    color: #ffffff;
 }
+
 #span-h2-inicial:hover {
     transition: all 0.5s ease;
 }
@@ -109,7 +119,7 @@
 #span-h2-inicial {
     color: #0866ff;
     cursor: pointer;
-    transition: all 0.5s ;
+    transition: all 0.5s;
     display: inline-block;
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
@@ -159,13 +169,14 @@
     max-height: 2.5rem;
 }
 
-.faixa-projetos-fundo{
+.faixa-projetos-fundo {
     background-color: #000000;
     max-width: 100%;
     height: auto;
-    
+
 }
-.faixa-textos{
+
+.faixa-textos {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,27 +186,39 @@
     color: #ffffff;
     padding: 2rem 0px 0px 0px;
 }
-.faixa-de-projetos{
+
+.faixa-de-projetos {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 3.5rem 0px 4vw 0px;
 }
-.destaque-projetos{
+
+.destaque-projetos {
     width: 90%;
-    height:auto;
+    height: auto;
     border: 0.6vh solid #ffffff;
     background-color: #000000;
     border-radius: 20px
-
 }
-.manipular-icons{
+
+.manipular-icons {
     padding: 0.7vw;
     display: flex;
     justify-content: space-around;
     align-items: center
 }
-.icon-proj{
+
+.icon-proj:active {
+    box-shadow: 0 0 60px #95a5ff;
+}
+
+.icon-proj:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+}
+
+.icon-proj {
     display: flex;
     justify-content: center;
     align-items: center;
