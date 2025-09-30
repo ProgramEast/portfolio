@@ -229,20 +229,36 @@
 }
 
 /* FIM PARTE INICIAL */
+.section-proj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b9b9b9 ;
+    flex-direction: column;
+}
 .detalhes-projetos{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #b9b9b9;
+    width: 90%;
+    height: 100vh   ;
+    background-color: #0866ff;
+   
 }
-#detalhe-Stayfit{
-    display: flex;
+
+#detalhe-stayfit{
+   
 }
 .display-projetos{
-    display: flex;
+   
+
 }
 .h2-card-1{
 
+}
+.div-1-card{
+    background-color: #ffffff;
+    
 }
 /* explicação projetos */
 
