@@ -1,9 +1,18 @@
-const logo = document.getElementById("Chuleta");
+const logoChuleta = document.querySelector("img#chuleta");
 
-logo.addEventListener("mouseover", () => {
-  logo.src = "/img/Chuleta_gif.gif";
+logoChuleta.addEventListener("mouseover", () => {
+  logoChuleta.src = "img/Chuleta_gif.gif";
 });
 
-logo.addEventListener("mouseout", () => {
-  logo.src = "/img/chuleta_icon.svg";
+logoChuleta.addEventListener("mouseout", () => {
+  logoChuleta.src = "img/chuleta_icon.svg";
 });
+
+let projChuleta = document.getElementById("proj-chuleta");
+projChuleta.style.visibility = "hidden";
+projChuleta.style.opacity = "0";
+
+
+logoChuleta.addEventListener("click", () => {
+  projChuleta.style.visibility = "visible"; 
+})
