@@ -7,7 +7,11 @@
 /* TABLETS (≤ 991 px) */
 @media (max-width: 991px) {}
 
+/* ---------------------------------------- */
+
 /* FONTES */
+
+/* ---------------------------------------- */
 
 @font-face {
     font-family: "Sunborn";
@@ -49,7 +53,11 @@
     transition: all 0.5s ease;
 }
 
+/* ---------------------------------------- */
+
 /* Icones do rodapé */
+
+/* ---------------------------------------- */
 
 .icones {
     font-size: 30px;
@@ -72,6 +80,8 @@
     transform: scale(1.1);
 }
 
+/* ---------------------------------------- */
+
 /* area inicial */
 .section_inicial {
     background-image: url('../img/imagem_inicial.png');
@@ -91,15 +101,7 @@
     padding: 0px 2vw;
 }
 
-.div_separacao {
-    padding-top: 20px;
-}
-
-#span-h2-inicial:hover {
-    transition: all 0.5s;
-    transform: scale(1.1);
-    margin-left: 30px;
-}
+/* TITULO DA PÁGINA */
 
 #h2_part-inicial {
     font-size: 3rem;
@@ -108,14 +110,7 @@
     cursor: context-menu;
 }
 
-#span-h2-inicial:active {
-    background-color: #0866ff;
-    color: #ffffff;
-}
-
-#span-h2-inicial:hover {
-    transition: all 0.5s ease;
-}
+/* TEXTO DO TITULO - PROGRAM EAST */
 
 #span-h2-inicial {
     color: #0866ff;
@@ -125,6 +120,18 @@
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
 }
+
+#span-h2-inicial:hover {
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+    margin-left: 30px;
+}
+
+#span-h2-inicial:active {
+    background-color: #0866ff;
+    color: #ffffff;
+}
+
 
 .div_part-p {
     max-width: 30%;
