@@ -49,44 +49,31 @@
     font-family: 'Open sans light';
 }
 
-.logo_programEast:hover {
-    transition: all 0.5s ease;
-}
-
 /* ---------------------------------------- */
 
 /* Icones do rodapé */
 
 /* ---------------------------------------- */
-
-.icones {
-    font-size: 30px;
+.icones-rodape:hover {
+    transition: all 0.5s ease;
+    transform: scale(1.5);
 }
 
 .bi-instagram {
     color: transparent;
     background-clip: text;
+    /* cores em gradiente */
     background-image: linear-gradient(135deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
 }
 
-.bi-facebook{
+.bi-facebook {
     color: #1877F2;
-}
-
-.icones:hover {
-    zoom: 150%;
-    /* transform: scale(2.2); */
-    transition: 0.5s;
-}
-
-#logo_programEast {
-    transition: all 0.5s;
-    transform: scale(1.1);
 }
 
 /* ---------------------------------------- */
 
 /* area inicial */
+
 .section_inicial {
     background-image: url('../img/imagem_inicial.png');
     width: 100%;
@@ -271,8 +258,8 @@
 /* parte 5*/
 .display-projetos {
     display: flex;
-    justify-content:space-between;
-    align-items:center;
+    justify-content: space-between;
+    align-items: center;
     width: 95%;
     height: 95%;
     background-color: #dac7ff;
@@ -290,32 +277,35 @@
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    
+
     width: 40%;
     height: 95%;
-    
+
 
 }
-#foto-capa{
+
+#foto-capa {
     width: 100%;
-    height:40%;
-   border: #000000 solid 1px;
-   border-radius: 20px 20px 0 0px;
+    height: 40%;
+    border: #000000 solid 1px;
+    border-radius: 20px 20px 0 0px;
 
 }
-#img-capa{
+
+#img-capa {
     width: 100%;
     height: 100%;
-    
+
 }
 
-#corpo-card-proj{
+#corpo-card-proj {
     width: 100%;
-    height:60%;
-    
+    height: 60%;
+
     background-color: #c4c4c4;
 }
-#foto-perfil-proj{
+
+#foto-perfil-proj {
     margin-top: 10%;
     position: absolute;
     max-width: 100%;
@@ -324,11 +314,13 @@
     background-color: #ffffff;
 
 }
-#img-proj{
+
+#img-proj {
     width: 30vh;
     height: 30vh;
     padding: 10px;
 }
+
 /* parte 7*/
 .itens-card {
     display: flex;
@@ -477,10 +469,10 @@
     width: 250px;
 }
 
-.container-sobre-nos{
+.container-sobre-nos {
     margin: 200px 0;
 }
 
-.texto-sobre-nos{
+.texto-sobre-nos {
     margin: 0 80px;
 }
