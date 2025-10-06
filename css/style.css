@@ -54,9 +54,16 @@
 /* Icones do rodapé */
 
 /* ---------------------------------------- */
+
+/* Animação de crescimento e clique dos ícones */
+
 .icones-rodape:hover {
     transition: all 0.5s ease;
-    transform: scale(1.5);
+    transform: scale(1.07);
+}
+
+.icones-rodape:active {
+    transform: scale(0.97);
 }
 
 .bi-instagram {
