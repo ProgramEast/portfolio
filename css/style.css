@@ -85,8 +85,10 @@
     background-image: url('../img/imagem_inicial.png');
     width: 100%;
     min-height: 100vh;
+    /* margem para a imagem não ser tampada */
+    margin-top: 60px;
     background-size: cover;
-    background-position: center;
+    background-position: left;
     background-repeat: no-repeat;
 }
 
