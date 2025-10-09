@@ -4,12 +4,9 @@
     padding: 0;
 }
 
-/* TABLETS (≤ 991 px) */
-@media (max-width: 991px) {}
-
 /* ---------------------------------------- */
 
-/* FONTES */
+/*                  FONTES                  */
 
 /* ---------------------------------------- */
 
@@ -51,7 +48,7 @@
 
 /* ---------------------------------------- */
 
-/* Icones do rodapé */
+/*              Icones do rodapé             */
 
 /* ---------------------------------------- */
 
@@ -132,7 +129,6 @@
     color: #ffffff;
 }
 
-
 .div_part-p {
     max-width: 30%;
     padding-left: 2vw;
@@ -177,11 +173,16 @@
     max-height: 2.5rem;
 }
 
+/* -------------------------------------------------------- */
+
+/*                INICIO FAIXA DE PROJETOS                  */
+
+/* -------------------------------------------------------- */
+
 .faixa-projetos-fundo {
     background-color: #000000;
     max-width: 100%;
     height: auto;
-
 }
 
 .faixa-textos {
@@ -236,7 +237,12 @@
     border-radius: 100%;
 }
 
-/* FIM PARTE INICIAL */
+/* -------------------------------------------------------- */
+
+/*                   FIM FAIXA DE PROJETOS                  */
+
+/* -------------------------------------------------------- */
+
 .section-proj {
     display: flex;
     justify-content: center;
@@ -251,7 +257,6 @@
     width: 90%;
     height: 100vh;
     background-color: #0867ff00;
-
 }
 
 /* parte 4*/
@@ -318,10 +323,8 @@
     border-radius: 0% 0% 10% 10%;
     border: 1px solid;
 }
-#p_corpo-card-proj{
-    
-    
-}
+
+#p_corpo-card-proj {}
 
 #foto-perfil-proj {
     margin-top: 10%;
@@ -493,4 +496,82 @@
 
 .texto-sobre-nos {
     margin: 0 80px;
+}
+
+
+/* --------------------------------------------------------- */
+
+/*                       RESPONSIVIDADE                      */
+
+/* --------------------------------------------------------- */
+
+/* TABLETS (≤ 991 px) */
+@media (max-width: 991px) {}
+
+@media(max-width: 428px) {
+    .section_inicial {
+        background-image: url('../img/imagem_inicial.png');
+        width: 100%;
+        min-height: 80vh;
+        background-size: initial;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+
+    .div-cards {
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0px 2vw;
+    }
+
+    /* titulo area inicial */
+    #h2_part-inicial {
+        font-size: 2rem;
+        font-family: 'Bree Serif';
+        padding: 5vh 0px 0px 2vw;
+        cursor: context-menu;
+    }
+
+    /* subtitulo area inicial */
+    .div_part-p {
+        max-width: 70%;
+        padding-left: 2vw;
+        cursor: context-menu;
+    }
+
+    .div_part-button {
+        margin: 70px 0px 0px 0px;
+        padding: 0.2rem 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        align-items: center;
+        font-size: 1.2rem;
+        font-family: 'Bree Serif';
+        border-radius: 50px;
+        background-color: #000000;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Faixa de Projetos */
+
+    .faixa-projetos-fundo {
+        background-color: #000000;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .faixa-textos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Bree Serif';
+        font-size: 2.0rem;
+        color: #ffffff;
+    }
 }
