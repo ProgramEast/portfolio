@@ -485,6 +485,14 @@
 
 /* Sobre Nós */
 
+#img-sobre-nos {
+    height: 70px;
+}
+
+#img_members {
+    height: 400px;
+}
+
 .img_profile {
     height: 250px;
     width: 250px;
@@ -573,5 +581,29 @@
         font-family: 'Bree Serif';
         font-size: 2.0rem;
         color: #ffffff;
+    }
+
+
+    /* SOBRE NÓS */
+    #img-sobre-nos {
+        height: 40px;
+    }
+
+    #img_members {
+        height: 200px;
+    }
+
+    .img_profile {
+        height: 110px;
+        width: 110px;
+    }
+
+    .container-sobre-nos {
+        margin: 100px 0;
+    }
+
+    .texto-sobre-nos {
+        margin: 0 23px;
+        font-size: 15px;
     }
 }
