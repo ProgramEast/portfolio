@@ -514,9 +514,7 @@
 /* --------------------------------------------------------- */
 
 /* TABLETS (≤ 991 px) */
-@media (max-width: 991px) {}
-
-@media(max-width: 428px) {
+@media (max-width: 991px) {
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
         width: 100%;
@@ -530,6 +528,100 @@
         display: flex;
         flex-direction: column;
         height: 80vh;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0px 2vw;
+    }
+
+    /* titulo area inicial */
+    #h2_part-inicial {
+        font-size: 2rem;
+        font-family: 'Bree Serif';
+        padding: 5vh 0px 0px 2vw;
+        cursor: context-menu;
+    }
+
+    /* subtitulo area inicial */
+    .div_part-p {
+        max-width: 70%;
+        padding-left: 2vw;
+        cursor: context-menu;
+    }
+
+    .div_part-button {
+        margin: 70px 0px 0px 0px;
+        padding: 0.2rem 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        align-items: center;
+        font-size: 1.2rem;
+        font-family: 'Bree Serif';
+        border-radius: 50px;
+        background-color: #000000;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Faixa de Projetos */
+
+    .faixa-projetos-fundo {
+        background-color: #000000;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .faixa-textos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Bree Serif';
+        font-size: 2.0rem;
+        color: #ffffff;
+    }
+
+
+    /* SOBRE NÓS */
+    #img-sobre-nos {
+        height: 40px;
+    }
+
+    #img_members {
+        height: 250px;
+    }
+
+    .img_profile {
+        height: 160px;
+        width: 160px;
+    }
+
+    .container-sobre-nos {
+        margin: 150px 0;
+    }
+
+    .texto-sobre-nos {
+        margin: 50px 23px;
+        font-size: 20px;
+    }
+}
+
+/* CELULAR */
+
+@media(max-width: 428px) {
+    .section_inicial {
+        background-image: url('../img/imagem_inicial.png');
+        width: 100%;
+        min-height: 50vh;
+        background-size: initial;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .div-cards {
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
         justify-content: center;
         align-items: flex-start;
         padding: 0px 2vw;
