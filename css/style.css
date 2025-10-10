@@ -515,7 +515,7 @@
 /* --------------------------------------------------------- */
 
 /* TABLETS (≤ 991 px) */
-@media (max-width: 991px) {
+@media (min-width: 429px) and (max-width: 991px) {
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
         width: 100%;
@@ -607,13 +607,17 @@
     }
 }
 
+
+
 /* CELULAR */
+
+
 
 @media(max-width: 428px) {
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
         width: 100%;
-        min-height: 50vh;
+        min-height: 5x0vh;
         background-size: initial;
         background-position: center;
         background-repeat: no-repeat;
@@ -622,7 +626,7 @@
     .div-cards {
         display: flex;
         flex-direction: column;
-        height: 50vh;
+        height: 5x0vh;
         justify-content: center;
         align-items: flex-start;
         padding: 0px 2vw;
