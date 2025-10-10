@@ -203,14 +203,25 @@
     padding: 3.5rem 0px 4vw 0px;
 }
 
+/* -------------------- */
 .destaque-projetos {
+    
     width: 90%;
-    height: auto;
     border: 0.6vh solid #ffffff;
     background-color: #000000;
-    border-radius: 20px
+    border-radius: 20px;
+    transition: all 0.5s;
 }
 
+.destaque-projetos:hover{
+    border-color: #ffffff;
+    box-shadow: 0 0 20px 3px #ffffff80;
+    /* brilho em volta, sem aumentar o tamanho real */
+    transition: all 0.5s;
+    
+    width: 95%;
+}
+/* ---------------- */
 .manipular-icons {
     padding: 0.7vw;
     display: flex;
@@ -219,12 +230,13 @@
 }
 
 .icon-proj:active {
-    box-shadow: 0 0 60px #95a5ff;
+    box-shadow: 0 0 60px #ffffff;
 }
 
 .icon-proj:hover {
-    transition: all 0.5s;
-    transform: scale(1.1);
+    transition: all 0.2s;
+    transform: scale(1.0);
+    
 }
 
 .icon-proj {
@@ -319,12 +331,17 @@
 
     width: 100%;
     height: 60%;
+
     background-color: #c4c4c4;
     border-radius: 0% 0% 10% 10%;
     border: 1px solid;
 }
 
-#p_corpo-card-proj {}
+#p_corpo-card-proj {
+    max-width: 100%;
+    font-size: 20px;
+    text-align: center;
+}
 
 #foto-perfil-proj {
     margin-top: 10%;
