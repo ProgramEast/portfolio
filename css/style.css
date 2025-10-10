@@ -338,9 +338,11 @@
 }
 
 #p_corpo-card-proj {
+    margin-top: 1.5rem;
     max-width: 100%;
     font-size: 20px;
     text-align: center;
+    font-family: "Bree Serif";
 }
 
 #foto-perfil-proj {
