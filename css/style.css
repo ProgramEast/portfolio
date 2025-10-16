@@ -205,7 +205,7 @@
 
 /* -------------------- */
 .destaque-projetos {
-    
+
     width: 90%;
     border: 0.6vh solid #ffffff;
     background-color: #000000;
@@ -213,14 +213,15 @@
     transition: all 0.5s;
 }
 
-.destaque-projetos:hover{
+.destaque-projetos:hover {
     border-color: #ffffff;
     box-shadow: 0 0 20px 3px #ffffff80;
     /* brilho em volta, sem aumentar o tamanho real */
     transition: all 0.5s;
-    
+
     width: 95%;
 }
+
 /* ---------------- */
 .manipular-icons {
     padding: 0.7vw;
@@ -236,7 +237,7 @@
 .icon-proj:hover {
     transition: all 0.2s;
     transform: scale(1.0);
-    
+
 }
 
 .icon-proj {
@@ -278,7 +279,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #693ec03b;
 }
 
 /* parte 5*/
@@ -288,7 +288,6 @@
     align-items: center;
     width: 95%;
     height: 95%;
-    background-color: #dac7ff;
 }
 
 /*  */
@@ -332,6 +331,7 @@
     width: 100%;
     height: 60%;
 
+    padding: 0px 30px;
     background-color: #c4c4c4;
     border-radius: 0% 0% 10% 10%;
     
@@ -365,22 +365,30 @@
 .itens-card {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 
     width: 55%;
     height: 95%;
-    background-color: #fcb045;
 }
 
 .slides-itens {
     width: 100%;
     height: 50%;
     background-color: #2b2b2b;
+
+    border-radius: 20px;
 }
 
 .desc-itens {
     width: 100%;
     height: 50%;
-    background-color: #000000;
+    background-color: #c4c4c4;
+
+    padding: 20px;
+    border-radius: 20px;
+    font-family: "Bree serif";
+    font-size: 20px;
+    text-align: center;
 }
 
 /* explicação projetos */
@@ -497,11 +505,6 @@
 
 }
 
-/**/
-#ver-mais {
-    height: 50px;
-}
-
 /* Sobre Nós */
 
 #img-sobre-nos {
@@ -538,7 +541,7 @@
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
         width: 100%;
-        min-height:54vh;
+        min-height: 54vh;
         background-size: initial;
         background-position: center;
         background-repeat: no-repeat;
