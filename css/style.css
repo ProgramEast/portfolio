@@ -1,3 +1,8 @@
+:root{
+    /* Ajuste aqui o raio das bordas do card/carousel */
+    --card-radius: 20px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -48,11 +53,11 @@
 
 /* ---------------------------------------- */
 
-/*              Icones do rodapé             */
+/*              Icones do Rodapé             */
 
 /* ---------------------------------------- */
 
-/* Animação de crescimento e clique dos ícones */
+/* Animação de Crescimento e Clique Dos Ícones */
 
 .icones-rodape:hover {
     transition: all 0.5s ease;
@@ -66,7 +71,7 @@
 .bi-instagram {
     color: transparent;
     background-clip: text;
-    /* cores em gradiente */
+    /* Cores em Gradiente */
     background-image: linear-gradient(135deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
 }
 
@@ -76,13 +81,13 @@
 
 /* ---------------------------------------- */
 
-/* area inicial */
+/* Area Inicial */
 
 .section_inicial {
     background-image: url('../img/imagem_inicial.png');
     width: 100%;
     min-height: 100vh;
-    /* margem para a imagem não ser tampada */
+    /* Margem para a imagem não ser tampada */
     margin-top: 60px;
     background-size: cover;
     background-position: left;
@@ -175,7 +180,7 @@
 
 /* -------------------------------------------------------- */
 
-/*                INICIO FAIXA DE PROJETOS                  */
+/*                Inicio Faixa De Projetos                  */
 
 /* -------------------------------------------------------- */
 
@@ -216,7 +221,7 @@
 .destaque-projetos:hover {
     border-color: #ffffff;
     box-shadow: 0 0 20px 3px #ffffff80;
-    /* brilho em volta, sem aumentar o tamanho real */
+    /* Brilho em volta, sem aumentar o tamanho real */
     transition: all 0.5s;
 
     width: 95%;
@@ -252,7 +257,7 @@
 
 /* -------------------------------------------------------- */
 
-/*                   FIM FAIXA DE PROJETOS                  */
+/*                   Fim Faixa De Projetos                  */
 
 /* -------------------------------------------------------- */
 
@@ -272,7 +277,7 @@
     background-color: #0867ff00;
 }
 
-/* parte 4*/
+/* Parte 4*/
 #detalhe-stayfit {
     display: flex;
     justify-content: center;
@@ -281,7 +286,7 @@
     height: 100%;
 }
 
-/* parte 5*/
+/* Parte 5*/
 .display-projetos {
     display: flex;
     justify-content: space-between;
@@ -296,7 +301,7 @@
     font-size: 15vh;
 }
 
-/* parte 6*/
+/* Parte 6*/
 .div-1-card {
     display: flex;
     flex-direction: column;
@@ -305,22 +310,24 @@
 
     width: 40%;
     height: 95%;
-
-
+    position: relative;
+    /* Necessário para posicionamento do avatar em mobile */
 }
 
 #foto-capa {
     width: 100%;
     height: 40%;
 
-    border-radius: 20px 20px 0 0px;
-
+    /* Mantemos o seu radius original, agora controlado pela variável */
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
 }
 
 #img-capa {
     width: 100%;
     height: 100%;
-
+    /* Remova qualquer style inline que defina border-radius no HTML */
+    display: block;
+    object-fit: cover;
 }
 
 #corpo-card-proj {
@@ -334,7 +341,6 @@
     padding: 0px 30px;
     background-color: #c4c4c4;
     border-radius: 0% 0% 10% 10%;
-
 }
 
 #p_corpo-card-proj {
@@ -352,16 +358,23 @@
     max-height: 100%;
     border-radius: 100%;
     background-color: #ffffff;
-
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #img-proj {
     width: 30vh;
     height: 30vh;
     padding: 10px;
+    border-radius: 50%;
+    background: #fff;
 }
 
-/* parte 7*/
+/* Parte 7*/
 .itens-card {
     display: flex;
     flex-direction: column;
@@ -371,13 +384,51 @@
     height: 95%;
 }
 
-.slides-itens {
-    width: 100%;
-    height: 50%;
-    background-color: #2b2b2b;
+/* ------------------- Carrossel - Regras (Ajustadas Para Bordas Arredondadas) ------------------- */
+/* Adicionado: Aplica borda arredondada ao carousel e corta sobras com overflow:hidden.
+   O raio segue a variável --card-radius para manter consistência com o #foto-capa. */
 
-    border-radius: 20px;
+.slides-itens {
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
+
+.slides-itens .carousel-inner,
+.slides-itens .carousel-item {
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+#carrosel-projeto .carousel-item img,
+.slides-itens img,
+.carousel-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none !important;
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none !important;
+}
+
+/* ------------------- Fim Carrossel ------------------- */
 
 .desc-itens {
     width: 100%;
@@ -394,9 +445,9 @@
     text-align: center;
 }
 
-/* explicação projetos */
+/* Explicação Projetos */
 
-/* final explicação */
+/* Final Explicação */
 
 /*card da stay fit !!!*/
 /* ---------------------------------------------------------------- */
@@ -406,15 +457,12 @@
     justify-content: flex-start;
     margin: 50px 58px;
     gap: 80px;
-
 }
 
 .div-card-one {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .background-color-one {
@@ -505,7 +553,6 @@
 .img-card-two {
     width: 700px;
     height: 300px;
-
 }
 
 /* Sobre Nós */
@@ -532,14 +579,169 @@
     font-size: 22px;
 }
 
+/* --------------------------------------------------------- */
+
+/*                       Responsividade                      */
 
 /* --------------------------------------------------------- */
 
-/*                       RESPONSIVIDADE                      */
+/* ---------- Responsivo: Tablets E Telas Médias (≤ 991px) ---------- */
+@media (max-width: 991px) {
 
-/* --------------------------------------------------------- */
+    /* Empilha Colunas E Centraliza */
+    .display-projetos {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 0;
+    }
 
-/* TABLETS (≤ 991 px) */
+    /* Ambos Ocuparam Quase Toda A Largura Do Container */
+    .div-1-card,
+    .itens-card {
+        width: 90%;
+        height: auto;
+    }
+
+    /* Foto Capa Mais Baixa Para Economizar Espaço Vertical */
+    #foto-capa {
+        height: 220px;
+        border-radius: var(--card-radius) var(--card-radius) 0 0;
+        overflow: hidden;
+    }
+
+    #img-capa {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Avatar: Coloca Logo Centralizado Abaixo Da Capa, Com Overlap Suave */
+    #foto-perfil-proj {
+        position: relative;
+        /* Relativo Aqui Para Não Depender De Offsets Imprevisíveis */
+        margin-top: -80px;
+        /* Sobe Sobre O Corpo Do Card */
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        z-index: 3;
+        background: transparent;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #img-proj {
+        width: 140px;
+        height: 140px;
+        padding: 8px;
+        border-radius: 50%;
+        background: #fff;
+        /* Fundo Branco Para Destacar O Ícone */
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Corpo Do Card Ajustado */
+    #corpo-card-proj {
+        padding: 22px;
+        margin-top: -30px;
+        /* Compensa O Overlap Do Avatar */
+    }
+
+    /* Carousel: Altura Reduzida E Ocupa Toda A Largura Do Bloco */
+    .slides-itens {
+        width: 100%;
+        height: 220px;
+        border-radius: var(--card-radius) var(--card-radius) 0 0;
+        overflow: hidden;
+    }
+
+    .slides-itens .carousel-inner,
+    .slides-itens .carousel-item {
+        height: 100%;
+    }
+
+    .slides-itens img,
+    #carrosel-projeto .carousel-item img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        display: block;
+        border-radius: var(--card-radius) var(--card-radius) 0 0;
+    }
+
+    /* Descrição Dos Slides Fica Com Padding E Sem Altura Fixa */
+    .desc-itens {
+        height: auto;
+        padding: 18px;
+        border-radius: 12px;
+    }
+}
+
+/* ---------- Responsivo: Celular (≤ 428px) ---------- */
+@media (max-width: 428px) {
+    .display-projetos {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        padding: 20px 0;
+    }
+
+    .div-1-card,
+    .itens-card {
+        width: 95%;
+    }
+
+    /* Reduzir Ainda Mais As Alturas Em Celular */
+    #foto-capa {
+        height: 160px;
+        border-radius: calc(var(--card-radius) * 0.8) calc(var(--card-radius) * 0.8) 0 0;
+    }
+
+    #img-capa {
+        object-fit: cover;
+    }
+
+    #foto-perfil-proj {
+        position: relative;
+        margin-top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #img-proj {
+        width: 110px;
+        height: 110px;
+        padding: 6px;
+    }
+
+    #corpo-card-proj {
+        padding: 16px;
+        margin-top: -20px;
+    }
+
+    .slides-itens {
+        height: 160px;
+    }
+
+    .slides-itens img {
+        object-fit: cover;
+    }
+
+    .desc-itens {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    /* Reduz Gaps Gerais */
+    .container-principal {
+        margin: 30px 16px;
+        gap: 20px;
+    }
+}
+
+/* TABLETS (≤ 991 px) */
 @media (min-width: 429px) and (max-width: 991px) {
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
@@ -559,7 +761,7 @@
         padding: 0px 2vw;
     }
 
-    /* titulo area inicial */
+    /* Titulo Area Inicial */
     #h2_part-inicial {
         font-size: 2rem;
         font-family: 'Bree Serif';
@@ -567,7 +769,7 @@
         cursor: context-menu;
     }
 
-    /* subtitulo area inicial */
+    /* Subtitulo Area Inicial */
     .div_part-p {
         max-width: 70%;
         padding-left: 2vw;
@@ -590,7 +792,7 @@
         cursor: pointer;
     }
 
-    /* Faixa de Projetos */
+    /* Faixa De Projetos */
 
     .faixa-projetos-fundo {
         background-color: #000000;
@@ -607,8 +809,7 @@
         color: #ffffff;
     }
 
-
-    /* SOBRE NÓS */
+    /* Sobre Nós */
     #img-sobre-nos {
         height: 40px;
     }
@@ -632,11 +833,7 @@
     }
 }
 
-
-
 /* CELULAR */
-
-
 
 @media(max-width: 428px) {
     .section_inicial {
@@ -657,7 +854,7 @@
         padding: 0px 2vw;
     }
 
-    /* titulo area inicial */
+    /* Titulo Area Inicial */
     #h2_part-inicial {
         font-size: 2rem;
         font-family: 'Bree Serif';
@@ -665,7 +862,7 @@
         cursor: context-menu;
     }
 
-    /* subtitulo area inicial */
+    /* Subtitulo Area Inicial */
     .div_part-p {
         max-width: 70%;
         padding-left: 2vw;
@@ -688,7 +885,7 @@
         cursor: pointer;
     }
 
-    /* Faixa de Projetos */
+    /* Faixa De Projetos */
 
     .faixa-projetos-fundo {
         background-color: #000000;
@@ -705,8 +902,7 @@
         color: #ffffff;
     }
 
-
-    /* SOBRE NÓS */
+    /* Sobre Nós */
     #img-sobre-nos {
         height: 40px;
     }
