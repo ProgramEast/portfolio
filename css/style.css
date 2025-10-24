@@ -693,6 +693,92 @@
         font-size: 18px;
     }
 }
+/* ------ Variáveis globais (cores dinâmicas + tamanho do perfil) ------ */
+:root{
+  --cover-bg: #cfff7a;   /* cor padrão topo */
+  --body-bg: #c4c4c4;    /* cor padrão corpo */
+  --profile-size: 30vh;  /* tamanho do círculo grande */
+}
+
+/* Garante que a capa e o corpo usem as variáveis */
+#foto-capa{
+  background-color: var(--cover-bg);
+  position: relative; /* para referência do perfil absoluto */
+  overflow: hidden;
+}
+
+/* se quiser que a imagem respeite o background (opcional) */
+/* #foto-capa img { opacity: 0.95; } */
+
+#corpo-card-proj{
+  background-color: var(--body-bg);
+}
+
+/* Perfil (ícone circular) posicionado exatamente na linha entre capa e corpo */
+#foto-perfil-proj{
+    position: absolute;       /* fica em relação ao .div-1-card (que já tem position:relative) */
+    left: 50%;
+    top: 40%;                 /* 40% = altura da capa (você definiu #foto-capa height:40%) */
+    transform: translate(-50%, -50%); /* centra o círculo nessa linha */
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: transparent; /* o branco vem do próprio #img-proj */
+    pointer-events: none;     /* evita clique acidental no wrapper */
+}
+
+/* tamanho do img-proj controlado por variável */
+#img-proj{
+    width: var(--profile-size);
+    height: var(--profile-size);
+    padding: 10px;
+    border-radius: 50%;
+    background: #fff;
+    object-fit: contain; /* importante para SVG */
+}
+/* preparação para posicionamento preciso do perfil */
+#foto-perfil-proj {
+  position: absolute;    /* o JS pode alterar conforme necessário */
+  left: 50%;
+  transform: translate(-50%, -50%); /* centra o círculo no ponto (top,left) definido */
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* para mobile (quando preferir o comportamento "relative" que já tinha) */
+@media (max-width: 991px) {
+  #foto-perfil-proj {
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-top: -80px; /* mantém aparência parecida com seu layout atual */
+    pointer-events: auto;
+  }
+}
+
+/* quando for mobile (suas regras já tornam o wrapper relativo) sobrescrevemos */
+@media (max-width: 991px) {
+    #foto-perfil-proj{
+        position: relative;
+        top: auto;
+        transform: translateX(-50%);
+        margin-top: -80px; /* mantém efeito visual parecido com seu layout mobile */
+        left: 50%;
+        pointer-events: auto;
+    }
+    /* reduz perfil */
+    #img-proj { width: 140px; height: 140px; }
+}
+
+/* ajustes para telas muito pequenas */
+@media (max-width: 428px) {
+    #img-proj { width: 110px; height: 110px; padding: 6px; }
+}
 
 /* CELULAR (corrigido: 50vh em vez de '5x0vh') */
 @media (max-width: 428px) {
