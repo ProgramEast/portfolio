@@ -2,24 +2,22 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Program East</title>
+
+    <!-- seu CSS -->
     <link rel="stylesheet" href="css/style.css"> <!-- arquivo style css-->
-    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- arquivo css do bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- arquivo css do bootstrap (local) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- icones do bootstrap -->
     <link rel="icon" href="img/icone_programEast.png">
 </head>
 
 <body class="bg-white">
 
-
     <!-- INICIO MENU -->
-
     <nav class="menu navbar navbar-expand-md fixed-top bg-black px-md-3 px-md-5 h-auto" id="menu">
         <div class="container-fluid d-flex justify-content-between">
-
             <!-- logo -->
             <div>
                 <a class="navbar-brand text-white d-flex justify-content-center align-items-center" href="#">
@@ -38,11 +36,8 @@
             <div class="collapse navbar-collapse" id="dropdown-menu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-auto">
-                        <a href="#sobre-nos"
-                            class="nav-link text-white link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem
-                            Somos</a>
+                        <a href="#sobre-nos" class="nav-link text-white mx-3">Quem Somos</a>
                     </li>
-
                     <li class="nav-item mx-auto">
                         <a href="#projetos" class="mx-3">
                             <button type="button" class="btn btn-outline-light rounded-5">Projetos <i
@@ -54,34 +49,21 @@
             </div>
         </div>
     </nav>
-
     <!-- FIM MENU -->
 
-
-    <!-- texto -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-    </style>
     <!-- INICIO ÁREA INICIAL -->
     <section class="section_inicial">
         <div class="div-cards">
-
             <div>
-                <h2 id="h2_part-inicial">PENSOU EM SITE?<br>CHAMA A<span id="span-h2-inicial"> PROGRAM EAST </span>
-                </h2>
+                <h2 id="h2_part-inicial">PENSOU EM SITE?<br>CHAMA A<span id="span-h2-inicial"> PROGRAM EAST </span></h2>
             </div>
+
             <div style="margin-top: 50px;"></div>
+
             <div class="div_part-p">
                 <p id="p_part-inicial">Desenvolvendo um código que transforma de maneira fácil, prática e profissional.
                 </p>
             </div>
-
-            <style>
-                a {
-                    text-decoration: none;
-                    /* Remove o sublinhado */
-                }
-            </style>
 
             <div>
                 <a
@@ -96,22 +78,21 @@
     </section>
     <!-- FIM ÁREA INICIAL -->
 
-
-    <!-- INICIO FAIXA 1 -->
+    <!-- FAIXA 1 -->
     <section class="faixa-projetos-fundo">
         <div class="faixa-textos" id="projetos">
             <p>UM SITE OU SISTEMA DA SUA PRÓPRIA EMPRESA</p>
             <p>DA FORMA QUE VOCÊ ESCOLHER !</p>
         </div>
+
         <section class="faixa-de-projetos">
             <div class="destaque-projetos">
                 <div class="manipular-icons">
-
-                    <div class="icon-proj"><img src="img/icon_stayFit.svg" alt="Stay Fit Web" id="Stayfit"></div>
-                    <div class="icon-proj"><img src="img/chuleta_icon.svg" alt="Chuleta" id="Chuleta"></div>
-                    <div class="icon-proj"><img src="img/ADM.svg" alt="adm Stay fit"></div>
-                    <div class="icon-proj"><img src="img/MENTE_RENOVADA.svg" alt="Mente Renovada"></div>
-
+                    <div class="icon-proj" data-project="stayfit"><img src="img/icon_stayFit.svg" alt="Stay Fit"></div>
+                    <div class="icon-proj" data-project="chuleta"><img src="img/chuleta_icon.svg" alt="Chuleta"></div>
+                    <div class="icon-proj" data-project="adm"><img src="img/ADM.svg" alt="ADM"></div>
+                    <div class="icon-proj" data-project="mente"><img src="img/MENTE_RENOVADA.svg" alt="Mente Renovada">
+                    </div>
                 </div>
             </div>
         </section>
@@ -119,50 +100,48 @@
     <!-- FIM FAIXA 1 -->
 
     <!-- EXPLICAÇÃO PROJETOS -->
-
-    <!-- parte 1 -->
     <section class="section-proj" id="proj-stay-web">
-        <!-- parte 2 -->
         <h2 class="h2-card-1">STAY FIT WEB</h2>
-        <!-- parte 3 -->
-        <div class="detalhes-projetos">
-            <!-- parte 4 -->
-            <div id="detalhe-stayfit" class=""> <!--detalhe hidden-->
-                <!-- parte 5 -->
-                <div class="display-projetos">
-                    <!-- parte 6 -->
-                    <div class="div-1-card">
-                        <div id="foto-capa"><img id="img-capa" src="img/Tela.png"
-                                style="border-top-left-radius: 50px; border-top-right-radius: 50px;" alt=""></div>
-                        <!--foto-capa-->
-                        <div id="foto-perfil-proj"><img id="img-proj" src="img/icon_stayFit.svg" alt=""></div>
 
-                        <!--foto-perfil-proj-->
+        <div class="detalhes-projetos">
+            <div id="detalhe-stayfit">
+                <div class="display-projetos">
+
+                    <!-- cartão -->
+                    <div class="div-1-card">
+                        <!-- REMOVIDO style inline para que o raio use a variável CSS -- veja style.css -->
+                        <div id="foto-capa"><img id="img-capa" src="img/Tela.png" alt="capa projeto"></div>
+
+                        <div id="foto-perfil-proj"><img id="img-proj" src="img/icon_stayFit.svg" alt="ícone do projeto">
+                        </div>
+
                         <div id="corpo-card-proj">
                             <p id="p_corpo-card-proj">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                Molestiae nihil molestias nostrum a voluptas sapiente tempore, praesentium cum earum.
-                                Ipsam, illum suscipit. Nihil, aspernatur reprehenderit ipsam architecto repellat sint
-                                beatae?</p>
-                        </div><!--corpo-card-proj-->
+                                Molestiae nihil
+                                molestias nostrum a voluptas sapiente tempore, praesentium cum earum. Ipsam, illum
+                                suscipit. Nihil,
+                                aspernatur reprehenderit ipsam architecto repellat sint beatae?</p>
+                        </div>
                     </div>
-                    <!-- parte7 -->
+
+                    <!-- itens / slides -->
                     <div class="itens-card">
-
-                        <!-- Carrosel do projeto -->
                         <div class="slides-itens">
-                            <div id="carrosel-projeto" class="carousel slide">
+                            <!-- adicionei data-bs-ride e container de indicadores para o bootstrap funcionar corretamente -->
+                            <div id="carrosel-projeto" class="carousel slide" data-bs-ride="carousel"
+                                aria-label="Carrossel de Projetos">
+                                <div class="carousel-indicators"><!-- será gerenciado pelo JS também --></div>
 
-                                <!-- Imagens do projeto -->
                                 <div class="carousel-inner">
+                                    <!-- conteúdo inicial (o JS poderá regenerar) -->
                                     <div class="carousel-item active">
-                                        <img src="img/web_chuleta.png" class="d-block w-100" alt="...">
+                                        <img src="img/web_chuleta.png" class="d-block w-100" alt="slide 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="img/desk_stayfit.png" class="d-block w-100" alt="...">
+                                        <img src="img/desk_stayfit.png" class="d-block w-100" alt="slide 2">
                                     </div>
                                 </div>
 
-                                <!-- botões dos slides -->
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carrosel-projeto"
                                     data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -176,25 +155,23 @@
                             </div>
                         </div>
 
-                        <!-- Descrição dos slides -->
-                        <div class="desc-itens">
+                        <div class="desc-itens" id="desc-itens-text">
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Deleniti accusantium aspernatur ut quaerat dignissimos, nulla molestias ab autem id in,
-                                ipsam harum dolor.
-                                Quae, in eligendi totam aliquam harum eum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusantium aspernatur
+                                ut quaerat
+                                dignissimos, nulla molestias ab autem id in, ipsam harum dolor. Quae, in eligendi totam
+                                aliquam harum eum!
                             </p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- FIM EXPLIÇÃO PROJETOS -->
+    <!-- FIM EXPLICAÇÃO PROJETOS -->
 
     <!-- SOBRE NÓS -->
-
     <div class="container-sobre-nos container" id="sobre-nos">
         <div class="d-flex justify-content-between align-items-center mx-5">
             <h1 class="sunborn">SOBRE NÓS</h1>
@@ -202,60 +179,50 @@
         </div>
 
         <div class="d-flex justify-content-evenly align-items-center" id="img_members">
-
             <img src="img/Img_porfolio_nicolas.jpg" class="img_profile rounded-circle" alt="...">
             <img src="img/Img_portfolio_gabriel.jpg" class="img_profile rounded-circle" alt="...">
             <img src="img/Img_portfolio_davi.jpg" class="img_profile rounded-circle" alt="...">
-
         </div>
 
         <p class="texto-sobre-nos text-center bree-serif">Somos uma iniciativa de 3 devs que desenvolve sites e
-            softwares funcionais, eficientes e que satisfaçam as expectativas de nossos clientes e sempre tentando
-            inovar em prol da usabilidade e facilidade de utilização!<br><br>
-
-            Se ficou curioso(a) com nossos projetos ou com a ideia de um site ou sistema somente seu, <br>
-            venha dar uma olhada no nosso trabalho!</p>
+            softwares
+            funcionais, eficientes e que satisfaçam as expectativas de nossos clientes e sempre tentando inovar em prol
+            da
+            usabilidade e facilidade de utilização!<br><br>
+            Se ficou curioso(a) com nossos projetos ou com a ideia de um site ou sistema somente seu, <br>venha dar uma
+            olhada no
+            nosso trabalho!</p>
     </div>
-
     <!-- FINAL SOBRE NÓS -->
 
-    <!-- INÍCIO RODAPÉ -->
-
+    <!-- RODAPÉ -->
     <footer class="container-fluid bg-black text-white py-4">
         <div class="row align-items-center px-4">
-            <!-- Logo -->
             <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
                 <a href="#" class="navbar-brand d-flex align-items-center text-white">
                     <p class="sunborn fs-3 my-auto"> Program</p>&nbsp;<p class="bree-serif fs-4 my-auto"> EAST</p>
                 </a>
             </div>
 
-            <!-- Contatos -->
             <div
                 class="col-12 col-md-6 d-flex gap-1 justify-content-center justify-content-md-end align-items-center pe-5">
                 <p class="sunborn fs-6 mb-0 me-3">Contatos:</p>
-                <a class="icones-rodape mx-1" href="https://instagram.com/program_east/" target="_blank">
-                    <i class="bi bi-instagram fs-4"></i>
-                </a>
+                <a class="icones-rodape mx-1" href="https://instagram.com/program_east/" target="_blank"><i
+                        class="bi bi-instagram fs-4"></i></a>
                 <a class="icones-rodape mx-1" href="https://www.facebook.com/profile.php?id=61581230303093"
-                    target="_blank">
-                    <i class="bi bi-facebook fs-4"></i>
-                </a>
-                <a class="icones-rodape mx-1" href="https://github.com/ProgramEast" target="_blank">
-                    <i class="bi bi-github text-white fs-4"></i>
-                </a>
-                <a class="icones-rodape mx-1" href="mailto:programeast0206@gmail.com">
-                    <i class="bi bi-envelope text-white fs-4"></i>
-                </a>
+                    target="_blank"><i class="bi bi-facebook fs-4"></i></a>
+                <a class="icones-rodape mx-1" href="https://github.com/ProgramEast" target="_blank"><i
+                        class="bi bi-github text-white fs-4"></i></a>
+                <a class="icones-rodape mx-1" href="mailto:programeast0206@gmail.com"><i
+                        class="bi bi-envelope text-white fs-4"></i></a>
             </div>
         </div>
     </footer>
-
     <!-- FIM RODAPÉ -->
 
+    <!-- Scripts: carregue o Bootstrap antes do seu js.js -->
+    <script src="js/bootstrap.min.js"></script> <!-- seu bootstrap local (ou troque pelo bundle se preferir) -->
+    <script src="js/js.js"></script> <!-- seu script (corrigido abaixo) -->
 </body>
-
-<script src="js/js.js"></script>
-<script src="js/bootstrap.min.js"></script> <!-- arquivo js do bootstrap -->
 
 </html>

@@ -1,4 +1,4 @@
-:root{
+:root {
     /* Ajuste aqui o raio das bordas do card/carousel */
     --card-radius: 20px;
 }
@@ -10,9 +10,7 @@
 }
 
 /* ---------------------------------------- */
-
 /*                  FONTES                  */
-
 /* ---------------------------------------- */
 
 @font-face {
@@ -25,6 +23,8 @@
     src: url(../fonts/BreeSerif-Regular.ttf);
 }
 
+/* Caso tenha o OpenSans Light/Medium, ajuste o caminho dos arquivos locais:
+   se não tiver, remova estes @font-face ou carregue via Google Fonts */
 @font-face {
     font-family: "Open sans medium";
     src: url(../fonts/static/OpenSans-Medium.ttf);
@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: "Open sans light";
-    src: url(../fonts/static/OpenSans-Medium.ttf);
+    src: url(../fonts/static/OpenSans-Light.ttf);
 }
 
 .sunborn {
@@ -52,12 +52,8 @@
 }
 
 /* ---------------------------------------- */
-
 /*              Icones do Rodapé             */
-
 /* ---------------------------------------- */
-
-/* Animação de Crescimento e Clique Dos Ícones */
 
 .icones-rodape:hover {
     transition: all 0.5s ease;
@@ -71,7 +67,7 @@
 .bi-instagram {
     color: transparent;
     background-clip: text;
-    /* Cores em Gradiente */
+    -webkit-background-clip: text;
     background-image: linear-gradient(135deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
 }
 
@@ -80,14 +76,13 @@
 }
 
 /* ---------------------------------------- */
-
 /* Area Inicial */
+/* ---------------------------------------- */
 
 .section_inicial {
     background-image: url('../img/imagem_inicial.png');
     width: 100%;
     min-height: 100vh;
-    /* Margem para a imagem não ser tampada */
     margin-top: 60px;
     background-size: cover;
     background-position: left;
@@ -103,17 +98,15 @@
     padding: 0px 2vw;
 }
 
-/* TITULO DA PÁGINA */
-
+/* TITULO */
 #h2_part-inicial {
     font-size: 3rem;
-    font-family: 'Bree Serif';
+    font-family: 'Bree serif';
     padding: 5vh 0px 0px 2vw;
     cursor: context-menu;
 }
 
 /* TEXTO DO TITULO - PROGRAM EAST */
-
 #span-h2-inicial {
     color: #0866ff;
     cursor: pointer;
@@ -142,7 +135,7 @@
 
 #p_part-inicial {
     font-size: 1.5rem;
-    font-family: 'Bree Serif';
+    font-family: 'Bree serif';
     line-height: 1.5;
 }
 
@@ -165,7 +158,7 @@
     gap: 0.8rem;
     align-items: center;
     font-size: 1.2rem;
-    font-family: 'Bree Serif';
+    font-family: 'Bree serif';
     border-radius: 50px;
     background-color: #000000;
     color: #ffffff;
@@ -179,9 +172,7 @@
 }
 
 /* -------------------------------------------------------- */
-
 /*                Inicio Faixa De Projetos                  */
-
 /* -------------------------------------------------------- */
 
 .faixa-projetos-fundo {
@@ -195,7 +186,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: 'Bree Serif';
+    font-family: 'Bree serif';
     font-size: 2.0rem;
     color: #ffffff;
     padding: 2rem 0px 0px 0px;
@@ -208,31 +199,26 @@
     padding: 3.5rem 0px 4vw 0px;
 }
 
-/* -------------------- */
 .destaque-projetos {
-
     width: 90%;
     border: 0.6vh solid #ffffff;
     background-color: #000000;
     border-radius: 20px;
     transition: all 0.5s;
+    margin: 0 auto;
 }
 
 .destaque-projetos:hover {
-    border-color: #ffffff;
     box-shadow: 0 0 20px 3px #ffffff80;
-    /* Brilho em volta, sem aumentar o tamanho real */
     transition: all 0.5s;
-
     width: 95%;
 }
 
-/* ---------------- */
 .manipular-icons {
     padding: 0.7vw;
     display: flex;
     justify-content: space-around;
-    align-items: center
+    align-items: center;
 }
 
 .icon-proj:active {
@@ -242,7 +228,6 @@
 .icon-proj:hover {
     transition: all 0.2s;
     transform: scale(1.0);
-
 }
 
 .icon-proj {
@@ -256,9 +241,7 @@
 }
 
 /* -------------------------------------------------------- */
-
 /*                   Fim Faixa De Projetos                  */
-
 /* -------------------------------------------------------- */
 
 .section-proj {
@@ -274,10 +257,9 @@
     align-items: center;
     width: 90%;
     height: 100vh;
-    background-color: #0867ff00;
+    background-color: transparent;
 }
 
-/* Parte 4*/
 #detalhe-stayfit {
     display: flex;
     justify-content: center;
@@ -286,7 +268,6 @@
     height: 100%;
 }
 
-/* Parte 5*/
 .display-projetos {
     display: flex;
     justify-content: space-between;
@@ -295,49 +276,42 @@
     height: 95%;
 }
 
-/*  */
 .h2-card-1 {
-    font-family: "Bree Serif";
+    font-family: "Bree serif";
     font-size: 15vh;
 }
 
-/* Parte 6*/
+/* Parte 6 */
 .div-1-card {
     display: flex;
     flex-direction: column;
-    justify-items: center;
     align-items: center;
-
     width: 40%;
     height: 95%;
     position: relative;
-    /* Necessário para posicionamento do avatar em mobile */
 }
 
 #foto-capa {
     width: 100%;
     height: 40%;
-
-    /* Mantemos o seu radius original, agora controlado pela variável */
     border-radius: var(--card-radius) var(--card-radius) 0 0;
+    overflow: hidden;
 }
 
 #img-capa {
     width: 100%;
     height: 100%;
-    /* Remova qualquer style inline que defina border-radius no HTML */
     display: block;
     object-fit: cover;
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
 }
 
 #corpo-card-proj {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 60%;
-
     padding: 0px 30px;
     background-color: #c4c4c4;
     border-radius: 0% 0% 10% 10%;
@@ -348,7 +322,7 @@
     max-width: 100%;
     font-size: 20px;
     text-align: center;
-    font-family: "Bree Serif";
+    font-family: "Bree serif";
 }
 
 #foto-perfil-proj {
@@ -374,20 +348,16 @@
     background: #fff;
 }
 
-/* Parte 7*/
+/* Parte 7 */
 .itens-card {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
     width: 55%;
     height: 95%;
 }
 
-/* ------------------- Carrossel - Regras (Ajustadas Para Bordas Arredondadas) ------------------- */
-/* Adicionado: Aplica borda arredondada ao carousel e corta sobras com overflow:hidden.
-   O raio segue a variável --card-radius para manter consistência com o #foto-capa. */
-
+/* ------------------- Carrossel - Regras ------------------- */
 .slides-itens {
     border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
     overflow: hidden !important;
@@ -400,8 +370,6 @@
 .slides-itens .carousel-item {
     border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
     overflow: hidden !important;
-    background: transparent !important;
-    border: none !important;
 }
 
 #carrosel-projeto .carousel-item img,
@@ -437,7 +405,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 20px;
     border-radius: 20px;
     font-family: "Bree serif";
@@ -445,12 +412,7 @@
     text-align: center;
 }
 
-/* Explicação Projetos */
-
-/* Final Explicação */
-
-/*card da stay fit !!!*/
-/* ---------------------------------------------------------------- */
+/* cards extras e sobre nós (mantive sua estrutura) */
 .container-principal {
     display: flex;
     align-items: center;
@@ -481,13 +443,13 @@
     justify-content: center;
     align-items: center;
     background-color: #844feb;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0 0;
     width: 300px;
     height: 60px;
 }
 
 .h2-card-one {
-    margin: 0%;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -495,7 +457,7 @@
 
 .botao-card-one {
     background-color: #844feb;
-    color: #ffffff;
+    color: #fff;
     border: none;
     border-radius: 10px;
     width: 250px;
@@ -506,57 +468,7 @@
     background-color: #693ec0;
 }
 
-.button-card-one {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.div-test-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.img-card {
-    width: 250px;
-    height: 230px;
-}
-
-.section-conteudo-direito {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 820px;
-    height: 400px;
-}
-
-.divisão-card {
-    width: 50px;
-    height: 150px;
-}
-
-.foto-card {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    height: 25vh;
-}
-
-.descricao-card {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.img-card-two {
-    width: 700px;
-    height: 300px;
-}
-
 /* Sobre Nós */
-
 #img-sobre-nos {
     height: 70px;
 }
@@ -580,15 +492,11 @@
 }
 
 /* --------------------------------------------------------- */
-
 /*                       Responsividade                      */
-
 /* --------------------------------------------------------- */
 
-/* ---------- Responsivo: Tablets E Telas Médias (≤ 991px) ---------- */
+/* Tablets e telas médias (<= 991px) */
 @media (max-width: 991px) {
-
-    /* Empilha Colunas E Centraliza */
     .display-projetos {
         flex-direction: column;
         align-items: center;
@@ -596,14 +504,12 @@
         padding: 30px 0;
     }
 
-    /* Ambos Ocuparam Quase Toda A Largura Do Container */
     .div-1-card,
     .itens-card {
         width: 90%;
         height: auto;
     }
 
-    /* Foto Capa Mais Baixa Para Economizar Espaço Vertical */
     #foto-capa {
         height: 220px;
         border-radius: var(--card-radius) var(--card-radius) 0 0;
@@ -617,12 +523,9 @@
         display: block;
     }
 
-    /* Avatar: Coloca Logo Centralizado Abaixo Da Capa, Com Overlap Suave */
     #foto-perfil-proj {
         position: relative;
-        /* Relativo Aqui Para Não Depender De Offsets Imprevisíveis */
         margin-top: -80px;
-        /* Sobe Sobre O Corpo Do Card */
         display: flex;
         justify-content: center;
         width: 100%;
@@ -638,18 +541,14 @@
         padding: 8px;
         border-radius: 50%;
         background: #fff;
-        /* Fundo Branco Para Destacar O Ícone */
         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     }
 
-    /* Corpo Do Card Ajustado */
     #corpo-card-proj {
         padding: 22px;
         margin-top: -30px;
-        /* Compensa O Overlap Do Avatar */
     }
 
-    /* Carousel: Altura Reduzida E Ocupa Toda A Largura Do Bloco */
     .slides-itens {
         width: 100%;
         height: 220px;
@@ -671,7 +570,6 @@
         border-radius: var(--card-radius) var(--card-radius) 0 0;
     }
 
-    /* Descrição Dos Slides Fica Com Padding E Sem Altura Fixa */
     .desc-itens {
         height: auto;
         padding: 18px;
@@ -679,7 +577,7 @@
     }
 }
 
-/* ---------- Responsivo: Celular (≤ 428px) ---------- */
+/* Celular (<= 428px) */
 @media (max-width: 428px) {
     .display-projetos {
         flex-direction: column;
@@ -693,7 +591,6 @@
         width: 95%;
     }
 
-    /* Reduzir Ainda Mais As Alturas Em Celular */
     #foto-capa {
         height: 160px;
         border-radius: calc(var(--card-radius) * 0.8) calc(var(--card-radius) * 0.8) 0 0;
@@ -734,14 +631,13 @@
         font-size: 16px;
     }
 
-    /* Reduz Gaps Gerais */
     .container-principal {
         margin: 30px 16px;
         gap: 20px;
     }
 }
 
-/* TABLETS (≤ 991 px) */
+/* TABLETS (entre 429px e 991px) */
 @media (min-width: 429px) and (max-width: 991px) {
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
@@ -758,58 +654,23 @@
         height: 54vh;
         justify-content: center;
         align-items: flex-start;
-        padding: 0px 2vw;
+        padding: 0 2vw;
     }
 
-    /* Titulo Area Inicial */
     #h2_part-inicial {
         font-size: 2rem;
-        font-family: 'Bree Serif';
-        padding: 5vh 0px 0px 2vw;
-        cursor: context-menu;
+        padding: 5vh 0 0 2vw;
     }
 
-    /* Subtitulo Area Inicial */
     .div_part-p {
         max-width: 70%;
         padding-left: 2vw;
-        cursor: context-menu;
     }
 
     .div_part-button {
-        margin: 70px 0px 0px 0px;
-        padding: 0.2rem 1rem;
-        display: flex;
-        justify-content: center;
-        gap: 0.8rem;
-        align-items: center;
-        font-size: 1.2rem;
-        font-family: 'Bree Serif';
-        border-radius: 50px;
-        background-color: #000000;
-        color: #ffffff;
-        border: none;
-        cursor: pointer;
+        margin: 70px 0 0 0;
     }
 
-    /* Faixa De Projetos */
-
-    .faixa-projetos-fundo {
-        background-color: #000000;
-        max-width: 100%;
-        height: auto;
-    }
-
-    .faixa-textos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Bree Serif';
-        font-size: 2.0rem;
-        color: #ffffff;
-    }
-
-    /* Sobre Nós */
     #img-sobre-nos {
         height: 40px;
     }
@@ -833,13 +694,12 @@
     }
 }
 
-/* CELULAR */
-
-@media(max-width: 428px) {
+/* CELULAR (corrigido: 50vh em vez de '5x0vh') */
+@media (max-width: 428px) {
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
         width: 100%;
-        min-height: 5x0vh;
+        min-height: 50vh;
         background-size: initial;
         background-position: center;
         background-repeat: no-repeat;
@@ -848,80 +708,9 @@
     .div-cards {
         display: flex;
         flex-direction: column;
-        height: 5x0vh;
+        height: 50vh;
         justify-content: center;
         align-items: flex-start;
-        padding: 0px 2vw;
-    }
-
-    /* Titulo Area Inicial */
-    #h2_part-inicial {
-        font-size: 2rem;
-        font-family: 'Bree Serif';
-        padding: 5vh 0px 0px 2vw;
-        cursor: context-menu;
-    }
-
-    /* Subtitulo Area Inicial */
-    .div_part-p {
-        max-width: 70%;
-        padding-left: 2vw;
-        cursor: context-menu;
-    }
-
-    .div_part-button {
-        margin: 70px 0px 0px 0px;
-        padding: 0.2rem 1rem;
-        display: flex;
-        justify-content: center;
-        gap: 0.8rem;
-        align-items: center;
-        font-size: 1.2rem;
-        font-family: 'Bree Serif';
-        border-radius: 50px;
-        background-color: #000000;
-        color: #ffffff;
-        border: none;
-        cursor: pointer;
-    }
-
-    /* Faixa De Projetos */
-
-    .faixa-projetos-fundo {
-        background-color: #000000;
-        max-width: 100%;
-        height: auto;
-    }
-
-    .faixa-textos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Bree Serif';
-        font-size: 2.0rem;
-        color: #ffffff;
-    }
-
-    /* Sobre Nós */
-    #img-sobre-nos {
-        height: 40px;
-    }
-
-    #img_members {
-        height: 200px;
-    }
-
-    .img_profile {
-        height: 110px;
-        width: 110px;
-    }
-
-    .container-sobre-nos {
-        margin: 100px 0;
-    }
-
-    .texto-sobre-nos {
-        margin: 0 23px;
-        font-size: 15px;
+        padding: 0 2vw;
     }
 }
