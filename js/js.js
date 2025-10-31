@@ -1,45 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
 
-    // 1) Definição dos projetos (Substitua caminhos/textos pelas suas imagens/descrições reais)
+    // 1) Definição Dos Projetos (Substitua Caminhos/Texto Pelas Suas Imagens/Descrições Reais)
     const projects = {
         stayfit: {
+            title: 'STAY FIT',
             cover: 'img/Tela.png',
             profile: 'img/icon_stayFit.svg',
-            desc: 'Descrição do Stay Fit — Lorem ipsum... (substitua pelo texto real).',
-            slides: ['img/web_stayfit.png', 'img/web_chuleta.png']
+            desc: 'Plataforma web responsiva para academias com agendamento de aulas, painel para instrutores, controle de planos e histórico de treinos. Interface intuitiva para alunos e administradores.',
+            slides: ['img/web_stayfit.png', 'img/web_stayfit2.png', 'img/web_stayfit3.png', 'img/web_stayfit4.png'],
+            coverBg: '#d59e1a',     // Cor do topo do card (exemplo)
+            bodyBg: '#c4c4c4',      // Cor do corpo do card
+            accent: '#f06a9f'       // Cor "rosa" / destaque do projeto
         },
         chuleta: {
+            title: 'CHULETA QUENTE',
             cover: 'img/Tela2.png',
             profile: 'img/chuleta_icon.svg',
-            desc: 'Descrição do Chuleta — Deleniti accusantium... (substitua).',
-            slides: ['img/web_chuleta.png', 'img/desk_stayfit.png']
+            desc: 'Site institucional para restaurante com cardápio dinâmico, galeria de fotos, sistema de reservas e integração para promoções. Foco em experiência visual e facilidade para o cliente conhecer pratos, horários e fazer reserva.',
+            slides: ['img/web_chuleta.png', 'img/web_chuleta2.png', 'img/web_chuleta3.png', 'img/web_chuleta4.png'],
+            coverBg: '#6fbf73',
+            bodyBg: '#eaeaea',
+            accent: '#ff6b6b'
         },
         adm: {
+            title: 'STAY FIT (ADM)',
             cover: 'img/Tela3.png',
             profile: 'img/ADM.svg',
-            desc: 'ADM — painel administrativo e funcionalidades (substitua pelo texto real).',
-            slides: ['img/desk_stayfit.png', 'img/renovada_mente.png']
+            desc: 'Aplicação desktop otimizada para gestão interna da academia: cadastro de alunos, controle financeiro, emissão de recibos, relatórios detalhados e sincronização com o sistema web. Ideal para uso em recepção e administração.',
+            slides: ['img/desk_stayfit.png', 'img/desk_stayfit2.png', 'img/desk_stayfit3.png', 'img/desk_stayfit4.png'],
+            coverBg: '#2b93d6',
+            bodyBg: '#f4f4f4',
+            accent: '#844feb'
         },
         mente: {
+            title: 'MENTE RENOVADA',
             cover: 'img/Tela4.png',
             profile: 'img/MENTE_RENOVADA.svg',
-            desc: 'Mente Renovada — descrição resumida do projeto (substitua).',
-            slides: ['img/renovada_mente.png', 'img/web_stayfit.png']
+            desc: 'Portal para clínica psicológica com área institucional, agendamento de sessões, perfil dos profissionais e recursos informativos sobre atendimento. Voltado para aproximação com pacientes e gestão segura de horários.',
+            slides: ['img/renovada_mente.png', 'img/renovada_mente2.png', 'img/renovada_mente3.png', 'img/renovada_mente4.png'],
+            coverBg: '#db9f1b',
+            bodyBg: '#f8f8f0ff',
+            accent: '#d5e221ff'
         }
     };
 
-    // 2) Helpers para acessar elementos do DOM que vamos atualizar
+    // 2) Helpers Para Acessar Elementos Do DOM Que Vamos Atualizar
     const el = {
-        imgCapa: document.getElementById('img-capa'), // Imagem de capa do cartão
-        imgProj: document.getElementById('img-proj'), // Imagem de perfil do projeto (círculo)
-        pDesc: document.getElementById('p_corpo-card-proj'), // Parágrafo com a descrição
-        carouselInner: document.querySelector('#carrosel-projeto .carousel-inner'), // Onde ficam os .carousel-item
-        carouselIndicators: document.querySelector('#carrosel-projeto .carousel-indicators'), // Indicadores (dots) se existirem
-        carouselEl: document.getElementById('carrosel-projeto'), // Elemento do carrossel (para controlar via bootstrap)
-        descItensText: document.getElementById('desc-itens-text')
+        h2Title: document.querySelector('.h2-card-1'), // Título Dinâmico
+        imgCapa: document.getElementById('img-capa'), // Imagem De Capa Do Cartão
+        imgProj: document.getElementById('img-proj'), // Imagem De Perfil Do Projeto (Círculo)
+        pDesc: document.getElementById('p_corpo-card-proj'), // Parágrafo Do Corpo Do Cartão (Primeiro Quadrado)
+        carouselInner: document.querySelector('#carrosel-projeto .carousel-inner'), // Onde Ficam Os .carousel-item
+        carouselIndicators: document.querySelector('#carrosel-projeto .carousel-indicators'), // Indicadores (dots)
+        carouselEl: document.getElementById('carrosel-projeto'), // Elemento Do Carrossel (Para Controlar Via Bootstrap)
+        descItensText: document.getElementById('desc-itens-text') // Segundo Quadrado (Onde Colocar A Descrição)
     };
 
-    // Cria container de indicadores se não existir e atualiza referência
+    // Cria Container De Indicadores Se Não Existir E Atualiza Referência
     function ensureIndicatorsContainer() {
         if (!el.carouselEl) return;
         if (!el.carouselIndicators) {
@@ -47,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!indicators) {
                 const div = document.createElement('div');
                 div.className = 'carousel-indicators';
-                // insere antes do .carousel-inner (padrão do Bootstrap)
                 const inner = el.carouselEl.querySelector('.carousel-inner');
                 if (inner) el.carouselEl.insertBefore(div, inner);
                 else el.carouselEl.appendChild(div);
@@ -59,14 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Recria os slides do carrossel com as imagens passadas.
-     * Também recria os indicadores, se o container de indicadores existir.
-     * @param {string[]} slidePaths - array com caminhos das imagens
+     * Recria Os Slides Do Carrossel Com As Imagens Passadas.
+     * Também Recria Os Indicadores, Se O Container De Indicadores Existir.
+     * @param {string[]} slidePaths - Array Com Caminhos Das Imagens
      */
     function rebuildCarousel(slidePaths) {
-        // Checagens de segurança
+        // Checagens De Segurança
         if (!el.carouselInner) {
-            // tenta reatribuir (caso o seletor tenha sido chamado antes do DOM estar pronto)
             el.carouselInner = document.querySelector('#carrosel-projeto .carousel-inner');
             if (!el.carouselInner) {
                 console.warn('carousel-inner não encontrado. Verifique se o elemento #carrosel-projeto .carousel-inner existe no HTML.');
@@ -76,10 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ensureIndicatorsContainer();
 
-        // Limpa o conteúdo atual dos slides
+        // Limpa O Conteúdo Atual Dos Slides
         el.carouselInner.innerHTML = '';
 
-        // Cria cada carousel-item e adiciona na carousel-inner
+        // Cria Cada Carousel-Item E Adiciona Na Carousel-Inner
         slidePaths.forEach((src, i) => {
             const item = document.createElement('div');
             item.className = 'carousel-item' + (i === 0 ? ' active' : '');
@@ -93,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             el.carouselInner.appendChild(item);
         });
 
-        // Se houver indicadores (dots), recria-os para corresponder ao número de slides
+        // Se Houver Indicadores (dots), Recria-Os Para Corresponder Ao Número De Slides
         if (el.carouselIndicators) {
             el.carouselIndicators.innerHTML = '';
             slidePaths.forEach((_, i) => {
@@ -110,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Reinicializa / Obtém a instância do carousel do Bootstrap e garante que volte ao slide 0
+        // Reinicializa / Obtém A Instância Do Carousel Do Bootstrap E Garante Que Volte Ao Slide 0
         if (el.carouselEl && typeof bootstrap !== 'undefined' && bootstrap.Carousel) {
             try {
                 const carousel = bootstrap.Carousel.getOrCreateInstance(el.carouselEl);
@@ -121,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Posiciona o #foto-perfil-proj para que o centro do círculo fique exatamente na borda inferior de #foto-capa
+    // Posiciona O #foto-perfil-proj Para Que O Centro Do Círculo Fique Exatamente Na Borda Inferior De #foto-capa
     function positionProfileCircle() {
         const wrapper = document.getElementById('foto-perfil-proj');
         const fotoCapa = document.getElementById('foto-capa');
@@ -129,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!wrapper || !fotoCapa || !card) return;
 
-        // Em dispositivos menores usamos o comportamento relative definido no CSS
+        // Em Dispositivos Menores Usamos O Comportamento Relative Definido No CSS
         if (window.innerWidth <= 991) {
             wrapper.style.position = '';
             wrapper.style.top = '';
@@ -138,11 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // offsetTop e offsetHeight são relativos ao offsetParent; aqui card é o offsetParent esperado
+        // OffsetTop E OffsetHeight São Relativos Ao OffsetParent; Aqui Card É O OffsetParent Esperado
         const offsetTop = fotoCapa.offsetTop;
         const offsetHeight = fotoCapa.offsetHeight;
 
-        // Queremos que o centro do círculo esteja exatamente na linha inferior de fotoCapa
+        // Queremos Que O Centro Do Círculo Esteja Exatamente Na Linha Inferior De fotoCapa
         const centerY = offsetTop + offsetHeight;
 
         wrapper.style.position = 'absolute';
@@ -151,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         wrapper.style.transform = 'translate(-50%, -50%)';
     }
 
-    // Ajusta a posição ao redimensionar (debounce)
+    // Ajusta A Posição Ao Redimensionar (Debounce)
     window.addEventListener('resize', () => {
         if (window._posProfileTimeout) clearTimeout(window._posProfileTimeout);
         window._posProfileTimeout = setTimeout(() => {
@@ -160,8 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /**
-     * Carrega um projeto (capa, perfil, descrição e slides)
-     * @param {string} id - id do projeto no objeto projects
+     * Carrega Um Projeto (Capa, Perfil, Descrição E Slides)
+     * @param {string} id - Id Do Projeto No Objeto Projects
      */
     function loadProject(id) {
         const p = projects[id];
@@ -170,25 +186,44 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Atualiza capa (se existir o elemento)
+        // Atualiza Título (Se Existir O Elemento)
+        if (el.h2Title) el.h2Title.textContent = p.title;
+
+        // Atualiza Capa (Se Existir O Elemento)
         if (el.imgCapa) el.imgCapa.src = p.cover;
-        // Atualiza ícone/perfil do projeto
+
+        // Atualiza Ícone/Perfil Do Projeto
         if (el.imgProj) el.imgProj.src = p.profile;
-        // Atualiza descrição (texto)
-        if (el.pDesc) el.pDesc.textContent = p.desc;
+
+        // Atualiza Descrição: limpar Primeiro Quadrado e Atualizar Apenas Segundo Quadrado
+        if (el.pDesc) {
+            // Limpa o parágrafo do corpo do cartão (primeiro quadrado) para não exibir a descrição ali
+            el.pDesc.textContent = '';
+        }
         if (el.descItensText) {
             const pNode = el.descItensText.querySelector('p');
-            if (pNode) pNode.textContent = p.desc;
+            if (pNode) pNode.textContent = p.desc || '';
         }
 
-        // Recria os slides do carrossel com as imagens do projeto
+        // Recria Os Slides Do Carrossel Com As Imagens Do Projeto
         rebuildCarousel(p.slides);
 
-        // Chama o reposicionamento do círculo após a atualização (pequeno timeout para garantir render)
+        // Atualiza Variáveis CSS Para Mudar Cores Do Card E Dos "Quadrados"
+        document.documentElement.style.setProperty('--cover-bg', p.coverBg || '#cfff7a');
+        document.documentElement.style.setProperty('--body-bg', p.bodyBg || '#c4c4c4');
+        document.documentElement.style.setProperty('--accent-color', p.accent || '#844feb');
+
+        // Adiciona Classe Selected Ao Ícone Clicado (Garante Consistência Visual)
+        document.querySelectorAll('.icon-proj').forEach(i => {
+            if (i.dataset.project === id) i.classList.add('selected');
+            else i.classList.remove('selected');
+        });
+
+        // Chama O Reposicionamento Do Círculo Após A Atualização (Pequeno Timeout Para Garantir Render)
         setTimeout(positionProfileCircle, 40);
     }
 
-    // 3) Conecta os ícones na faixa de projetos com o atributo data-project
+    // 3) Conecta Os Ícones Na Faixa De Projetos Com O Atributo data-project
     document.querySelectorAll('.icon-proj').forEach(icon => {
         const pid = icon.dataset.project;
         if (!pid) return;
@@ -199,14 +234,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Assina o evento load da imagem da capa para reposicionar quando ela terminar de carregar
+    // Assina O Evento load Da Imagem Da Capa Para Reposicionar Quando Ela Terminar De Carregar
     if (el.imgCapa) {
         el.imgCapa.addEventListener('load', positionProfileCircle);
     }
 
-    // 4) Carrega um projeto padrão ao abrir a página
+    // 4) Carrega Um Projeto Padrão Ao Abrir A Página
     if (projects.stayfit) loadProject('stayfit');
 
-    // Garante posicionamento inicial (após carregar o projeto padrão)
+    // Garante Posicionamento Inicial (Após Carregar O Projeto Padrão)
     setTimeout(positionProfileCircle, 60);
 });

@@ -1,6 +1,16 @@
 :root {
-    /* Ajuste aqui o raio das bordas do card/carousel */
+    /* Ajuste Aqui O Raio Das Bordas Do Card/Carousel */
     --card-radius: 20px;
+
+    /* Variáveis Globais (Cores Dinâmicas + Tamanho Do Perfil) */
+    --cover-bg: #cfff7a;
+    /* Cor padrão topo */
+    --body-bg: #c4c4c4;
+    /* Cor padrão corpo */
+    --profile-size: 30vh;
+    /* Tamanho do círculo grande */
+    --accent-color: #844feb;
+    /* Cor principal (botões/"quadrados") */
 }
 
 * {
@@ -10,7 +20,7 @@
 }
 
 /* ---------------------------------------- */
-/*                  FONTES                  */
+/*                  Fontes                  */
 /* ---------------------------------------- */
 
 @font-face {
@@ -23,8 +33,7 @@
     src: url(../fonts/BreeSerif-Regular.ttf);
 }
 
-/* Caso tenha o OpenSans Light/Medium, ajuste o caminho dos arquivos locais:
-   se não tiver, remova estes @font-face ou carregue via Google Fonts */
+/* Caso Tenha O OpenSans Light/Medium, Ajuste O Caminho Dos Arquivos Locais */
 @font-face {
     font-family: "Open sans medium";
     src: url(../fonts/static/OpenSans-Medium.ttf);
@@ -52,7 +61,7 @@
 }
 
 /* ---------------------------------------- */
-/*              Icones do Rodapé             */
+/*               Icones Do Rodapé           */
 /* ---------------------------------------- */
 
 .icones-rodape:hover {
@@ -98,7 +107,7 @@
     padding: 0px 2vw;
 }
 
-/* TITULO */
+/* Título */
 #h2_part-inicial {
     font-size: 3rem;
     font-family: 'Bree serif';
@@ -106,7 +115,7 @@
     cursor: context-menu;
 }
 
-/* TEXTO DO TITULO - PROGRAM EAST */
+/* Texto Do Título - Program East */
 #span-h2-inicial {
     color: #0866ff;
     cursor: pointer;
@@ -172,7 +181,7 @@
 }
 
 /* -------------------------------------------------------- */
-/*                Inicio Faixa De Projetos                  */
+/*                Início Faixa De Projetos                  */
 /* -------------------------------------------------------- */
 
 .faixa-projetos-fundo {
@@ -240,6 +249,13 @@
     border-radius: 100%;
 }
 
+/* Estilo Quando Um Ícone Está Selecionado */
+.icon-proj.selected {
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.06), 0 6px 18px rgba(0, 0, 0, 0.12);
+    outline: 6px solid var(--accent-color);
+    transform: scale(1.03);
+}
+
 /* -------------------------------------------------------- */
 /*                   Fim Faixa De Projetos                  */
 /* -------------------------------------------------------- */
@@ -296,6 +312,8 @@
     height: 40%;
     border-radius: var(--card-radius) var(--card-radius) 0 0;
     overflow: hidden;
+    background-color: var(--cover-bg);
+    /* Usa variável */
 }
 
 #img-capa {
@@ -313,7 +331,8 @@
     width: 100%;
     height: 60%;
     padding: 0px 30px;
-    background-color: #c4c4c4;
+    background-color: var(--body-bg);
+    /* Usa variável */
     border-radius: 0% 0% 10% 10%;
 }
 
@@ -341,8 +360,8 @@
 }
 
 #img-proj {
-    width: 30vh;
-    height: 30vh;
+    width: var(--profile-size);
+    height: var(--profile-size);
     padding: 10px;
     border-radius: 50%;
     background: #fff;
@@ -396,12 +415,45 @@
     background-image: none !important;
 }
 
+.slides-itens {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    overflow: hidden !important;
+}
+
+.slides-itens .carousel-inner,
+.slides-itens .carousel-item {
+    height: 100%;
+}
+
+.slides-itens img,
+#carrosel-projeto .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Indicadores Do Carousel */
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.12);
+    border: none;
+    margin: 0 4px;
+}
+
+.carousel-indicators .active {
+    background-color: var(--accent-color);
+}
+
 /* ------------------- Fim Carrossel ------------------- */
 
 .desc-itens {
     width: 100%;
     height: 50%;
-    background-color: #c4c4c4;
+    background-color: var(--body-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -412,7 +464,7 @@
     text-align: center;
 }
 
-/* cards extras e sobre nós (mantive sua estrutura) */
+/* Cards Extras E Sobre Nós (Mantive Sua Estrutura) */
 .container-principal {
     display: flex;
     align-items: center;
@@ -442,7 +494,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #844feb;
+    background-color: var(--accent-color);
     border-radius: 10px 10px 0 0;
     width: 300px;
     height: 60px;
@@ -456,7 +508,7 @@
 }
 
 .botao-card-one {
-    background-color: #844feb;
+    background-color: var(--accent-color);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -495,7 +547,7 @@
 /*                       Responsividade                      */
 /* --------------------------------------------------------- */
 
-/* Tablets e telas médias (<= 991px) */
+/* Tablets E Telas Médias (<= 991px) */
 @media (max-width: 991px) {
     .display-projetos {
         flex-direction: column;
@@ -637,7 +689,7 @@
     }
 }
 
-/* TABLETS (entre 429px e 991px) */
+/* Tablets (entre 429px e 991px) */
 @media (min-width: 429px) and (max-width: 991px) {
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
@@ -692,111 +744,18 @@
         margin: 50px 23px;
         font-size: 18px;
     }
-}
-/* ------ Variáveis globais (cores dinâmicas + tamanho do perfil) ------ */
-:root{
-  --cover-bg: #cfff7a;   /* cor padrão topo */
-  --body-bg: #c4c4c4;    /* cor padrão corpo */
-  --profile-size: 30vh;  /* tamanho do círculo grande */
-}
 
-/* Garante que a capa e o corpo usem as variáveis */
-#foto-capa{
-  background-color: var(--cover-bg);
-  position: relative; /* para referência do perfil absoluto */
-  overflow: hidden;
-}
-
-/* se quiser que a imagem respeite o background (opcional) */
-/* #foto-capa img { opacity: 0.95; } */
-
-#corpo-card-proj{
-  background-color: var(--body-bg);
-}
-
-/* Perfil (ícone circular) posicionado exatamente na linha entre capa e corpo */
-#foto-perfil-proj{
-    position: absolute;       /* fica em relação ao .div-1-card (que já tem position:relative) */
-    left: 50%;
-    top: 40%;                 /* 40% = altura da capa (você definiu #foto-capa height:40%) */
-    transform: translate(-50%, -50%); /* centra o círculo nessa linha */
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background: transparent; /* o branco vem do próprio #img-proj */
-    pointer-events: none;     /* evita clique acidental no wrapper */
-}
-
-/* tamanho do img-proj controlado por variável */
-#img-proj{
-    width: var(--profile-size);
-    height: var(--profile-size);
-    padding: 10px;
-    border-radius: 50%;
-    background: #fff;
-    object-fit: contain; /* importante para SVG */
-}
-/* preparação para posicionamento preciso do perfil */
-#foto-perfil-proj {
-  position: absolute;    /* o JS pode alterar conforme necessário */
-  left: 50%;
-  transform: translate(-50%, -50%); /* centra o círculo no ponto (top,left) definido */
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-}
-
-/* para mobile (quando preferir o comportamento "relative" que já tinha) */
-@media (max-width: 991px) {
-  #foto-perfil-proj {
-    position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    margin-top: -80px; /* mantém aparência parecida com seu layout atual */
-    pointer-events: auto;
-  }
-}
-
-/* quando for mobile (suas regras já tornam o wrapper relativo) sobrescrevemos */
-@media (max-width: 991px) {
-    #foto-perfil-proj{
-        position: relative;
-        top: auto;
-        transform: translateX(-50%);
-        margin-top: -80px; /* mantém efeito visual parecido com seu layout mobile */
-        left: 50%;
-        pointer-events: auto;
+    /* Remover sublinhado do link que envolve o botão */
+    .container .no-underline,
+    .container .no-underline * {
+        text-decoration: none !important;
+        /* Remove underline */
+        color: inherit !important;
+        /* Garante que o texto herde a cor do botão */
     }
-    /* reduz perfil */
-    #img-proj { width: 140px; height: 140px; }
-}
-
-/* ajustes para telas muito pequenas */
-@media (max-width: 428px) {
-    #img-proj { width: 110px; height: 110px; padding: 6px; }
-}
-
-/* CELULAR (corrigido: 50vh em vez de '5x0vh') */
-@media (max-width: 428px) {
-    .section_inicial {
-        background-image: url('../img/imagem_inicial.png');
-        width: 100%;
-        min-height: 50vh;
-        background-size: initial;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .div-cards {
-        display: flex;
-        flex-direction: column;
-        height: 50vh;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 0 2vw;
+    .no-underline:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(132, 79, 255, 0.18);
+        border-radius: 50px;
     }
 }
