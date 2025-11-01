@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slides: ['img/desk_stayfit.png', 'img/desk_stayfit2.png', 'img/desk_stayfit3.png', 'img/desk_stayfit4.png'],
             coverBg: '#2b93d6',
             bodyBg: '#f4f4f4',
-            accent: '#844feb'
+            accent: '#2b93d6'
         },
         mente: {
             title: 'MENTE RENOVADA',
