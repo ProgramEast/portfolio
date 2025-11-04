@@ -7,45 +7,45 @@
 
     /* Variáveis Globais (Cores Dinâmicas + Tamanho Do Perfil) */
     --cover-bg: #cfff7a;
-    /* Cor padrão topo */
+    /* Cor Padrão Topo */
     --body-bg: #c4c4c4;
-    /* Cor padrão corpo */
+    /* Cor Padrão Corpo */
 
-    /* Tamanho do círculo grande - agora responsivo (clamp) */
+    /* Tamanho Do Círculo Grande - Agora Responsivo (Clamp) */
     --profile-size: clamp(84px, 18vw, 30vh);
 
-    /* Cor principal (botões/"quadrados") */
+    /* Cor Principal (Botões/"Quadrados") */
     --accent-color: #844feb;
 
-    /* Tipografia responsiva (valores base) */
+    /* Tipografia Responsiva (Valores Base) */
     --h1-size: clamp(1.6rem, 4.8vw, 3rem);
     --h2-card-size: clamp(3rem, 10vw, 15vh);
     --body-font-size: clamp(14px, 2.2vw, 20px);
 
-    /* Altura padrão do nav para evitar sobreposição do conteúdo */
+    /* Altura Padrão Do Nav Para Evitar Sobreposição Do Conteúdo */
     --nav-height: 60px;
 
-    /* Padding horizontal da página (responsivo) */
+    /* Padding Horizontal Da Página (Responsivo) */
     --page-horizontal-padding: 2vw;
 }
 
-/* Reset básico */
+/* Reset Básico */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Evitar overflow horizontal que pode causar "extrapolar" em celulares */
+/* Evitar Overflow Horizontal Que Pode Causar "Extrapolar" Em Celulares */
 html,
 body {
     width: 100%;
     overflow-x: hidden;
 }
 
-/* ---------------------------------------- */
-/*                  Fontes                  */
-/* ---------------------------------------- */
+/* ----------------------------------------
+   Fontes
+   ---------------------------------------- */
 
 @font-face {
     font-family: "Sunborn";
@@ -84,9 +84,9 @@ body {
     font-family: 'Open sans light';
 }
 
-/* ---------------------------------------- */
-/*               Icones Do Rodapé           */
-/* ---------------------------------------- */
+/* ----------------------------------------
+   Ícones Do Rodapé
+   ---------------------------------------- */
 
 .icones-rodape:hover {
     transition: all 0.5s ease;
@@ -108,10 +108,10 @@ body {
     color: #1877F2;
 }
 
-/* ---------------------------------------- */
-/*               Imagens / SVGs             */
-/* ---------------------------------------- */
-/* Garante que imagens e SVGs escalem com o container */
+/* ----------------------------------------
+   Imagens / SVGs
+   ---------------------------------------- */
+/* Garante Que Imagens E SVGs Escalem Com O Container */
 img,
 svg {
     max-width: 100%;
@@ -119,7 +119,7 @@ svg {
     display: block;
 }
 
-/* Força SVGs e imgs .svg a manterem proporção e serem redimensionáveis */
+/* Força SVGs E Imgs .svg A Manterem Proporção E Serem Redimensionáveis */
 img[src$=".svg"],
 svg {
     width: auto;
@@ -128,48 +128,100 @@ svg {
     object-fit: contain;
 }
 
-/* ---------------------------------------- */
-/* Area Inicia         l                    */
-/* ---------------------------------------- */
+/* ----------------------------------------
+   Área Inicial
+   ---------------------------------------- */
 
-/* Fundo Com Imagem*/
+/* Seção: Usamos Uma Imagem Interna Para Controlar Crop/Posicionamento */
 .section_inicial {
-    background-image: url('../img/imagem_inicial.png');
+    position: relative;
     width: 100%;
+    /* Garante Que A Área Inicial Não Fique Debaixo Do Nav Fixo */
     min-height: calc(100vh - var(--nav-height));
     margin-top: 0;
-    padding: clamp(3rem, 6vw, 6rem) var(--page-horizontal-padding) clamp(3rem, 6vw, 6rem) var(--page-horizontal-padding);
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-size: cover;
-    background-position: right center;
-    background-repeat: no-repeat;
+    padding: 0;
+    /* Espaço No Topo Para Não Ficar Escondido Pelo Nav */
+    padding-top: var(--nav-height);
+    display: block;
+    overflow: hidden;
+    background-color: #fff;
+    /* Fallback */
 }
 
-/* Overlay Opcional Para Maior Contraste Do Texto */
+/* Imagem Hero Como Elemento: Ocupa A Parte Direita Da Seção */
+.hero-img {
+    position: absolute;
+    right: 0;
+    /* Mantém A Imagem Abaixo Do Nav Fixo */
+    top: var(--nav-height);
+    /* Usa Altura Descontando O Nav Para Evitar Corte */
+    height: calc(100% - var(--nav-height));
+    width: 50%;
+    /* Ajuste: Entre 45% E 60% Conforme Preferir */
+    object-fit: cover;
+    /* Escala Para Cobrir Área Sem Distorcer */
+    /* Foco: Ajustado Para Não CortAR As TESTAS — Mexa Aqui Se Quiser Outro Corte */
+    object-position: 72% 20%;
+    z-index: 0;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+/* Overlay Sobre A Imagem Para Legibilidade Do Texto (Sobre A Img, Abaixo Do Card) */
 .section_inicial::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.0) 60%);
+    z-index: 1;
     pointer-events: none;
+    /* Faixa Esquerda Mais Opaca E Direita Translúcida Para Ver As Pessoas */
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.98) 0%,
+            rgba(255, 255, 255, 0.9) 15%,
+            rgba(255, 255, 255, 0.6) 35%,
+            rgba(255, 255, 255, 0.0) 60%);
 }
 
-/* Container De Conteúdo (Content Box) */
+/* Container De Conteúdo (Content Box) - Frosted Card Absoluto Sobre O Overlay */
 .div-cards {
+    position: absolute;
+    /* Posiciona Em Relação À Section_inicial */
+    top: var(--nav-height);
+    /* Começa Abaixo Do Nav Fixo */
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    /* Acima Do ::Before E Da .Hero-img */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 0px var(--page-horizontal-padding);
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+
+    /* Largura Do Card: Ajustada Para Não Tocar A Imagem À Direita */
+    width: 44%;
+    max-width: 44%;
+
+    /* Espaçamento Interno */
+    padding: clamp(2rem, 4vw, 6rem);
+
+    /* Aparência "Frosted" */
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+
+    margin: 0;
     gap: clamp(1rem, 3vw, 3rem);
-    z-index: 2;
-    /* Garantir que fique sobre a overlay */
-    min-height: calc(100vh - var(--nav-height));
+}
+
+/* Contorno Sutil Interno */
+.div-cards::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Título */
@@ -180,7 +232,7 @@ svg {
     cursor: context-menu;
     line-height: 1.05;
     word-break: keep-all;
-    /* Ajuda a evitar quebra palavra-a-palavra em português */
+    /* Ajuda A Evitar Quebra Palavra-A-Palavra Em Português */
     color: #111;
     max-width: 60ch;
 }
@@ -205,7 +257,7 @@ svg {
     color: #ffffff;
 }
 
-/* Ajustei esse max-width para não criar colunas estreitas em mobile */
+/* Ajustei Esse Max-Width Para Não Criar Colunas Estreitas Em Mobile */
 .div_part-p {
     max-width: 520px;
     padding-left: 0;
@@ -219,8 +271,8 @@ svg {
     color: #222;
 }
 
-/* Botão contato */
-/* Tornar Botão Inline-Flex e evitar que extrapole o viewport */
+/* Botão Contato */
+/* Tornar Botão Inline-Flex E Evitar Que Extrapole O Viewport */
 .div_part-button:hover {
     transition: all 0.5s;
     transform: scale(1.06);
@@ -257,9 +309,9 @@ svg {
     object-fit: contain;
 }
 
-/* -------------------------------------------------------- */
-/*                Início Faixa De Projetos                  */
-/* -------------------------------------------------------- */
+/* --------------------------------------------------------
+   Início Faixa De Projetos
+   -------------------------------------------------------- */
 
 .faixa-projetos-fundo {
     background-color: #000000;
@@ -273,40 +325,40 @@ svg {
     justify-content: center;
     align-items: center;
 
-    /* Legibilidade / alinhamento */
+    /* Legibilidade / Alinhamento */
     text-align: center;
-    /* centraliza o texto em cada linha */
+    /* Centraliza O Texto Em Cada Linha */
     line-height: 1.25;
-    /* espaçamento entre linhas para evitar sobreposição */
+    /* Espaçamento Entre Linhas Para Evitar Sobreposição */
     word-break: normal;
     hyphens: auto;
 
     /* Tipografia */
     font-family: 'Bree serif', serif;
     font-size: clamp(1rem, 3.2vw, 1.6rem);
-    /* ligeiramente menor e mais consistente */
+    /* Ligeiramente Menor E Mais Consistente */
     color: #ffffff;
 
-    /* Espaçamento e limite de largura para evitar que o texto "grude" nas bordas */
+    /* Espaçamento E Limite De Largura Para Evitar Que O Texto "Grude" Nas Bordas */
     padding: 1.25rem 1rem;
-    /* padding vertical + horizontal */
+    /* Padding Vertical + Horizontal */
     max-width: 90ch;
-    /* limita largura de linha para melhor leitura */
+    /* Limita Largura De Linha Para Melhor Leitura */
     margin: 0 auto;
-    /* centraliza o bloco dentro do container */
+    /* Centraliza O Bloco Dentro Do Container */
 
-    /* Contraste em cima de imagens/overlays */
+    /* Contraste Em Cima De Imagens/Overlays */
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
-    /* leve sombra para aumentar contraste */
+    /* Leve Sombra Para Aumentar Contraste */
 }
 
-/* Ajustes nos parágrafos (se você usar <p> dentro da faixa) */
+/* Ajustes Nos Parágrafos (Se Você Usar <p> Dentro Da Faixa) */
 .faixa-textos p {
     margin: .4rem 0;
     width: 100%;
     box-sizing: border-box;
 }
-    
+
 .faixa-de-projetos {
     display: flex;
     justify-content: center;
@@ -329,7 +381,7 @@ svg {
     width: 95%;
 }
 
-/* Manipular icons: evita que os ícones quebrem em múltiplas linhas e permite scroll em mobile */
+/* Manipular Icons: Evita Que Os Ícones Quebrem Em Múltiplas Linhas E Permite Scroll Em Mobile */
 .manipular-icons {
     padding: 1.6vw;
     display: flex;
@@ -341,7 +393,7 @@ svg {
     -webkit-overflow-scrolling: touch;
 }
 
-/* Ícone do projeto (círculo). Agora responsivo com clamp */
+/* Ícone Do Projeto (Círculo). Agora Responsivo Com Clamp */
 .icon-proj {
     flex: 0 0 auto;
     display: flex;
@@ -379,9 +431,9 @@ svg {
     transform: scale(1.03);
 }
 
-/* -------------------------------------------------------- */
-/*                   Fim Faixa De Projetos                  */
-/* -------------------------------------------------------- */
+/* --------------------------------------------------------
+   Fim Faixa De Projetos
+   -------------------------------------------------------- */
 
 .section-proj {
     display: flex;
@@ -416,6 +468,7 @@ svg {
     gap: 20px;
 }
 
+/* Tamanho Do Título Do Card */
 .h2-card-1 {
     font-family: "Bree serif";
     font-size: var(--h2-card-size);
@@ -423,7 +476,7 @@ svg {
     margin: 0;
 }
 
-/* Parte 6 */
+/* Parte 6 - Card */
 .div-1-card {
     display: flex;
     flex-direction: column;
@@ -431,17 +484,19 @@ svg {
     width: 40%;
     height: 95%;
     position: relative;
+    /* Importante: Pai Posicionado Para Casos Que Usem Absolute */
 }
 
+/* Foto Capa (Topo Do Card) */
 #foto-capa {
     width: 100%;
     height: 40%;
     border-radius: var(--card-radius) var(--card-radius) 0 0;
     overflow: hidden;
     background-color: var(--cover-bg);
-    /* Usa variável */
 }
 
+/* Imagem De Capa */
 #img-capa {
     width: 100%;
     height: 100%;
@@ -450,6 +505,7 @@ svg {
     border-radius: var(--card-radius) var(--card-radius) 0 0;
 }
 
+/* Corpo Do Card */
 #corpo-card-proj {
     display: flex;
     justify-content: center;
@@ -458,7 +514,6 @@ svg {
     height: 60%;
     padding: 0px 30px;
     background-color: var(--body-bg);
-    /* Usa variável */
     border-radius: 0% 0% 10% 10%;
 }
 
@@ -470,31 +525,39 @@ svg {
     font-family: "Bree serif";
 }
 
+/* Foto Perfil Do Projeto: Agora Em Absolute Por Padrão Em Desktop */
+/* Em Mobile Será Substituído Por Position: Relative (no media query). */
 #foto-perfil-proj {
-    margin-top: 10%;
     position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 100%;
-    background-color: #ffffff;
+    /* Desktop: absoluto em relação a .div-1-card */
+    top: calc(40% - (var(--profile-size) / 2));
+    /* Posiciona verticalmente sobre a borda da capa */
     left: 50%;
+    /* Centraliza horizontalmente em relação ao pai */
     transform: translateX(-50%);
     z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-#img-proj {
     width: var(--profile-size);
     height: var(--profile-size);
     padding: 10px;
     border-radius: 50%;
-    background: #fff;
-    object-fit: cover;
+    background-color: #ffffff;
+    overflow: visible;
 }
 
-/* Parte 7 */
+/* Imagem Interna Do Perfil */
+#img-proj {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Parte 7 - Itens Ao Lado Do Card */
 .itens-card {
     display: flex;
     flex-direction: column;
@@ -532,7 +595,7 @@ svg {
     border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
 }
 
-/* Carousel controls */
+/* Carousel Controls */
 .carousel-control-prev,
 .carousel-control-next {
     background: transparent !important;
@@ -633,23 +696,51 @@ svg {
 }
 
 /* Sobre Nós */
-#img-sobre-nos {
-    height: 70px;
-}
-
+/* Ajuste Do Container De Membros: Permitir Que Itens Quebrem Em Linhas E Centralizar */
 #img_members {
-    height: auto;
+    /* Mantém Layout Flexível E Centrado */
     display: flex;
-    gap: 24px;
     justify-content: center;
     align-items: center;
+    gap: 24px;
+
+    /* Permite Que Os Avatares Quebrem Linha Se O Espaço For Insuficiente,
+       Evitando Que Um Item Seja Forçado A Encolher Excessivamente */
+    flex-wrap: wrap;
+
+    /* Remove Altura Fixa (Se Existir) Para Evitar Cortes/Compressões */
+    height: auto;
 }
 
+/* Avatares: Forçar Caixa Quadrada, Não Encolher E Cobrir Conteúdo */
 .img_profile {
-    height: clamp(100px, 22vw, 250px);
+    /* Usar Somente A Largura Como Controle E Forçar Proporção 1:1 */
     width: clamp(100px, 22vw, 250px);
+    aspect-ratio: 1 / 1;
+    /* Garante Sempre Caixa Quadrada */
     object-fit: cover;
+    /* Preenche A Caixa Sem Distorcer A Imagem */
+
+    /* Evita Que O Flex Encolha O Item Em Telas Apertadas */
+    flex: 0 0 auto;
+
+    /* Aparência */
+    display: block;
     border-radius: 50%;
+}
+
+/* Ajustes Finais Para Telas Pequenas (Evita Que O Avatar Fique Gigante) */
+@media (max-width: 428px) {
+    .img_profile {
+        width: 96px;
+        /* Tamanho fixo mais previsível em celulares pequeninos */
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Mantém Espaçamento Menor No Container */
+    #img_members {
+        gap: 12px;
+    }
 }
 
 .container-sobre-nos {
@@ -661,14 +752,14 @@ svg {
     font-size: 22px;
 }
 
-/* Acessibilidade: foco em ícones */
+/* Acessibilidade: Foco Em Ícones */
 .icon-proj:focus {
     outline: 3px solid rgba(132, 79, 255, 0.2);
 }
 
-/* --------------------------------------------------------- */
-/*                       Responnsividade por favor            */
-/* --------------------------------------------------------- */
+/* ---------------------------------------------------------
+   Responsividade
+   --------------------------------------------------------- */
 
 /* Tablets E Telas Médias (<= 991px) */
 @media (max-width: 991px) {
@@ -701,94 +792,49 @@ svg {
         display: block;
     }
 
-    /* Em telas médias, o círculo passa a ser relativo (JS já lida com absolute em desktop) */
-    #foto-perfil-proj {
+    /* Quando Em Tablet, O Card Volta A Ser Relativo E Empilha */
+    .div-cards {
         position: relative;
-        margin-top: -80px;
-        display: flex;
-        justify-content: center;
+        top: auto;
+        left: auto;
+        bottom: auto;
+        flex: 0 0 auto;
+        max-width: 100%;
         width: 100%;
-        z-index: 3;
-        background: transparent;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    #img-proj {
-        width: 140px;
-        height: 140px;
-        padding: 8px;
-        border-radius: 50%;
-        background: #fff;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    }
-
-    #corpo-card-proj {
-        padding: 22px;
-        margin-top: -30px;
-    }
-
-    .slides-itens {
-        width: 100%;
-        height: 220px;
-        border-radius: var(--card-radius) var(--card-radius) 0 0;
-        overflow: hidden;
-    }
-
-    .slides-itens .carousel-inner,
-    .slides-itens .carousel-item {
-        height: 100%;
-    }
-
-    .slides-itens img,
-    #carrosel-projeto .carousel-item img {
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-        display: block;
-        border-radius: var(--card-radius) var(--card-radius) 0 0;
-    }
-
-    .desc-itens {
-        height: auto;
-        padding: 18px;
-        border-radius: 12px;
-    }
-
-    /* Ajustes área inicial e sobre-nos para telas médias */
-    .div_part-p {
-        max-width: 90%;
-        padding-left: 0;
-    }
-
-    .div_part-button {
-        margin: 2.5rem 0 0 0;
-    }
-
-    .container-sobre-nos {
-        margin: 80px 0;
-    }
-
-    .texto-sobre-nos {
-        margin: 20px 16px;
-        font-size: 18px;
-    }
-
-    /* Ajustar Hero Para Menor Altura Em Tablets */
-    .section_inicial {
-        min-height: 54vh;
-        padding: clamp(2rem, 4.5vw, 4rem) var(--page-horizontal-padding);
-        background-position: center right;
-        background-size: cover;
+        margin: 0 auto;
+        padding: 1.2rem var(--page-horizontal-padding);
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-radius: 8px;
     }
 
     #h2_part-inicial {
         font-size: clamp(1.4rem, 6vw, 2.2rem);
         max-width: 48ch;
     }
+
+    .section_inicial {
+        min-height: 54vh;
+        padding: clamp(2rem, 4.5vw, 4rem) var(--page-horizontal-padding);
+        background-position: center right;
+        background-size: cover;
+        display: block;
+    }
+
+    .section_inicial::before {
+        /* Overlay Alternativo Para Tablets (Vertical) */
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.85) 35%, rgba(255, 255, 255, 0.0) 70%);
+    }
+
+    /* Esconder Imagem Hero Em Telas Médias, Usamos A Versão Com Background-Size:Contain Para Tablets */
+    .hero-img {
+        display: none;
+    }
 }
 
 /* Celular (<= 428px) */
+/* Aqui Mantemos O Comportamento Que Você Já Aprovou: O Perfil Fica Em Fluxo (Relative). */
 @media (max-width: 428px) {
 
     /* Layout De Projetos Em Coluna E Ajustes De Espaçamento */
@@ -813,17 +859,26 @@ svg {
         object-fit: cover;
     }
 
+    /* Ajuste Do Perfil Em Mobile: Tornar Relativo Para Evitar Sobreposição Errada */
     #foto-perfil-proj {
         position: relative;
-        margin-top: -60px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    #img-proj {
+        /* Mobile: fica no fluxo para centralizar corretamente */
+        margin: 0 auto;
         width: 110px;
         height: 110px;
         padding: 6px;
+        margin-top: -55px;
+        /* Metade Do Tamanho Para Manter Sobreposição */
+        transform: none;
+        /* Remover translateX para evitar dupla transformação */
+        left: auto;
+        top: auto;
+    }
+
+    #img-proj {
+        width: 100%;
+        height: 100%;
+        padding: 0;
     }
 
     #corpo-card-proj {
@@ -850,7 +905,7 @@ svg {
         gap: 20px;
     }
 
-    /* Ajustes de tipografia / título para caber melhor */
+    /* Ajustes De Tipografia / Título Para Caber Melhor */
     .h2-card-1 {
         font-size: clamp(2rem, 10vw, 4.2rem);
         text-align: left;
@@ -868,7 +923,7 @@ svg {
         padding-left: 0;
     }
 
-    /* Reduzir gap dos ícones no mobile para evitar overflow vertical */
+    /* Reduzir Gap Dos Ícones No Mobile Para Evitar Overflow Vertical */
     .manipular-icons {
         padding: 0.9rem;
         gap: 0.8rem;
@@ -884,19 +939,24 @@ svg {
         height: clamp(90px, 30vw, 160px);
     }
 
-    /* Ajustes no Hero para mobile: centralizar foco do background */
+    /* Ajustes No Hero Para Mobile: Esconder Hero-Img E Centralizar O Card */
+    .hero-img {
+        display: none;
+    }
+
     .section_inicial {
         background-position: center top;
         background-size: cover;
         padding-top: calc(var(--nav-height) + 1rem);
+        display: block;
     }
 
-    /* Overlay mais densa para legibilidade no mobile */
+    /* Overlay Mais Densa Para Legibilidade No Mobile */
     .section_inicial::before {
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.85) 35%, rgba(255, 255, 255, 0.0) 70%);
     }
 
-    /* Ajustes botão para não extrapolar */
+    /* Ajustes Botão Para Não Extrapolar */
     .div_part-button {
         font-size: .95rem;
         padding: .35rem .9rem;
@@ -907,84 +967,55 @@ svg {
         width: 1.9rem;
         height: 1.9rem;
     }
+
+    /* Ajustes Do Container De Conteúdo Em Mobile (Remover Blur Para Performance) */
+    .div-cards {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-radius: 8px;
+        padding: 1rem;
+        position: relative;
+        top: auto;
+        left: auto;
+        bottom: auto;
+    }
 }
 
-/* Tablets (entre 429px e 991px) - mostrar a imagem inteira */
+/* Tablets (Entre 429px E 991px) - Mostra A Imagem Com Background Fallback */
 @media (min-width: 429px) and (max-width: 991px) {
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
         background-repeat: no-repeat;
-        background-size: contain;           /* garante que a imagem inteira apareça */
-        background-position: center right;  /* ajustar conforme a composição */
+        background-size: contain;
+        /* Garante Que A Imagem Inteira Apareça */
+        background-position: center right;
+        /* Ajustar Conforme A Composição */
         width: 100%;
         min-height: 54vh;
-        background-color: #ffffff;          /* cor de fundo para o espaço vazio */
+        background-color: #ffffff;
+        /* Cor De Fundo Para O Espaço Vazio */
+        display: block;
     }
 
-    /* garantir que o conteúdo não ocupe toda a altura (para a imagem aparecer) */
+    /* Garantir Que O Conteúdo Não Ocupe Toda A Altura (Para A Imagem Aparecer) */
     .div-cards {
         min-height: auto;
         height: auto;
         padding: 0 var(--page-horizontal-padding);
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: none;
     }
 
-
-    .div-cards {
-        display: flex;
-        flex-direction: column;
-        height: 54vh;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 0 var(--page-horizontal-padding);
-    }
-
-    #h2_part-inicial {
-        font-size: 2rem;
-        padding: 0;
-    }
-
-    .div_part-p {
-        max-width: 70%;
-        padding-left: 0;
-    }
-
-    .div_part-button {
-        margin: 70px 0 0 0;
-    }
-
-    #img-sobre-nos {
-        height: 40px;
-    }
-
-    #img_members {
-        height: 250px;
-    }
-
-    .img_profile {
-        height: 160px;
-        width: 160px;
-    }
-
-    .container-sobre-nos {
-        margin: 150px 0;
-    }
-
-    .texto-sobre-nos {
-        margin: 50px 23px;
-        font-size: 18px;
-    }
-
-    /* Remover sublinhado do link que envolve o botão */
-    .container .no-underline,
-    .container .no-underline * {
-        text-decoration: none !important;
-        color: inherit !important;
-    }
-
-    .no-underline:focus-visible {
-        outline: none;
-        box-shadow: 0 0 0 4px rgba(132, 79, 255, 0.18);
-        border-radius: 50px;
+    .hero-img {
+        display: none;
     }
 }
 
@@ -1004,20 +1035,122 @@ svg {
     }
 }
 
-/* Fim Responnsividade por favor */
+/* Fim Responsividade  */
 
-/* --------------------------------------------------------- */
-/*                       Regras Finais                       */
-/* --------------------------------------------------------- */
+/* ---------------------------------------------------------
+   Regras Finais
+   --------------------------------------------------------- */
 
-/* Pequenas melhorias visuais globais */
+/* Pequenas Melhorias Visuais Globais */
 body {
     background: #fff;
     color: #111;
     font-family: 'Open sans light', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* Espaçamento do footer */
+/* Espaçamento Do Footer */
 footer {
     margin-top: 3rem;
+}
+
+/* ---------------------------------------------------------
+   Esconde A Imagem De Fundo Entre 400px E 1200px
+   (Mantida Para Compatibilidade) 
+   --------------------------------------------------------- */
+@media (min-width: 400px) and (max-width: 1200px) {
+
+    /* Forçar Esconder A Imagem Hero */
+    .hero-img {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Remover Qualquer Background-Image Da Section Inicial Nessa Faixa */
+    .section_inicial {
+        background-image: none !important;
+        background-color: #ffffff !important;
+    }
+}
+
+/* ---------------------------------------------------------
+   Esconde A Imagem De Fundo Em Larguras
+   De Tela Até 1000px (Inclui 1000px E Abaixo)
+   --------------------------------------------------------- */
+@media (max-width: 1000px) {
+
+    /* Esconde A Imagem Hero Que É Elemento <img> */
+    .hero-img {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Remove Qualquer Background-Image Aplicada À Section Inicial */
+    .section_inicial {
+        background-image: none !important;
+        background-color: #ffffff !important;
+    }
+
+  /*Reduzir Tamanho Do Perfil Em Telas Pequenas */
+    #foto-perfil-proj {
+        width: clamp(90px, 18vw, 180px);
+        height: clamp(90px, 18vw, 180px);
+        top: calc(40% - (clamp(90px, 18vw, 180px) / 2));
+    }
+}
+/* Força centralização correta em telas pequenas */
+@media (max-width: 428px) {
+  #foto-perfil-proj {
+    position: relative;        /* Manter no fluxo */
+    left: 50%;                 /* Mover 50% da largura do contêiner */
+    transform: translateX(-50%); /* e puxar metade do próprio elemento -> centro */
+    margin: 0;                 /*Remove margens laterais que possam atrapalhar */
+    width: 110px;
+    height: 110px;
+    padding: 6px;
+    margin-top: -55px;         /* Se quiser a sobreposição visual */
+    top: auto !important;      /* Anula qualquer top vindo de outras media queries */
+  }
+}
+/* ------------------------------
+   FIX FOR MOBILE CENTERING
+
+   Essas regras abaixo servem para arrumar as regras conflitantes no código nos ícones dos projetos.
+   ------------------------------ */
+@media (max-width: 428px) {
+
+  /* Garante que o cartão fique centralizado no contêiner */
+  .div-1-card {
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* centraliza horizontalmente o filho */
+    width: 95% !important;
+  }
+
+  /* Anula qualquer posicionamento absoluto/top/left vindo de outras regras */
+  #foto-perfil-proj {
+    position: static !important;      /* remove top/left/translate */
+    margin: -55px auto 0 auto !important; /* negative top para sobreposição visual */
+    width: 110px !important;
+    height: 110px !important;
+    padding: 6px !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 5 !important;
+    display: block !important;
+  }
+
+  /* Garante que a própria imagem esteja centralizada dentro do círculo */
+  #img-proj {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
 }
