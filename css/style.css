@@ -1,3 +1,6 @@
+/* ===========================
+   Variáveis Globais / Tema
+   =========================== */
 :root {
     /* Ajuste Aqui O Raio Das Bordas Do Card/Carousel */
     --card-radius: 20px;
@@ -7,16 +10,37 @@
     /* Cor padrão topo */
     --body-bg: #c4c4c4;
     /* Cor padrão corpo */
-    --profile-size: 30vh;
-    /* Tamanho do círculo grande */
-    --accent-color: #844feb;
+
+    /* Tamanho do círculo grande - agora responsivo (clamp) */
+    --profile-size: clamp(84px, 18vw, 30vh);
+
     /* Cor principal (botões/"quadrados") */
+    --accent-color: #844feb;
+
+    /* Tipografia responsiva (valores base) */
+    --h1-size: clamp(1.6rem, 4.8vw, 3rem);
+    --h2-card-size: clamp(3rem, 10vw, 15vh);
+    --body-font-size: clamp(14px, 2.2vw, 20px);
+
+    /* Altura padrão do nav para evitar sobreposição do conteúdo */
+    --nav-height: 60px;
+
+    /* Padding horizontal da página (responsivo) */
+    --page-horizontal-padding: 2vw;
 }
 
+/* Reset básico */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* Evitar overflow horizontal que pode causar "extrapolar" em celulares */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* ---------------------------------------- */
@@ -85,34 +109,80 @@
 }
 
 /* ---------------------------------------- */
-/* Area Inicial */
+/*               Imagens / SVGs             */
+/* ---------------------------------------- */
+/* Garante que imagens e SVGs escalem com o container */
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Força SVGs e imgs .svg a manterem proporção e serem redimensionáveis */
+img[src$=".svg"],
+svg {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ---------------------------------------- */
+/* Area Inicia         l                    */
 /* ---------------------------------------- */
 
+/* Fundo Com Imagem*/
 .section_inicial {
     background-image: url('../img/imagem_inicial.png');
     width: 100%;
-    min-height: 100vh;
-    margin-top: 60px;
+    min-height: calc(100vh - var(--nav-height));
+    margin-top: 0;
+    padding: clamp(3rem, 6vw, 6rem) var(--page-horizontal-padding) clamp(3rem, 6vw, 6rem) var(--page-horizontal-padding);
+    display: flex;
+    align-items: center;
+    position: relative;
     background-size: cover;
-    background-position: left;
+    background-position: right center;
     background-repeat: no-repeat;
 }
 
+/* Overlay Opcional Para Maior Contraste Do Texto */
+.section_inicial::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.0) 60%);
+    pointer-events: none;
+}
+
+/* Container De Conteúdo (Content Box) */
 .div-cards {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: center;
     align-items: flex-start;
-    padding: 0px 2vw;
+    padding: 0px var(--page-horizontal-padding);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: clamp(1rem, 3vw, 3rem);
+    z-index: 2;
+    /* Garantir que fique sobre a overlay */
+    min-height: calc(100vh - var(--nav-height));
 }
 
 /* Título */
 #h2_part-inicial {
-    font-size: 3rem;
+    font-size: var(--h1-size);
     font-family: 'Bree serif';
-    padding: 5vh 0px 0px 2vw;
+    padding: 0 0 0 0;
     cursor: context-menu;
+    line-height: 1.05;
+    word-break: keep-all;
+    /* Ajuda a evitar quebra palavra-a-palavra em português */
+    color: #111;
+    max-width: 60ch;
 }
 
 /* Texto Do Título - Program East */
@@ -127,8 +197,7 @@
 
 #span-h2-inicial:hover {
     transition: all 0.5s ease;
-    transform: scale(1.1);
-    margin-left: 30px;
+    transform: translateX(6px) scale(1.03);
 }
 
 #span-h2-inicial:active {
@@ -136,21 +205,25 @@
     color: #ffffff;
 }
 
+/* Ajustei esse max-width para não criar colunas estreitas em mobile */
 .div_part-p {
-    max-width: 30%;
-    padding-left: 2vw;
+    max-width: 520px;
+    padding-left: 0;
     cursor: context-menu;
 }
 
 #p_part-inicial {
-    font-size: 1.5rem;
+    font-size: var(--body-font-size);
     font-family: 'Bree serif';
     line-height: 1.5;
+    color: #222;
 }
 
+/* Botão contato */
+/* Tornar Botão Inline-Flex e evitar que extrapole o viewport */
 .div_part-button:hover {
     transition: all 0.5s;
-    transform: scale(1.1);
+    transform: scale(1.06);
     box-shadow: 0 0 20px #95a5ff;
     background-color: #040e4b;
 }
@@ -160,24 +233,28 @@
 }
 
 .div_part-button {
-    margin: 15vh 0px 0px 2vw;
-    padding: 0.2rem 1rem;
-    display: flex;
+    margin: 1.6rem 0 0 0;
+    padding: 0.35rem 1rem;
+    display: inline-flex;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 0.6rem;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     font-family: 'Bree serif';
     border-radius: 50px;
     background-color: #000000;
     color: #ffffff;
     border: none;
     cursor: pointer;
+    white-space: nowrap;
+    min-width: 0;
+    overflow: hidden;
 }
 
 #img-part-inicial {
-    max-width: 2.5rem;
-    max-height: 2.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    object-fit: contain;
 }
 
 /* -------------------------------------------------------- */
@@ -192,20 +269,49 @@
 
 .faixa-textos {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    font-family: 'Bree serif';
-    font-size: 2.0rem;
+
+    /* Legibilidade / alinhamento */
+    text-align: center;
+    /* centraliza o texto em cada linha */
+    line-height: 1.25;
+    /* espaçamento entre linhas para evitar sobreposição */
+    word-break: normal;
+    hyphens: auto;
+
+    /* Tipografia */
+    font-family: 'Bree serif', serif;
+    font-size: clamp(1rem, 3.2vw, 1.6rem);
+    /* ligeiramente menor e mais consistente */
     color: #ffffff;
-    padding: 2rem 0px 0px 0px;
+
+    /* Espaçamento e limite de largura para evitar que o texto "grude" nas bordas */
+    padding: 1.25rem 1rem;
+    /* padding vertical + horizontal */
+    max-width: 90ch;
+    /* limita largura de linha para melhor leitura */
+    margin: 0 auto;
+    /* centraliza o bloco dentro do container */
+
+    /* Contraste em cima de imagens/overlays */
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    /* leve sombra para aumentar contraste */
 }
 
+/* Ajustes nos parágrafos (se você usar <p> dentro da faixa) */
+.faixa-textos p {
+    margin: .4rem 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+    
 .faixa-de-projetos {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3.5rem 0px 4vw 0px;
+    padding: 3.5rem 0px 2rem 0px;
 }
 
 .destaque-projetos {
@@ -223,11 +329,38 @@
     width: 95%;
 }
 
+/* Manipular icons: evita que os ícones quebrem em múltiplas linhas e permite scroll em mobile */
 .manipular-icons {
-    padding: 0.7vw;
+    padding: 1.6vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    gap: 1rem;
     align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ícone do projeto (círculo). Agora responsivo com clamp */
+.icon-proj {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: clamp(64px, 22vw, 150px);
+    height: clamp(64px, 22vw, 150px);
+    border-radius: 100%;
+    padding: 6px;
+    overflow: hidden;
+    min-width: 64px;
+}
+
+.icon-proj img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .icon-proj:active {
@@ -239,19 +372,9 @@
     transform: scale(1.0);
 }
 
-.icon-proj {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-}
-
 /* Estilo Quando Um Ícone Está Selecionado */
 .icon-proj.selected {
-    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.06), 0 6px 18px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     outline: 6px solid var(--accent-color);
     transform: scale(1.03);
 }
@@ -290,11 +413,14 @@
     align-items: center;
     width: 95%;
     height: 95%;
+    gap: 20px;
 }
 
 .h2-card-1 {
     font-family: "Bree serif";
-    font-size: 15vh;
+    font-size: var(--h2-card-size);
+    line-height: 0.95;
+    margin: 0;
 }
 
 /* Parte 6 */
@@ -365,6 +491,7 @@
     padding: 10px;
     border-radius: 50%;
     background: #fff;
+    object-fit: cover;
 }
 
 /* Parte 7 */
@@ -383,12 +510,15 @@
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    aspect-ratio: 16 / 9;
+    width: 100%;
 }
 
 .slides-itens .carousel-inner,
 .slides-itens .carousel-item {
     border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
     overflow: hidden !important;
+    height: 100%;
 }
 
 #carrosel-projeto .carousel-item img,
@@ -402,6 +532,7 @@
     border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
 }
 
+/* Carousel controls */
 .carousel-control-prev,
 .carousel-control-next {
     background: transparent !important;
@@ -413,25 +544,6 @@
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-image: none !important;
-}
-
-.slides-itens {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    overflow: hidden !important;
-}
-
-.slides-itens .carousel-inner,
-.slides-itens .carousel-item {
-    height: 100%;
-}
-
-.slides-itens img,
-#carrosel-projeto .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
 /* Indicadores Do Carousel */
@@ -460,7 +572,7 @@
     padding: 20px;
     border-radius: 20px;
     font-family: "Bree serif";
-    font-size: 20px;
+    font-size: var(--body-font-size);
     text-align: center;
 }
 
@@ -526,16 +638,22 @@
 }
 
 #img_members {
-    height: 400px;
+    height: auto;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
 }
 
 .img_profile {
-    height: 250px;
-    width: 250px;
+    height: clamp(100px, 22vw, 250px);
+    width: clamp(100px, 22vw, 250px);
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .container-sobre-nos {
-    margin: 200px 0;
+    margin: 120px 0;
 }
 
 .texto-sobre-nos {
@@ -543,12 +661,19 @@
     font-size: 22px;
 }
 
+/* Acessibilidade: foco em ícones */
+.icon-proj:focus {
+    outline: 3px solid rgba(132, 79, 255, 0.2);
+}
+
 /* --------------------------------------------------------- */
-/*                       Responsividade                      */
+/*                       Responnsividade por favor            */
 /* --------------------------------------------------------- */
 
 /* Tablets E Telas Médias (<= 991px) */
 @media (max-width: 991px) {
+
+    /* Ajustar Layout Dos Projetos Para Coluna Em Tablets */
     .display-projetos {
         flex-direction: column;
         align-items: center;
@@ -562,6 +687,7 @@
         height: auto;
     }
 
+    /* Ajustar Foto De Capa Para Altura Fixa Em Tablets */
     #foto-capa {
         height: 220px;
         border-radius: var(--card-radius) var(--card-radius) 0 0;
@@ -575,6 +701,7 @@
         display: block;
     }
 
+    /* Em telas médias, o círculo passa a ser relativo (JS já lida com absolute em desktop) */
     #foto-perfil-proj {
         position: relative;
         margin-top: -80px;
@@ -627,10 +754,44 @@
         padding: 18px;
         border-radius: 12px;
     }
+
+    /* Ajustes área inicial e sobre-nos para telas médias */
+    .div_part-p {
+        max-width: 90%;
+        padding-left: 0;
+    }
+
+    .div_part-button {
+        margin: 2.5rem 0 0 0;
+    }
+
+    .container-sobre-nos {
+        margin: 80px 0;
+    }
+
+    .texto-sobre-nos {
+        margin: 20px 16px;
+        font-size: 18px;
+    }
+
+    /* Ajustar Hero Para Menor Altura Em Tablets */
+    .section_inicial {
+        min-height: 54vh;
+        padding: clamp(2rem, 4.5vw, 4rem) var(--page-horizontal-padding);
+        background-position: center right;
+        background-size: cover;
+    }
+
+    #h2_part-inicial {
+        font-size: clamp(1.4rem, 6vw, 2.2rem);
+        max-width: 48ch;
+    }
 }
 
 /* Celular (<= 428px) */
 @media (max-width: 428px) {
+
+    /* Layout De Projetos Em Coluna E Ajustes De Espaçamento */
     .display-projetos {
         flex-direction: column;
         align-items: center;
@@ -672,6 +833,7 @@
 
     .slides-itens {
         height: 160px;
+        aspect-ratio: 4 / 3;
     }
 
     .slides-itens img {
@@ -687,18 +849,85 @@
         margin: 30px 16px;
         gap: 20px;
     }
+
+    /* Ajustes de tipografia / título para caber melhor */
+    .h2-card-1 {
+        font-size: clamp(2rem, 10vw, 4.2rem);
+        text-align: left;
+    }
+
+    #h2_part-inicial {
+        font-size: clamp(1.15rem, 8vw, 1.6rem);
+        padding: 0;
+        line-height: 1.08;
+        max-width: 44ch;
+    }
+
+    .div_part-p {
+        max-width: 92%;
+        padding-left: 0;
+    }
+
+    /* Reduzir gap dos ícones no mobile para evitar overflow vertical */
+    .manipular-icons {
+        padding: 0.9rem;
+        gap: 0.8rem;
+    }
+
+    .icon-proj {
+        width: clamp(56px, 20vw, 110px);
+        height: clamp(56px, 20vw, 110px);
+    }
+
+    .img_profile {
+        width: clamp(90px, 30vw, 160px);
+        height: clamp(90px, 30vw, 160px);
+    }
+
+    /* Ajustes no Hero para mobile: centralizar foco do background */
+    .section_inicial {
+        background-position: center top;
+        background-size: cover;
+        padding-top: calc(var(--nav-height) + 1rem);
+    }
+
+    /* Overlay mais densa para legibilidade no mobile */
+    .section_inicial::before {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.85) 35%, rgba(255, 255, 255, 0.0) 70%);
+    }
+
+    /* Ajustes botão para não extrapolar */
+    .div_part-button {
+        font-size: .95rem;
+        padding: .35rem .9rem;
+        gap: .45rem;
+    }
+
+    .div_part-button img {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
 }
 
-/* Tablets (entre 429px e 991px) */
+/* Tablets (entre 429px e 991px) - mostrar a imagem inteira */
 @media (min-width: 429px) and (max-width: 991px) {
     .section_inicial {
         background-image: url('../img/imagem_inicial.png');
+        background-repeat: no-repeat;
+        background-size: contain;           /* garante que a imagem inteira apareça */
+        background-position: center right;  /* ajustar conforme a composição */
         width: 100%;
         min-height: 54vh;
-        background-size: initial;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-color: #ffffff;          /* cor de fundo para o espaço vazio */
     }
+
+    /* garantir que o conteúdo não ocupe toda a altura (para a imagem aparecer) */
+    .div-cards {
+        min-height: auto;
+        height: auto;
+        padding: 0 var(--page-horizontal-padding);
+    }
+
 
     .div-cards {
         display: flex;
@@ -706,17 +935,17 @@
         height: 54vh;
         justify-content: center;
         align-items: flex-start;
-        padding: 0 2vw;
+        padding: 0 var(--page-horizontal-padding);
     }
 
     #h2_part-inicial {
         font-size: 2rem;
-        padding: 5vh 0 0 2vw;
+        padding: 0;
     }
 
     .div_part-p {
         max-width: 70%;
-        padding-left: 2vw;
+        padding-left: 0;
     }
 
     .div_part-button {
@@ -749,13 +978,46 @@
     .container .no-underline,
     .container .no-underline * {
         text-decoration: none !important;
-        /* Remove underline */
         color: inherit !important;
-        /* Garante que o texto herde a cor do botão */
     }
+
     .no-underline:focus-visible {
         outline: none;
         box-shadow: 0 0 0 4px rgba(132, 79, 255, 0.18);
         border-radius: 50px;
     }
+}
+
+/* Grandes Monitores (>= 1200px) */
+@media (min-width: 1200px) {
+    .div-cards {
+        padding-left: 6vw;
+    }
+
+    #h2_part-inicial {
+        font-size: clamp(2rem, 4.8vw, 3.6rem);
+    }
+
+    .section_inicial {
+        background-position: right center;
+        background-size: cover;
+    }
+}
+
+/* Fim Responnsividade por favor */
+
+/* --------------------------------------------------------- */
+/*                       Regras Finais                       */
+/* --------------------------------------------------------- */
+
+/* Pequenas melhorias visuais globais */
+body {
+    background: #fff;
+    color: #111;
+    font-family: 'Open sans light', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Espaçamento do footer */
+footer {
+    margin-top: 3rem;
 }
