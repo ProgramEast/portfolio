@@ -11,6 +11,12 @@
     --body-bg: #c4c4c4;
     /* Cor Padrão Corpo */
 
+    /* Variáveis Novas Para Controlar As Duas Áreas Separadas */
+    --accent-logo: #eb82f5;
+    /* Cor Para A Parte Abaixo Da Logo (Fallback Rosa Escuro) */
+    --accent-desc: #c5c5c5;
+    /* Cor Para A Parte De Descrição Abaixo Do Carousel (Fallback Rosa Claro) */
+
     /* Tamanho Do Círculo Grande - Agora Responsivo (Clamp) */
     --profile-size: clamp(84px, 18vw, 30vh);
 
@@ -70,7 +76,7 @@ body {
 
 .sunborn {
     font-family: 'Sunborn';
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 .bree-serif {
@@ -494,7 +500,8 @@ svg {
     height: 40%;
     border-radius: var(--card-radius) var(--card-radius) 0 0;
     overflow: hidden;
-    background-color: var(--cover-bg);
+    /* Usa A Cor Específica Para A Área Da Logo Com Fallback Para --cover-bg */
+    background: var(--accent-logo, var(--cover-bg));
 }
 
 /* Imagem De Capa */
@@ -527,14 +534,14 @@ svg {
 }
 
 /* Foto Perfil Do Projeto: Agora Em Absolute Por Padrão Em Desktop */
-/* Em Mobile Será Substituído Por Position: Relative (no media query). */
+/* Em Mobile Será Substituído Por Position: Relative (No Media Query). */
 #foto-perfil-proj {
     position: absolute;
-    /* Desktop: absoluto em relação a .div-1-card */
+    /* Desktop: Absoluto Em Relação A .div-1-card */
     top: calc(40% - (var(--profile-size) / 2));
-    /* Posiciona verticalmente sobre a borda da capa */
+    /* Posiciona Verticalmente Sobre A Borda Da Capa */
     left: 50%;
-    /* Centraliza horizontalmente em relação ao pai */
+    /* Centraliza Horizontalmente Em Relação Ao Pai */
     transform: translateX(-50%);
     z-index: 5;
     display: flex;
@@ -626,10 +633,11 @@ svg {
 
 /* ------------------- Fim Carrossel ------------------- */
 
+/* Caixa De Descrição - Usa Variável Específica Com Fallback */
 .desc-itens {
     width: 100%;
     height: 50%;
-    background-color: var(--body-bg);
+    background: var(--accent-desc, var(--body-bg));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -734,7 +742,7 @@ svg {
 @media (max-width: 428px) {
     .img_profile {
         width: 96px;
-        /* Tamanho fixo mais previsível em celulares pequeninos */
+        /* Tamanho Fixo Mais Previsível Em Celulares Pequeninos */
         aspect-ratio: 1 / 1;
     }
 
@@ -863,7 +871,7 @@ svg {
     /* Ajuste Do Perfil Em Mobile: Tornar Relativo Para Evitar Sobreposição Errada */
     #foto-perfil-proj {
         position: relative;
-        /* Mobile: fica no fluxo para centralizar corretamente */
+        /* Mobile: Fica No Fluxo Para Centralizar Corretamente */
         margin: 0 auto;
         width: 110px;
         height: 110px;
@@ -871,7 +879,7 @@ svg {
         margin-top: -55px;
         /* Metade Do Tamanho Para Manter Sobreposição */
         transform: none;
-        /* Remover translateX para evitar dupla transformação */
+        /* Remover TranslateX Para Evitar Dupla Transformação */
         left: auto;
         top: auto;
     }
@@ -1095,63 +1103,74 @@ footer {
         background-color: #ffffff !important;
     }
 
-  /*Reduzir Tamanho Do Perfil Em Telas Pequenas */
+    /*Reduzir Tamanho Do Perfil Em Telas Pequenas */
     #foto-perfil-proj {
         width: clamp(90px, 18vw, 180px);
         height: clamp(90px, 18vw, 180px);
         top: calc(40% - (clamp(90px, 18vw, 180px) / 2));
     }
 }
-/* Força centralização correta em telas pequenas */
-@media (max-width: 428px) {
-  #foto-perfil-proj {
-    position: relative;        /* Manter no fluxo */
-    left: 50%;                 /* Mover 50% da largura do contêiner */
-    transform: translateX(-50%); /* e puxar metade do próprio elemento -> centro */
-    margin: 0;                 /*Remove margens laterais que possam atrapalhar */
-    width: 110px;
-    height: 110px;
-    padding: 6px;
-    margin-top: -55px;         /* Se quiser a sobreposição visual */
-    top: auto !important;      /* Anula qualquer top vindo de outras media queries */
-  }
-}
-/* ------------------------------
-   FIX FOR MOBILE CENTERING
 
-   Essas regras abaixo servem para arrumar as regras conflitantes no código nos ícones dos projetos.
+/* Força Centralização Correta Em Telas Pequenas */
+@media (max-width: 428px) {
+    #foto-perfil-proj {
+        position: relative;
+        /* Manter No Fluxo */
+        left: 50%;
+        /* Mover 50% Da Largura Do Contêiner */
+        transform: translateX(-50%);
+        /* E Puxar Metade Do Próprio Elemento -> Centro */
+        margin: 0;
+        /* Remove Margens Laterais Que Possam Atrapalhar */
+        width: 110px;
+        height: 110px;
+        padding: 6px;
+        margin-top: -55px;
+        /* Se Quiser A Sobreposição Visual */
+        top: auto !important;
+        /* Anula Qualquer Top Vindo De Outras Media Queries */
+    }
+}
+
+/* ------------------------------
+   Fix For Mobile Centering
+
+   Essas Regras Abaixo Servem Para Arrumar As Regras Conflitantes No Código Nos Ícones Dos Projetos.
    ------------------------------ */
 @media (max-width: 428px) {
 
-  /* Garante que o cartão fique centralizado no contêiner */
-  .div-1-card {
-    margin: 0 auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important; /* centraliza horizontalmente o filho */
-    width: 95% !important;
-  }
+    /* Garante Que O Cartão Fique Centralizado No Contêiner */
+    .div-1-card {
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        /* Centraliza Horizontalmente O Filho */
+        width: 95% !important;
+    }
 
-  /* Anula qualquer posicionamento absoluto/top/left vindo de outras regras */
-  #foto-perfil-proj {
-    position: static !important;      /* remove top/left/translate */
-    margin: -55px auto 0 auto !important; /* negative top para sobreposição visual */
-    width: 110px !important;
-    height: 110px !important;
-    padding: 6px !important;
-    transform: none !important;
-    left: auto !important;
-    top: auto !important;
-    z-index: 5 !important;
-    display: block !important;
-  }
+    /* Anula Qualquer Posicionamento Absolute/Top/Left Vindo De Outras Regras */
+    #foto-perfil-proj {
+        position: static !important;
+        /* Remove Top/Left/Translate */
+        margin: -55px auto 0 auto !important;
+        /* Negative Top Para Sobreposição Visual */
+        width: 110px !important;
+        height: 110px !important;
+        padding: 6px !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+        z-index: 5 !important;
+        display: block !important;
+    }
 
-  /* Garante que a própria imagem esteja centralizada dentro do círculo */
-  #img-proj {
-    display: block !important;
-    margin: 0 auto !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
+    /* Garante Que A Própria Imagem Esteja Centralizada Dentro Do Círculo */
+    #img-proj {
+        display: block !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
 }
