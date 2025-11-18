@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: 'Site institucional para restaurante com cardápio dinâmico, galeria de fotos, sistema de reservas e integração para promoções. Foco em experiência visual e facilidade para o cliente conhecer pratos, horários e fazer reserva.',
             slides: ['img/web_chuleta.png', 'img/web_chuleta2.png', 'img/web_chuleta3.png', 'img/web_chuleta4.png'],
             coverBg: '#6fbf73',
-            bodyBg: '#eaeaea',
+            bodyBg: '#5e2627',
             accent: '#ff6b6b'
         },
         adm: {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: 'Aplicação desktop otimizada para gestão interna da academia: cadastro de alunos, controle financeiro, emissão de recibos, relatórios detalhados e sincronização com o sistema web. Ideal para uso em recepção e administração.',
             slides: ['img/desk_stayfit.png', 'img/desk_stayfit2.png', 'img/desk_stayfit3.png', 'img/desk_stayfit4.png'],
             coverBg: '#2b93d6',
-            bodyBg: '#f4f4f4',
+            bodyBg: '#8ac0ff',
             accent: '#2b93d6'
         },
         mente: {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: 'Portal para clínica psicológica com área institucional, agendamento de sessões, perfil dos profissionais e recursos informativos sobre atendimento. Voltado para aproximação com pacientes e gestão segura de horários.',
             slides: ['img/renovada_mente.png', 'img/renovada_mente2.png', 'img/renovada_mente3.png', 'img/renovada_mente4.png'],
             coverBg: '#db9f1b',
-            bodyBg: '#f8f8f0ff',
+            bodyBg: '#dea31b',
             accent: '#d5e221ff'
         }
     };

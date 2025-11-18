@@ -14,7 +14,7 @@
     /* Variáveis Novas Para Controlar As Duas Áreas Separadas */
     --accent-logo: #eb82f5;
     /* Cor Para A Parte Abaixo Da Logo (Fallback Rosa Escuro) */
-    --accent-desc: #c5c5c5;
+    --accent-desc: #f7ecec;
     /* Cor Para A Parte De Descrição Abaixo Do Carousel (Fallback Rosa Claro) */
 
     /* Tamanho Do Círculo Grande - Agora Responsivo (Clamp) */
