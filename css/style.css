@@ -485,7 +485,6 @@ svg {
 /* Parte 6 - Card */
 .div-1-card {
     display: flex;
-    flex-direction: column;
     align-items: center;
     width: 40%;
     height: 95%;
@@ -496,24 +495,28 @@ svg {
 /* Foto Capa (Topo Do Card) */
 #foto-capa {
     width: 100%;
-    height: 40%;
-    border-radius: var(--card-radius) var(--card-radius) 0 0;
+    height: 80%;
+    border-radius: var(--card-radius);
     overflow: hidden;
     /* Usa A Cor Específica Para A Área Da Logo Com Fallback Para --cover-bg */
-    background: var(--accent-logo, var(--cover-bg));
+    /* background: var(--accent-logo); */
+    background-color: var(--cover-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Imagem De Capa */
-#img-capa {
+/* #img-capa {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
     border-radius: var(--card-radius) var(--card-radius) 0 0;
-}
+} */
 
 /* Corpo Do Card */
-#corpo-card-proj {
+/* #corpo-card-proj {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -522,46 +525,47 @@ svg {
     padding: 0px 30px;
     background-color: var(--body-bg);
     border-radius: 0% 0% 10% 10%;
-}
+} */
 
-#p_corpo-card-proj {
+/* #p_corpo-card-proj {
     margin-top: 13vh;
     max-width: 100%;
     font-size: 20px;
     text-align: center;
     font-family: "Bree serif";
-}
+} */
 
 /* Foto Perfil Do Projeto: Agora Em Absolute Por Padrão Em Desktop */
+
 /* Em Mobile Será Substituído Por Position: Relative (No Media Query). */
+
 #foto-perfil-proj {
-    position: absolute;
+    /* position: relative; */
     /* Desktop: Absoluto Em Relação A .div-1-card */
-    top: calc(40% - (var(--profile-size) / 2));
+    /* top: calc(40% - (var(--profile-size) / 2)); */
     /* Posiciona Verticalmente Sobre A Borda Da Capa */
-    left: 50%;
+    /* left: 50%; */
     /* Centraliza Horizontalmente Em Relação Ao Pai */
-    transform: translateX(-50%);
+    /* transform: translateX(-50%);  */
     z-index: 5;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 
     width: var(--profile-size);
     height: var(--profile-size);
-    padding: 10px;
-    border-radius: 50%;
+    /* padding: 10px; */
+    border-radius: 50%; 
     background-color: #ffffff;
     overflow: visible;
 }
 
 /* Imagem Interna Do Perfil */
 #img-proj {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
     border-radius: 50%;
-    display: block;
 }
 
 /* Parte 7 - Itens Ao Lado Do Card */
@@ -789,16 +793,16 @@ svg {
     /* Ajustar Foto De Capa Para Altura Fixa Em Tablets */
     #foto-capa {
         height: 220px;
-        border-radius: var(--card-radius) var(--card-radius) 0 0;
+        border-radius: var(--card-radius);
         overflow: hidden;
     }
 
-    #img-capa {
+    /* #img-capa {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
-    }
+    } */
 
     /* Quando Em Tablet, O Card Volta A Ser Relativo E Empilha */
     .div-cards {
@@ -860,12 +864,12 @@ svg {
 
     #foto-capa {
         height: 160px;
-        border-radius: calc(var(--card-radius) * 0.8) calc(var(--card-radius) * 0.8) 0 0;
+        border-radius: calc(var(--card-radius) * 0.8);
     }
 
-    #img-capa {
+    /* #img-capa {
         object-fit: cover;
-    }
+    } */
 
     /* Ajuste Do Perfil Em Mobile: Tornar Relativo Para Evitar Sobreposição Errada */
     #foto-perfil-proj {
@@ -889,10 +893,10 @@ svg {
         padding: 0;
     }
 
-    #corpo-card-proj {
+    /* #corpo-card-proj {
         padding: 16px;
         margin-top: -20px;
-    }
+    } */
 
     .slides-itens {
         height: 160px;
@@ -1152,7 +1156,7 @@ footer {
     #foto-perfil-proj {
         position: static !important;
         /* Remove Top/Left/Translate */
-        margin: -55px auto 0 auto !important;
+        margin: auto !important;
         /* Negative Top Para Sobreposição Visual */
         width: 110px !important;
         height: 110px !important;

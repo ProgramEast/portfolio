@@ -9,17 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
             profile: 'img/icon_stayFit.svg',
             desc: 'Plataforma web responsiva para academias com agendamento de aulas, painel para instrutores, controle de planos e histórico de treinos. Interface intuitiva para alunos e administradores.',
             slides: ['img/web_stayfit.png', 'img/web_stayfit2.png', 'img/web_stayfit3.png', 'img/web_stayfit4.png'],
-            coverBg: '#d59e1a',     // Cor do topo do card (exemplo)
+            coverBg: '#844feb',     // Cor do topo do card (exemplo)
             bodyBg: '#c4c4c4',      // Cor do corpo do card
             accent: '#f06a9f'       // Cor "rosa" / destaque do projeto
         },
         chuleta: {
             title: 'CHULETA QUENTE',
-            cover: 'img/Tela2.png',
+            cover: '#5e2627',
             profile: 'img/chuleta_icon.svg',
             desc: 'Site institucional para restaurante com cardápio dinâmico, galeria de fotos, sistema de reservas e integração para promoções. Foco em experiência visual e facilidade para o cliente conhecer pratos, horários e fazer reserva.',
             slides: ['img/web_chuleta.png', 'img/web_chuleta2.png', 'img/web_chuleta3.png', 'img/web_chuleta4.png'],
-            coverBg: '#6fbf73',
+            coverBg: '#5e2627',
             bodyBg: '#5e2627',
             accent: '#ff6b6b'
         },
@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2) Helpers Para Acessar Elementos Do DOM Que Vamos Atualizar
     const el = {
         h2Title: document.querySelector('.h2-card-1'), // Título Dinâmico
-        imgCapa: document.getElementById('img-capa'), // Imagem De Capa Do Cartão
+        fotoCapa: document.getElementById('foto-capa'), // Imagem De Capa Do Cartão
         imgProj: document.getElementById('img-proj'), // Imagem De Perfil Do Projeto (Círculo)
-        pDesc: document.getElementById('p_corpo-card-proj'), // Parágrafo Do Corpo Do Cartão (Primeiro Quadrado)
+        // pDesc: document.getElementById('p_corpo-card-proj'), // Parágrafo Do Corpo Do Cartão (Primeiro Quadrado)
         carouselInner: document.querySelector('#carrosel-projeto .carousel-inner'), // Onde Ficam Os .carousel-item
         carouselIndicators: document.querySelector('#carrosel-projeto .carousel-indicators'), // Indicadores (dots)
         carouselEl: document.getElementById('carrosel-projeto'), // Elemento Do Carrossel (Para Controlar Via Bootstrap)
@@ -161,10 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Queremos Que O Centro Do Círculo Esteja Exatamente Na Linha Inferior De fotoCapa
         const centerY = offsetTop + offsetHeight;
 
-        wrapper.style.position = 'absolute';
-        wrapper.style.left = '50%';
-        wrapper.style.top = centerY + 'px';
-        wrapper.style.transform = 'translate(-50%, -50%)';
+        // wrapper.style.position = 'absolute';
+        // wrapper.style.left = '50%';
+        // wrapper.style.top = centerY + 'px';
+        // wrapper.style.transform = 'translate(-50%, -50%)';
     }
 
     // Ajusta A Posição Ao Redimensionar (Debounce)
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el.h2Title) el.h2Title.textContent = p.title;
 
         // Atualiza Capa (Se Existir O Elemento)
-        if (el.imgCapa) el.imgCapa.src = p.cover;
+        if (el.fotoCapa) el.fotoCapa.backgroundColor = p.cover;
 
         // Atualiza Ícone/Perfil Do Projeto
         if (el.imgProj) el.imgProj.src = p.profile;
@@ -235,8 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Assina O Evento load Da Imagem Da Capa Para Reposicionar Quando Ela Terminar De Carregar
-    if (el.imgCapa) {
-        el.imgCapa.addEventListener('load', positionProfileCircle);
+    if (el.fotoCapa) {
+        el.fotoCapa.addEventListener('load', positionProfileCircle);
     }
 
     // 4) Carrega Um Projeto Padrão Ao Abrir A Página
