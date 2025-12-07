@@ -437,9 +437,13 @@ svg {
     transform: scale(1.03);
 }
 
-/* --------------------------------------------------------
-   Fim Faixa De Projetos
-   -------------------------------------------------------- */
+/* -------------------------------------------------------- */
+/*                  Fim Faixa De Projetos                   */
+/*--------------------------------------------------------- */
+
+/* -------------------------------------------------------- */
+/*               Início Apresentação Projeto                */
+/*--------------------------------------------------------- */
 
 .section-proj {
     display: flex;
@@ -455,14 +459,6 @@ svg {
     width: 90%;
     height: 100vh;
     background-color: transparent;
-}
-
-#detalhe-stayfit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
 .display-projetos {
@@ -550,12 +546,12 @@ svg {
     z-index: 5;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 
     width: var(--profile-size);
     height: var(--profile-size);
     /* padding: 10px; */
-    border-radius: 50%; 
+    border-radius: 50%;
     background-color: #ffffff;
     overflow: visible;
 }
@@ -779,9 +775,10 @@ svg {
     /* Ajustar Layout Dos Projetos Para Coluna Em Tablets */
     .display-projetos {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         gap: 30px;
-        padding: 30px 0;
+        padding: 10px 0;
     }
 
     .div-1-card,
@@ -852,9 +849,10 @@ svg {
     /* Layout De Projetos Em Coluna E Ajustes De Espaçamento */
     .display-projetos {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 22px;
-        padding: 20px 0;
+        /* gap: 22px;
+        padding: 20px 0; */
     }
 
     .div-1-card,
@@ -1142,6 +1140,20 @@ footer {
    ------------------------------ */
 @media (max-width: 428px) {
 
+    .faixa-projetos-fundo {
+        background-color: #000000;
+        max-width: 100%;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .faixa-de-projetos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+    }
+
     /* Garante Que O Cartão Fique Centralizado No Contêiner */
     .div-1-card {
         margin: 0 auto !important;
@@ -1175,5 +1187,28 @@ footer {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
+    }
+
+    .detalhes-projetos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 100%;
+        margin: 20px 0;
+        background-color: transparent;
+    }
+
+
+    /* SOBRE NÓS */
+
+    #img-sobre-nos {
+        height: 70px;
+        width: 70px;
+    }
+
+    .texto-sobre-nos {
+        margin: 0 20px;
+        font-size: 18px;
     }
 }
