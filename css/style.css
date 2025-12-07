@@ -1,6 +1,7 @@
-/* ===========================
-   Variáveis Globais / Tema
-   =========================== */
+/* ================================ */
+/*      Variáveis Globais / Tema    */
+/* ================================ */
+
 :root {
     /* Ajuste Aqui O Raio Das Bordas Do Card/Carousel */
     --card-radius: 20px;
@@ -49,9 +50,11 @@ body {
     overflow-x: hidden;
 }
 
-/* ----------------------------------------
-   Fontes
-   ---------------------------------------- */
+
+/* ---------------------------------------- */
+/*                 Fontes                   */
+/* ---------------------------------------- */
+
 
 @font-face {
     font-family: "Sunborn";
@@ -74,6 +77,8 @@ body {
     src: url(../fonts/static/OpenSans-Light.ttf);
 }
 
+/* Classes de Fontes */
+
 .sunborn {
     font-family: 'Sunborn';
     margin-right: 10px;
@@ -91,9 +96,11 @@ body {
     font-family: 'Open sans light';
 }
 
-/* ----------------------------------------
-   Ícones Do Rodapé
-   ---------------------------------------- */
+
+/* ---------------------------------------- */
+/*             Ícones Do Rodapé             */
+/* ---------------------------------------- */
+
 
 .icones-rodape:hover {
     transition: all 0.5s ease;
@@ -115,9 +122,12 @@ body {
     color: #1877F2;
 }
 
-/* ----------------------------------------
-   Imagens / SVGs
-   ---------------------------------------- */
+
+/* ---------------------------------------- */
+/*               Imagens / SVGs             */
+/* ---------------------------------------- */
+
+
 /* Garante Que Imagens E SVGs Escalem Com O Container */
 img,
 svg {
@@ -135,9 +145,11 @@ svg {
     object-fit: contain;
 }
 
-/* ----------------------------------------
-   Área Inicial
-   ---------------------------------------- */
+
+/* ---------------------------------------- */
+/*               Área Inicial               */
+/* ---------------------------------------- */
+
 
 /* Seção: Usamos Uma Imagem Interna Para Controlar Crop/Posicionamento */
 .section_inicial {
@@ -316,9 +328,17 @@ svg {
     object-fit: contain;
 }
 
-/* --------------------------------------------------------
-   Início Faixa De Projetos
-   -------------------------------------------------------- */
+
+/* -------------------------------------------------------- */
+/*                     Fim Área Inicial                     */
+/*--------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------- */
+/*                  Início Faixa De Projetos                */
+/* -------------------------------------------------------- */
+
 
 .faixa-projetos-fundo {
     background-color: #000000;
@@ -440,6 +460,8 @@ svg {
 /* -------------------------------------------------------- */
 /*                  Fim Faixa De Projetos                   */
 /*--------------------------------------------------------- */
+
+
 
 /* -------------------------------------------------------- */
 /*               Início Apresentação Projeto                */
@@ -703,7 +725,18 @@ svg {
     background-color: #693ec0;
 }
 
-/* Sobre Nós */
+
+/* -------------------------------------------------------- */
+/*                 Fim Apresentação Projeto                 */
+/*--------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------- */
+/*                      Início Sobre Nós                    */
+/*--------------------------------------------------------- */
+
+
 /* Ajuste Do Container De Membros: Permitir Que Itens Quebrem Em Linhas E Centralizar */
 #img_members {
     /* Mantém Layout Flexível E Centrado */
@@ -725,6 +758,7 @@ svg {
     /* Usar Somente A Largura Como Controle E Forçar Proporção 1:1 */
     width: clamp(100px, 22vw, 250px);
     aspect-ratio: 1 / 1;
+
     /* Garante Sempre Caixa Quadrada */
     object-fit: cover;
     /* Preenche A Caixa Sem Distorcer A Imagem */
@@ -765,9 +799,17 @@ svg {
     outline: 3px solid rgba(132, 79, 255, 0.2);
 }
 
-/* ---------------------------------------------------------
-   Responsividade
-   --------------------------------------------------------- */
+
+/* -------------------------------------------------------- */
+/*                      Fim Sobre Nós                       */
+/*--------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------- */
+/*           Início Responsividade 1 (A Verificar)           */
+/* --------------------------------------------------------- */
+
 
 /* Tablets E Telas Médias (<= 991px) */
 @media (max-width: 991px) {
@@ -843,6 +885,7 @@ svg {
 }
 
 /* Celular (<= 428px) */
+
 /* Aqui Mantemos O Comportamento Que Você Já Aprovou: O Perfil Fica Em Fluxo (Relative). */
 @media (max-width: 428px) {
 
@@ -1045,23 +1088,16 @@ svg {
     }
 }
 
-/* Fim Responsividade  */
+/* --------------------------------------------------------- */
+/*              Fim Responsividade 1 (A Verificar)           */
+/* --------------------------------------------------------- */
 
-/* ---------------------------------------------------------
-   Regras Finais
-   --------------------------------------------------------- */
 
-/* Pequenas Melhorias Visuais Globais */
-body {
-    background: #fff;
-    color: #111;
-    font-family: 'Open sans light', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-}
 
-/* Espaçamento Do Footer */
-footer {
-    margin-top: 3rem;
-}
+/* --------------------------------------------------------- */
+/*             Início Responsividade 2 (A Verificar)         */
+/* --------------------------------------------------------- */
+
 
 /* ---------------------------------------------------------
    Esconde A Imagem De Fundo Entre 400px E 1200px
@@ -1211,4 +1247,28 @@ footer {
         margin: 0 20px;
         font-size: 18px;
     }
+}
+
+
+/* --------------------------------------------------------- */
+/*              Fim Responsividade 2 (A Verificar)           */
+/* --------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------- */
+/*                       Regras Finais                       */
+/* --------------------------------------------------------- */
+
+
+/* Pequenas Melhorias Visuais Globais */
+body {
+    background: #fff;
+    color: #111;
+    font-family: 'Open sans light', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Espaçamento Do Footer */
+footer {
+    margin-top: 3rem;
 }
