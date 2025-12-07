@@ -737,6 +737,11 @@ svg {
 /*--------------------------------------------------------- */
 
 
+#img-sobre-nos {
+    height: clamp(70px, 100px, 132px);
+    width: clamp(70px, 100px, 132px);
+}
+
 /* Ajuste Do Container De Membros: Permitir Que Itens Quebrem Em Linhas E Centralizar */
 #img_members {
     /* Mantém Layout Flexível E Centrado */
@@ -1041,7 +1046,7 @@ svg {
 /* Tablets (Entre 429px E 991px) - Mostra A Imagem Com Background Fallback */
 @media (min-width: 429px) and (max-width: 991px) {
     .section_inicial {
-        background-image: url('../img/imagem_inicial.png');
+        /* background-image: url('../img/imagem_inicial.png');
         background-repeat: no-repeat;
         background-size: contain;
         /* Garante Que A Imagem Inteira Apareça */
@@ -1127,12 +1132,12 @@ svg {
 @media (max-width: 1000px) {
 
     /* Esconde A Imagem Hero Que É Elemento <img> */
-    .hero-img {
+    /* .hero-img {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
         pointer-events: none !important;
-    }
+    } */
 
     /* Remove Qualquer Background-Image Aplicada À Section Inicial */
     .section_inicial {
@@ -1177,16 +1182,12 @@ svg {
 @media (max-width: 428px) {
 
     .faixa-projetos-fundo {
-        background-color: #000000;
-        max-width: 100%;
-        height: auto;
+        /* Adicionando padding no fundo da faixa de projetos */
         padding: 30px 0;
     }
 
     .faixa-de-projetos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        /* Retirando padding da faixa de projetos */
         padding: 0px;
     }
 
@@ -1225,14 +1226,11 @@ svg {
         object-fit: cover !important;
     }
 
+
+    /* Mudando tamanho das divs dos detalhes do projeto */
     .detalhes-projetos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
         height: 100%;
         margin: 20px 0;
-        background-color: transparent;
     }
 
 
