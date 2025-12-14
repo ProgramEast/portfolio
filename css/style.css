@@ -390,7 +390,7 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3.5rem 0px 2rem 0px;
+    padding: 1rem 0px 2rem 0px;
 }
 
 .destaque-projetos {
@@ -828,6 +828,11 @@ svg {
         padding: 10px 0;
     }
 
+    .detalhes-projetos {
+        height: auto;
+        margin: 30px 0;
+    }
+
     .div-1-card,
     .itens-card {
         width: 90%;
@@ -851,14 +856,13 @@ svg {
     /* Quando Em Tablet, O Card Volta A Ser Relativo E Empilha */
     .div-cards {
         position: relative;
-        top: auto;
         left: auto;
         bottom: auto;
         flex: 0 0 auto;
         max-width: 100%;
         width: 100%;
         margin: 0 auto;
-        padding: 1.2rem var(--page-horizontal-padding);
+        
         background: rgba(255, 255, 255, 0.94);
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
@@ -1063,7 +1067,6 @@ svg {
     .div-cards {
         min-height: auto;
         height: auto;
-        padding: 0 var(--page-horizontal-padding);
         flex: 0 0 auto;
         max-width: 100%;
         width: 100%;
@@ -1112,9 +1115,9 @@ svg {
 
     /* Forçar Esconder A Imagem Hero */
     .hero-img {
-        display: none !important;
+        /* display: none !important;
         visibility: hidden !important;
-        opacity: 0 !important;
+        opacity: 0 !important; */
         pointer-events: none !important;
     }
 
