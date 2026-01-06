@@ -2,45 +2,42 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Program East</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- arquivo style css-->
-    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- arquivo css do bootstrap -->
+
+    <!-- Seu CSS -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Arquivo style css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Arquivo css do bootstrap (local) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- icones do bootstrap -->
-     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/icone_programEast.png">
 </head>
 
 <body class="bg-white">
 
-
-    <!-- INICIO MENU -->
-
-    <nav class="navbar navbar-expand-md bg-black position-static px-xs-3 px-md-5 h-auto" id="menu">
+    <!-- Inicio Menu -->
+    <nav class="menu navbar navbar-expand-md fixed-top bg-black px-md-3 px-md-5 h-auto" id="menu" style="height:60px;">
         <div class="container-fluid d-flex justify-content-between">
+            <!-- Logo -->
+            <div>
+                <a class="navbar-brand text-white d-flex justify-content-center align-items-center" href="#">
+                    <p class="sunborn fs-3 my-auto">Program</p>&nbsp;<p class="bree-serif fs-4 my-auto"> EAST</p>
+                </a>
+            </div>
 
-            <!-- logo -->
-            <a class="navbar-brand text-white d-flex justify-content-center align-items-center" href="#">
-                <p class="sunborn fs-3 my-auto"> Program</p>&nbsp;<p class="bree-serif fs-4 my-auto"> EAST</p>
-            </a>
-
-            <!-- dropdown responsivo -->
+            <!-- Dropdown Responsivo -->
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#dropdown-menu" aria-controls="dropdown-menu" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- opções menu -->
+            <!-- Opções Menu -->
             <div class="collapse navbar-collapse" id="dropdown-menu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-auto">
-                        <a href="#sobre-nos"
-                            class="nav-link text-white link-offset-2 link-underline link-underline-opacity-0 mx-3">Quem
-                            Somos</a>
+                        <a href="#sobre-nos" class="nav-link text-white mx-3">Quem Somos</a>
                     </li>
-
                     <li class="nav-item mx-auto">
                         <a href="#projetos" class="mx-3">
                             <button type="button" class="btn btn-outline-light rounded-5">Projetos <i
@@ -52,286 +49,162 @@
             </div>
         </div>
     </nav>
+    <!-- Fim Menu -->
 
-    <!-- FIM MENU -->
+    <!-- Inicio Área Inicial -->
+    <section class="section_inicial">
+        <!-- Imagem Como Elemento Para Melhor Controle De Crop/Posicionamento -->
+        <img class="hero-img" src="img/imagem_inicial.png" alt="Equipe Program East">
 
+        <div class="div-cards">
+            <div>
+                <h2 id="h2_part-inicial">PENSOU EM SITE?<br>CHAMA A<span id="span-h2-inicial"> PROGRAM EAST </span></h2>
+            </div>
 
+            <div class="div_part-p">
+                <p id="p_part-inicial">Desenvolvendo um código que transforma de maneira fácil, prática e profissional.
+                </p>
+            </div>
 
-    <!-- INICIO ÁREA INICIAL -->
-
-    <section class="area_inicial">
-        <div class="texto_ini">
-            <h2 class="titulo mb-0">a<span style="color:#3954a3;"> program east</span></h2>
-            <h2 class="titulo" id="h2-sub">desenvolve um código que transforma de maneira fácil, prática e profissional.
-            </h2>
-        </div>
-        <!-- SEPARAÇÃO ENTRE TEXTO E IMAGEM -->
-        <div class="imagem_principal">
-            <img src="img/imagem_principal.jpg" alt="Imagem Principal" class="img-fluid w-100 h-100">
+            <div>
+                <a class="no-underline" href="https://api.whatsapp.com/send?phone=...&source_surface=30">
+                    <button class="div_part-button">
+                        <img id="img-part-inicial" src="img/telefone_icon.png" alt="telefone_icon">
+                        <p>ENTRE EM CONTATO</p>
+                    </button>
+                </a>
+            </div>
         </div>
     </section>
+    <!-- Fim Área Inicial -->
 
-    <!-- FIM ÁREA INICIAL -->
+    <!-- Faixa 1 -->
+    <section class="faixa-projetos-fundo">
+        <div class="faixa-textos" id="projetos">
+            <p>UM SITE OU SISTEMA DA SUA PRÓPRIA EMPRESA</p>
+            <p>DA FORMA QUE VOCÊ ESCOLHER !</p>
+        </div>
 
-
-
-    <!-- INICIO FAIXA 1 -->
-
-    <div class="container-fluid bg-black bg-gradient d-flex justify-content-center align-items-center"
-        style="height: 20vh;">
-        <h4 class="bree-serif text-white text-center">
-            UM SITE OU SISTEMA DA SUA PRÓPRIA EMPRESA! <br>
-            DA FORMA QUE VOCÊ ESCOLHER!
-        </h4>
-    </div>
-
-    <!-- FIM FAIXA 1 -->
-
-    <!-- SOBRE NÓS -->
-    <div class="container my-5" id="sobre-nos">
-        <div class="row align-items-center">
-
-            <!-- TEXTO -->
-            <div class="col-12 col-md-6 order-1 order-md-1 mb-4 mb-md-0">
-                <h1 class="sunborn mb-5 text-center text-md-start">SOBRE NÓS</h1>
-
-                <!-- Visão -->
-                <div class="d-flex mb-5 align-items-start">
-                    <div class="me-3">
-                        <h1>01</h1>
+        <section class="faixa-de-projetos ">
+            <div class="destaque-projetos">
+                <div class="manipular-icons">
+                    <div class="icon-proj" data-project="stayfit"><img src="img/icon_stayFit.svg" alt="Stay Fit"></div>
+                    <div class="icon-proj" data-project="adm"><img src="img/ADM.svg" alt="ADM"></div>
+                    <div class="icon-proj" data-project="chuleta"><img src="img/chuleta_icon.svg" alt="Chuleta"></div>
+                    <div class="icon-proj" data-project="mente"><img src="img/MENTE_RENOVADA.svg" alt="Mente Renovada">
                     </div>
-                    <div>
-                        <h4 class="bree-serif">Visão</h4>
-                        <p class="open-sans-light">
-                            Somos uma empresa de Desenvolvimento Web e Desktop que busca desenvolver sites de acordo com
-                            a requisição dos clientes.
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- Fim Faixa 1 -->
+
+    <!-- Explicação Projetos -->
+    <section class="section-proj pt-5" id="proj-stay-web">
+        <h2 class="h2-card-1">STAY FIT WEB</h2>
+
+        <div class="detalhes-projetos">
+            <div class="display-projetos">
+
+                <!-- Cartão -->
+                <div class="div-1-card" data-project="stayfit" data-active="true">
+
+                    <div id="foto-capa">
+
+                        <div id="foto-perfil-proj">
+                            <img id="img-proj" src="img/icon_stayFit.svg" alt="ícone do projeto">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Itens / Slides -->
+                <div class="itens-card">
+                    <div class="slides-itens">
+                        <div id="carrosel-projeto" class="carousel slide" data-bs-ride="carousel"
+                            aria-label="Carrossel de Projetos">
+                            <div class="carousel-indicators"></div>
+
+                            <div class="carousel-inner"></div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carrosel-projeto"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carrosel-projeto"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="desc-itens" id="desc-itens-text">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusantium aspernatur
+                            ut quaerat dignissimos, nulla molestias ab autem id in, ipsam harum dolor. Quae, in
+                            eligendi totam
+                            aliquam harum eum!
                         </p>
                     </div>
                 </div>
 
-                <!-- Solução -->
-                <div class="d-flex align-items-start">
-                    <div class="me-3">
-                        <h1>02</h1>
-                    </div>
-                    <div>
-                        <h4 class="bree-serif">Solução</h4>
-                        <p class="open-sans-light">
-                            Através de soluções sob medida, com integridade, comprometimento e disponibilidade,
-                            desenvolvemos o melhor produto à você.
-                        </p>
-                    </div>
-                </div>
             </div>
-
-            <!-- IMAGEM DO PC-->
-            <div class="col-12 col-md-6 order-2 order-md-2 text-center">
-                <img src="img/PE.png" alt="Computador com logo da Program East" class="img-fluid"
-                    style="max-width: 100%; height: auto;">
-            </div>
-
         </div>
+    </section>
+    <!-- Fim Explicação Projetos -->
+
+    <!-- Sobre Nós -->
+    <div class="container-sobre-nos container" id="sobre-nos">
+        <div class="d-flex justify-content-between align-items-center mx-5">
+            <h1 class="sunborn">SOBRE NÓS</h1>
+            <img src="img/img_program_east.png" id="img-sobre-nos" alt="Program East">
+        </div>
+
+        <div class="d-flex justify-content-evenly align-items-center pb-5 pt-5" id="img_members">
+            <img src="img/Img_porfolio_nicolas.jpg" class="img_profile rounded-circle" alt="...">
+            <img src="img/Img_portfolio_gabriel.jpg" class="img_profile rounded-circle" alt="...">
+            <img src="img/Img_portfolio_davi.jpg" class="img_profile rounded-circle" alt="...">
+        </div>
+
+        <p class="texto-sobre-nos text-center bree-serif">Somos uma iniciativa de 3 devs que desenvolve sites e
+            softwares funcionais, eficientes e que satisfaçam as expectativas de nossos clientes e sempre tentando
+            inovar em prol
+            da usabilidade e facilidade de utilização!<br><br>
+            Se ficou curioso(a) com nossos projetos ou com a ideia de um site ou sistema somente seu, <br>venha dar uma
+            olhada no nosso trabalho!</p>
     </div>
+    <!-- Final Sobre Nós -->
 
-
-
-
-    <!-- PROJETOS -->
-
-    <!-- Site Stayfit -->
-    <div class="container my-5 py-5" id="projetos">
-
-        <!-- título do projeto -->
-        <div class="row mb-5">
-            <div class="card text-bg-info" style="background-color: #844feb !important; height: 100px;">
-                <h2 class="bree-serif text-black text-center my-auto text-white">Projetos</h2>
-            </div>
-        </div>
-
-        <div class="container d-flex align-items-center justify-content-center flex-wrap flex-lg-nowrap mb-3">
-
-            <!-- card -->
-            <div class="section-card-one me-md-4 mb-4">
-                <div class="div-card-one">
-                    <div class="background-color-one">
-                        <div class="title-card-one">
-                            <h2 class="h2-card-one text-white">Site de Academia</h2>
-                        </div>
-                        <div class="div-test-card">
-                            <img class="img-card" src="img/stayfit_logo2.png" alt="stay fit logo"></img>
-                        </div>
-                        <div class="button-card-one">
-                            <!-- <button class="botao-card-one h3 text-white">Confira!</button> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Imagem e descrição do projeto -->
-            <div class="col-md-8 ms-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="img/web_stayfit.png" class="card-img-top img-fluid" alt="screenshot do site">
-                    <div class="card-body bg-light text-center">
-                        <p class="open-sans-medium fs-3">Site de academia com plataforma integrada para interação
-                            entre
-                            alunos,
-                            professores e administradores, oferecendo soluções completas para login, matrícula e
-                            pagamento.</p>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-
-    <!-- Desktop Stay Fit -->
-
-    <div class="container my-5 py-5">
-
-        <!-- título do projeto -->
-        <!-- <div class="mb-5">
-            <div class="card text-bg-info" style="height: 100px;">
-                <h2 class="bree-serif text-center my-auto text-white">Sistema Administrativo de Academia</h2>
-            </div>
-        </div> -->
-
-        <div class="container d-flex align-items-center justify-content-center flex-wrap flex-lg-nowrap mb-3">
-
-            <!-- card -->
-            <div class="section-card-one me-md-4 mb-4">
-                <div class="div-card-one">
-                    <div class="background-color-one">
-                        <div class="title-card-one bg-info">
-                            <h2 class="h2-card-one text-black">Sistema Academia</h2>
-                        </div>
-                        <div class="div-test-card">
-                            <img class="img-card" src="img/stayfit_logo2.png" alt="stay fit logo"></img>
-                        </div>
-                        <div class="button-card-one">
-                            <!-- <button class="botao-card-one h3 bg-info text-white">Confira!</button> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Imagem e descrição do projeto -->
-            <div class="col-md-8 ms-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="img/desk_stayfit.png" class="card-img-top img-fluid" alt="screenshot do site">
-                    <div class="card-body bg-light">
-                        <p class="card-text fs-5 text-center open-sans-medium fs-3">
-                            Sistema desktop de academia onde centraliza as principais necessidades da academia,
-                            como gerenciamento de alunos, funcionários, planos da academia e matrículas dos alunos.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Chuleta -->
-
-    <div class="container my-5 py-5">
-
-        <!-- título do projeto -->
-        <!-- <div class="mb-5">
-            <div class="card text-bg-warning" style="height: 100px;">
-                <h2 class="bree-serif text-center my-auto text-white">Site de Churrascaria</h2>
-            </div>
-        </div> -->
-
-        <div class="container d-flex align-items-center justify-content-center flex-wrap flex-lg-nowrap">
-
-            <!-- card -->
-            <div class="section-card-one me-md-4 mb-4">
-                <div class="div-card-one">
-                    <div class="background-color-one">
-                        <div class="title-card-one bg-warning">
-                            <h2 class="h2-card-one text-black">Site de Churrascaria</h2>
-                        </div>
-                        <div class="div-test-card">
-                            <img class="img-card" src="img/logo-chuleta (1).jpg" alt="stay fit logo"></img>
-                        </div>
-                        <div class="button-card-one">
-                            <!-- <button class="botao-card-one h3 bg-warning text-white">Confira!</button> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Imagem e descrição do projeto -->
-            <div class="col-md-8 ms-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="img/web_chuleta.png" class="card-img-top img-fluid" alt="screenshot do site">
-                    <div class="card-body bg-light">
-                        <p class="card-text fs-5 text-center open-sans-medium fs-3">
-                            Site de Churrascaria, cujo foco é a exposição da marca e itens
-                            a venda, com o serviço de agendamento de mesas com cadastro de clientes, administradores e login.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- FIM PROJETOS -->
-
-
-
-    <!-- INICIO TEXTO FINAL -->
-
-    <div class="container my-5">
-        <p class="bree-serif fs-4 text-center">Somos uma iniciativa criada para o desenvolvimento de softwares funcionais, eficientes e
-            que satisfaçam as expectativas de nossos clientes e sempre tentando inovar em prol da usabilidade e facilidade da utilização!
-            Se ficou curioso(a) com nossos projetos ou com a ideia de um site ou sistema somente seu, venha dar uma olhada
-            no nosso trabalho!</p>
-        <div class="w-100 d-flex justify-content-around align-items-end mt-5">
-            <img src="img/seta.png" height="100px">
-            <a class="btn btn-lg btn-dark bree-serif" id="ver-mais">ver mais</a>
-            <img src="img/seta-2.png" height="100px">
-        </div>
-    </div>
-
-    <!-- FIM TEXTO FINAL -->
-
-
-
-    <!-- INÍCIO RODAPÉ -->
+    <!-- Rodapé -->
     <footer class="container-fluid bg-black text-white py-4">
         <div class="row align-items-center px-4">
-            <!-- Logo -->
             <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
                 <a href="#" class="navbar-brand d-flex align-items-center text-white">
                     <p class="sunborn fs-3 my-auto"> Program</p>&nbsp;<p class="bree-serif fs-4 my-auto"> EAST</p>
                 </a>
             </div>
 
-            <!-- Contatos -->
-            <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center">
-                <p class="sunborn fs-6 mb-0 me-2">Contatos:</p>
-                <a href="https://instagram.com/program_east/" target="_blank">
-                    <i class="bi bi-instagram mx-1 icones fs-5"></i>
-                </a>
-                <a href="https://github.com/ProgramEast" target="_blank">
-                    <i class="bi bi-github mx-1 text-white icones fs-5"></i>
-                </a>
-                <a href="mailto:programeast0206@gmail.com">
-                    <i class="bi bi-envelope mx-1 text-white icones fs-5"></i>
-                </a>
+            <div
+                class="col-12 col-md-6 d-flex gap-1 justify-content-center justify-content-md-end align-items-center pe-5">
+                <p class="sunborn fs-6 mb-0 me-3">Contatos:</p>
+                <a class="icones-rodape mx-1" href="https://instagram.com/program_east/" target="_blank"><i
+                        class="bi bi-instagram fs-4"></i></a>
+                <a class="icones-rodape mx-1" href="https://www.facebook.com/profile.php?id=61581230303093"
+                    target="_blank"><i class="bi bi-facebook fs-4"></i></a>
+                <a class="icones-rodape mx-1" href="https://github.com/ProgramEast" target="_blank"><i
+                        class="bi bi-github text-white fs-4"></i></a>
+                <a class="icones-rodape mx-1" href="mailto:programeast0206@gmail.com"><i
+                        class="bi bi-envelope text-white fs-4"></i></a>
             </div>
         </div>
     </footer>
-    <!-- FIM RODAPÉ -->
+    <!-- Fim Rodapé -->
 
-
+    <!-- Scripts: Carregue O Bootstrap Antes Do Seu js.js -->
+    <script src="js/bootstrap.min.js"></script> <!-- Seu bootstrap local (ou troque pelo bundle se preferir) -->
+    <script src="js/js.js"></script> <!-- Seu script (corrigido abaixo) -->
 </body>
-
-<script src="js/bootstrap.min.js"></script> <!-- arquivo js do bootstrap -->
 
 </html>

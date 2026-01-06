@@ -1,122 +1,60 @@
+/* ================================ */
+/*      Variáveis Globais / Tema    */
+/* ================================ */
+
+:root {
+    /* Ajuste Aqui O Raio Das Bordas Do Card/Carousel */
+    --card-radius: 20px;
+
+    /* Variáveis Globais (Cores Dinâmicas + Tamanho Do Perfil) */
+    --cover-bg: #cfff7a;
+    /* Cor Padrão Topo */
+    --body-bg: #c4c4c4;
+    /* Cor Padrão Corpo */
+
+    /* Variáveis Novas Para Controlar As Duas Áreas Separadas */
+    --accent-logo: #eb82f5;
+    /* Cor Para A Parte Abaixo Da Logo (Fallback Rosa Escuro) */
+    --accent-desc: #f7ecec;
+    /* Cor Para A Parte De Descrição Abaixo Do Carousel (Fallback Rosa Claro) */
+
+    /* Tamanho Do Círculo Grande - Agora Responsivo (Clamp) */
+    --profile-size: clamp(84px, 18vw, 30vh);
+
+    /* Cor Principal (Botões/"Quadrados") */
+    --accent-color: #844feb;
+
+    /* Tipografia Responsiva (Valores Base) */
+    --h1-size: clamp(1.6rem, 4.8vw, 3rem);
+    --h2-card-size: clamp(3rem, 10vw, 15vh);
+    --body-font-size: clamp(14px, 2.2vw, 20px);
+
+    /* Altura Padrão Do Nav Para Evitar Sobreposição Do Conteúdo */
+    --nav-height: 60px;
+
+    /* Padding Horizontal Da Página (Responsivo) */
+    --page-horizontal-padding: 2vw;
+}
+
+/* Reset Básico */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* TABLETS (≤ 991 px) */
-@media (max-width: 991px) {
-    .area_inicial {
-        gap: 1rem;
-        /* menos espaço entre colunas */
-        height: auto;
-
-    }
-
-    .texto_ini {
-        padding-inline: 1.5rem;
-        /* deixa padding só no lado esquerdo do texto */
-
-    }
+/* Evitar Overflow Horizontal Que Pode Causar "Extrapolar" Em Celulares */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
 }
 
-/* CELULARES (≤ 767 px) */
-@media (max-width: 767px) {
-    .area_inicial {
-        grid-template-columns: 1fr;
-        /*coloca tudo em uma só coluna*/
-        grid-template-rows: auto auto;
-        /*tera duas linhas com a altura automatica*/
-        height: auto;
-        /*conteiner cresce junto do conteudo*/
-        gap: 2rem;
-        /*adiciona espaço dentre os itens*/
 
-    }
+/* ---------------------------------------- */
+/*                 Fontes                   */
+/* ---------------------------------------- */
 
-    .texto_ini {
-        align-items: flex-start;
-        /*alinha o conteudo para esquerda*/
-        padding: 0;
-        /*zera o padding*/
-        padding-inline: 1rem;
-        /*adiciona padding nas margens laterais*/
-    }
-
-    .imagem_principal {
-        overflow: hidden;
-        /*corta as partes da imagem que ultrapasse a area visivel*/
-        height: 50vh;
-        /*altura da imagem em 50% da altura da janela*/
-    }
-
-    .imagem_principal img {
-        width: 100%;
-        height: 100%;
-        /*a imagem preenche totalmente o contêiner*/
-        object-fit: cover;
-        /*A imagem fica ajustada no contêiner sem distorção e corta se preciso*/
-        transform: scale(1.05);
-        /*zoom de uns 5% na imagem*/
-        transform-origin: left center;
-        /*o zoom foca no lado esquerdo da imagem*/
-        transition: transform 0.4s ease-in-out;
-        /*adiciona uma suavidade no zoom*/
-    }
-
-
-    .h2 {
-        font-size: clamp(1.125rem, 4vw, 1.5rem);
-        /*Define um tamanho de fonte que:
-           * nunca será menor que 1.125rem
-           * cresce com a tela (até 4vw)
-           * mas nunca passa de 1.5rem
-        */
-    }
-
-    #menu {
-        height: 12vh;
-        /*Isso deixa o menu visivelmente sem ocupar muito espaço*/
-    }
-}
-
-/* CELULARES COM LARGURA MENOR (≤ 412 px) */
-@media (max-width: 500px) {
-    .area_inicial {
-        grid-template-columns: 1fr;
-        /*coloca tudo em uma só coluna*/
-        grid-template-rows: auto auto;
-        /*tera duas linhas com a altura automatica*/
-        height: auto;
-        /*conteiner cresce junto do conteudo*/
-        gap: 1rem;
-        /*adiciona espaço dentre os itens*/
-
-    }
-
-    .texto_ini {
-        text-transform: uppercase;
-        align-items: start;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-inline: 2rem;
-        /*adiciona padding nas margens laterais*/
-    }
-
-    .imagem_principal {}
-
-    .imagem_principal img {}
-
-    #menu {
-        height: 12vh;
-        /*Isso deixa o menu visivelmente sem ocupar muito espaço*/
-    }
-
-    .titulo {
-        font-size: clamp(1.125rem, 5vw, 2rem);
-    }
-}
-
-/* FONTES */
 
 @font-face {
     font-family: "Sunborn";
@@ -128,6 +66,7 @@
     src: url(../fonts/BreeSerif-Regular.ttf);
 }
 
+/* Caso Tenha O OpenSans Light/Medium, Ajuste O Caminho Dos Arquivos Locais */
 @font-face {
     font-family: "Open sans medium";
     src: url(../fonts/static/OpenSans-Medium.ttf);
@@ -135,11 +74,14 @@
 
 @font-face {
     font-family: "Open sans light";
-    src: url(../fonts/static/OpenSans-Medium.ttf);
+    src: url(../fonts/static/OpenSans-Light.ttf);
 }
+
+/* Classes de Fontes */
 
 .sunborn {
     font-family: 'Sunborn';
+    margin-right: 10px;
 }
 
 .bree-serif {
@@ -155,78 +97,591 @@
 }
 
 
-/* Icones do rodapé */
+/* ---------------------------------------- */
+/*             Ícones Do Rodapé             */
+/* ---------------------------------------- */
 
-.icones {
-    font-size: 30px;
+
+.icones-rodape:hover {
+    transition: all 0.5s ease;
+    transform: scale(1.07);
+}
+
+.icones-rodape:active {
+    transform: scale(0.97);
 }
 
 .bi-instagram {
     color: transparent;
     background-clip: text;
-    background-image: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+    -webkit-background-clip: text;
+    background-image: linear-gradient(135deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
 }
 
-.icones:hover {
-    zoom: 150%;
-    /* transform: scale(2.2); */
-    transition: 0.5s;
+.bi-facebook {
+    color: #1877F2;
 }
 
-.area_inicial {
-    height: 600px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    justify-content: center;
+
+/* ---------------------------------------- */
+/*               Imagens / SVGs             */
+/* ---------------------------------------- */
+
+
+/* Garante Que Imagens E SVGs Escalem Com O Container */
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.imagem_principal {
-    background-color: #844feb;
+/* Força SVGs E Imgs .svg A Manterem Proporção E Serem Redimensionáveis */
+img[src$=".svg"],
+svg {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------- */
+/*               Área Inicial               */
+/* ---------------------------------------- */
+
+
+/* Seção: Usamos Uma Imagem Interna Para Controlar Crop/Posicionamento */
+.section_inicial {
+    position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform-origin: left center;
-    transition: transform 0.4s ease-in-out;
+    /* Garante Que A Área Inicial Não Fique Debaixo Do Nav Fixo */
+    min-height: calc(100vh - var(--nav-height));
+    margin-top: 0;
+    padding: 0;
+    /* Espaço No Topo Para Não Ficar Escondido Pelo Nav */
+    padding-top: var(--nav-height);
+    display: block;
+    overflow: hidden;
+    background-color: #fff;
+    /* Fallback */
 }
 
-.texto_ini {
-    text-transform: uppercase;
-    align-items: start;
+/* Imagem Hero Como Elemento: Ocupa A Parte Direita Da Seção */
+.hero-img {
+    position: absolute;
+    right: 0;
+    /* Mantém A Imagem Abaixo Do Nav Fixo */
+    top: var(--nav-height);
+    /* Usa Altura Descontando O Nav Para Evitar Corte */
+    height: calc(100% - var(--nav-height));
+    width: 50%;
+    /* Ajuste: Entre 45% E 60% Conforme Preferir */
+    object-fit: cover;
+    /* Escala Para Cobrir Área Sem Distorcer */
+    /* Foco: Ajustado Para Não CortAR As TESTAS — Mexa Aqui Se Quiser Outro Corte */
+    object-position: 72% 20%;
+    z-index: 0;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+/* Overlay Sobre A Imagem Para Legibilidade Do Texto (Sobre A Img, Abaixo Do Card) */
+.section_inicial::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    /* Faixa Esquerda Mais Opaca E Direita Translúcida Para Ver As Pessoas */
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.98) 0%,
+            rgba(255, 255, 255, 0.9) 15%,
+            rgba(255, 255, 255, 0.6) 35%,
+            rgba(255, 255, 255, 0.0) 60%);
+}
+
+/* Container De Conteúdo (Content Box) - Frosted Card Absoluto Sobre O Overlay */
+.div-cards {
+    position: absolute;
+    /* Posiciona Em Relação À Section_inicial */
+    top: var(--nav-height);
+    /* Começa Abaixo Do Nav Fixo */
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    /* Acima Do ::Before E Da .Hero-img */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-inline: 2rem;
-    /*adiciona padding nas margens laterais*/
+    align-items: flex-start;
+
+    /* Largura Do Card: Ajustada Para Não Tocar A Imagem À Direita */
+    width: 44%;
+    max-width: 44%;
+
+    /* Espaçamento Interno */
+    padding: clamp(2rem, 4vw, 6rem);
+
+    /* Aparência "Frosted" */
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+
+    margin: 0;
+    gap: clamp(1rem, 3vw, 3rem);
 }
 
-.titulo {
-    font-family: 'Bree Serif';
-    font-size: clamp(1.2rem, 4vw, 2rem);
-    text-transform: uppercase;
+/* Contorno Sutil Interno */
+.div-cards::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-#menu {
-    height: 10dvh;
+/* Título */
+#h2_part-inicial {
+    font-size: var(--h1-size);
+    font-family: 'Bree serif';
+    padding: 0 0 0 0;
+    cursor: context-menu;
+    line-height: 1.05;
+    word-break: keep-all;
+    /* Ajuda A Evitar Quebra Palavra-A-Palavra Em Português */
+    color: #111;
+    max-width: 60ch;
 }
 
-/*card da stay fit !!!*/
-/* ---------------------------------------------------------------- */
+/* Texto Do Título - Program East */
+#span-h2-inicial {
+    color: #0866ff;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+#span-h2-inicial:hover {
+    transition: all 0.5s ease;
+    transform: translateX(6px) scale(1.03);
+}
+
+#span-h2-inicial:active {
+    background-color: #0866ff;
+    color: #ffffff;
+}
+
+/* Ajustei Esse Max-Width Para Não Criar Colunas Estreitas Em Mobile */
+.div_part-p {
+    max-width: 520px;
+    padding-left: 0;
+    cursor: context-menu;
+}
+
+#p_part-inicial {
+    font-size: var(--body-font-size);
+    font-family: 'Bree serif';
+    line-height: 1.5;
+    color: #222;
+}
+
+/* Botão Contato */
+/* Tornar Botão Inline-Flex E Evitar Que Extrapole O Viewport */
+.div_part-button:hover {
+    transition: all 0.5s;
+    transform: scale(1.06);
+    box-shadow: 0 0 20px #95a5ff;
+    background-color: #040e4b;
+}
+
+.div_part-button:active {
+    background-color: #3851db;
+}
+
+.div_part-button {
+    margin: 1.6rem 0 0 0;
+    padding: 0.35rem 1rem;
+    display: inline-flex;
+    justify-content: center;
+    gap: 0.6rem;
+    align-items: center;
+    font-size: 1.05rem;
+    font-family: 'Bree serif';
+    border-radius: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: 0;
+    overflow: hidden;
+}
+
+#img-part-inicial {
+    width: 2.2rem;
+    height: 2.2rem;
+    object-fit: contain;
+}
+
+
+/* -------------------------------------------------------- */
+/*                     Fim Área Inicial                     */
+/*--------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------- */
+/*                  Início Faixa De Projetos                */
+/* -------------------------------------------------------- */
+
+
+.faixa-projetos-fundo {
+    background-color: #000000;
+    max-width: 100%;
+    height: auto;
+}
+
+.faixa-textos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Legibilidade / Alinhamento */
+    text-align: center;
+    /* Centraliza O Texto Em Cada Linha */
+    line-height: 1.25;
+    /* Espaçamento Entre Linhas Para Evitar Sobreposição */
+    word-break: normal;
+    hyphens: auto;
+
+    /* Tipografia */
+    font-family: 'Bree serif', serif;
+    font-size: clamp(1rem, 3.2vw, 1.6rem);
+    /* Ligeiramente Menor E Mais Consistente */
+    color: #ffffff;
+
+    /* Espaçamento E Limite De Largura Para Evitar Que O Texto "Grude" Nas Bordas */
+    padding: 1.25rem 1rem;
+    /* Padding Vertical + Horizontal */
+    max-width: 90ch;
+    /* Limita Largura De Linha Para Melhor Leitura */
+    margin: 0 auto;
+    /* Centraliza O Bloco Dentro Do Container */
+
+    /* Contraste Em Cima De Imagens/Overlays */
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    /* Leve Sombra Para Aumentar Contraste */
+}
+
+/* Ajustes Nos Parágrafos (Se Você Usar <p> Dentro Da Faixa) */
+.faixa-textos p {
+    margin: .4rem 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.faixa-de-projetos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0px 2rem 0px;
+}
+
+.destaque-projetos {
+    width: 90%;
+    background-color: #000000;
+    border-radius: 20px;
+    transition: all 0.5s;
+    margin: 0 auto;
+}
+
+.destaque-projetos:hover {
+    box-shadow: 0 0 20px 3px #ffffff80;
+    transition: all 0.5s;
+    width: 95%;
+}
+
+/* Manipular Icons: Evita Que Os Ícones Quebrem Em Múltiplas Linhas E Permite Scroll Em Mobile */
+.manipular-icons {
+    padding: 1.6vw;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ícone Do Projeto (Círculo). Agora Responsivo Com Clamp */
+.icon-proj {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: clamp(64px, 22vw, 150px);
+    height: clamp(64px, 22vw, 150px);
+    border-radius: 100%;
+    padding: 6px;
+    overflow: hidden;
+    min-width: 64px;
+}
+
+.icon-proj img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.icon-proj:active {
+    box-shadow: 0 0 60px #ffffff;
+}
+
+.icon-proj:hover {
+    transition: all 0.2s;
+    transform: scale(1.0);
+}
+
+/* Estilo Quando Um Ícone Está Selecionado */
+.icon-proj.selected {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    outline: 6px solid var(--accent-color);
+    transform: scale(1.03);
+}
+
+/* -------------------------------------------------------- */
+/*                  Fim Faixa De Projetos                   */
+/*--------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------- */
+/*               Início Apresentação Projeto                */
+/*--------------------------------------------------------- */
+
+.section-proj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.detalhes-projetos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100vh;
+    background-color: transparent;
+}
+
+.display-projetos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    height: 85%;
+    gap: 20px;
+}
+
+/* Tamanho Do Título Do Card */
+.h2-card-1 {
+    font-family: "Bree serif";
+    font-size: var(--h2-card-size);
+    line-height: 0.95;
+    margin: 0;
+}
+
+/* Parte 6 - Card */
+.div-1-card {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 95%;
+    position: relative;
+    /* Importante: Pai Posicionado Para Casos Que Usem Absolute */
+}
+
+/* Foto Capa (Topo Do Card) */
+#foto-capa {
+    width: 100%;
+    height: 80%;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    /* Usa A Cor Específica Para A Área Da Logo Com Fallback Para --cover-bg */
+    /* background: var(--accent-logo); */
+    background-color: var(--cover-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagem De Capa */
+/* #img-capa {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+} */
+
+/* Corpo Do Card */
+/* #corpo-card-proj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    padding: 0px 30px;
+    background-color: var(--body-bg);
+    border-radius: 0% 0% 10% 10%;
+} */
+
+/* #p_corpo-card-proj {
+    margin-top: 13vh;
+    max-width: 100%;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Bree serif";
+} */
+
+/* Foto Perfil Do Projeto: Agora Em Absolute Por Padrão Em Desktop */
+
+/* Em Mobile Será Substituído Por Position: Relative (No Media Query). */
+
+#foto-perfil-proj {
+    /* position: relative; */
+    /* Desktop: Absoluto Em Relação A .div-1-card */
+    /* top: calc(40% - (var(--profile-size) / 2)); */
+    /* Posiciona Verticalmente Sobre A Borda Da Capa */
+    /* left: 50%; */
+    /* Centraliza Horizontalmente Em Relação Ao Pai */
+    /* transform: translateX(-50%);  */
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--profile-size);
+    height: var(--profile-size);
+    /* padding: 10px; */
+    border-radius: 50%;
+    background-color: #ffffff;
+    overflow: visible;
+}
+
+/* Imagem Interna Do Perfil */
+#img-proj {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Parte 7 - Itens Ao Lado Do Card */
+.itens-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 55%;
+    height: 95%;
+}
+
+/* ------------------- Carrossel - Regras ------------------- */
+.slides-itens {
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+.slides-itens .carousel-inner,
+.slides-itens .carousel-item {
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+    overflow: hidden !important;
+    height: 100%;
+}
+
+#carrosel-projeto .carousel-item img,
+.slides-itens img,
+.carousel-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none !important;
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none !important;
+}
+
+/* Indicadores Do Carousel */
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.12);
+    border: none;
+    margin: 0 4px;
+}
+
+.carousel-indicators .active {
+    background-color: var(--accent-color);
+}
+
+/* ------------------- Fim Carrossel ------------------- */
+
+/* Caixa De Descrição - Usa Variável Específica Com Fallback */
+.desc-itens {
+    width: 100%;
+    height: 50%;
+    background: var(--accent-desc, var(--body-bg));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: "Bree serif";
+    font-size: var(--body-font-size);
+    text-align: center;
+}
+
+/* Cards Extras E Sobre Nós (Mantive Sua Estrutura) */
 .container-principal {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin: 50px 58px;
     gap: 80px;
-
 }
 
 .div-card-one {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .background-color-one {
@@ -244,22 +699,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #844feb;
-    border-radius: 10px 10px 0px 0px;
+    background-color: var(--accent-color);
+    border-radius: 10px 10px 0 0;
     width: 300px;
     height: 60px;
 }
 
 .h2-card-one {
-    margin: 0%;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .botao-card-one {
-    background-color: #844feb;
-    color: #ffffff;
+    background-color: var(--accent-color);
+    color: #fff;
     border: none;
     border-radius: 10px;
     width: 250px;
@@ -270,53 +725,551 @@
     background-color: #693ec0;
 }
 
-.button-card-one {
+
+/* -------------------------------------------------------- */
+/*                 Fim Apresentação Projeto                 */
+/*--------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------- */
+/*                      Início Sobre Nós                    */
+/*--------------------------------------------------------- */
+
+
+#img-sobre-nos {
+    height: clamp(70px, 100px, 132px);
+    width: clamp(70px, 100px, 132px);
+}
+
+/* Ajuste Do Container De Membros: Permitir Que Itens Quebrem Em Linhas E Centralizar */
+#img_members {
+    /* Mantém Layout Flexível E Centrado */
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 24px;
+
+    /* Permite Que Os Avatares Quebrem Linha Se O Espaço For Insuficiente,
+       Evitando Que Um Item Seja Forçado A Encolher Excessivamente */
+    flex-wrap: wrap;
+
+    /* Remove Altura Fixa (Se Existir) Para Evitar Cortes/Compressões */
+    height: auto;
 }
 
-.div-test-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Avatares: Forçar Caixa Quadrada, Não Encolher E Cobrir Conteúdo */
+.img_profile {
+    /* Usar Somente A Largura Como Controle E Forçar Proporção 1:1 */
+    width: clamp(100px, 22vw, 250px);
+    aspect-ratio: 1 / 1;
+
+    /* Garante Sempre Caixa Quadrada */
+    object-fit: cover;
+    /* Preenche A Caixa Sem Distorcer A Imagem */
+
+    /* Evita Que O Flex Encolha O Item Em Telas Apertadas */
+    flex: 0 0 auto;
+
+    /* Aparência */
+    display: block;
+    border-radius: 50%;
 }
 
-.img-card {
-    width: 250px;
-    height: 230px;
+/* Ajustes Finais Para Telas Pequenas (Evita Que O Avatar Fique Gigante) */
+@media (max-width: 428px) {
+    .img_profile {
+        width: 96px;
+        /* Tamanho Fixo Mais Previsível Em Celulares Pequeninos */
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Mantém Espaçamento Menor No Container */
+    #img_members {
+        gap: 12px;
+    }
 }
 
-.section-conteudo-direito {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 820px;
-    height: 400px;
+.container-sobre-nos {
+    margin: 80px 0;
 }
 
-.divisão-card {
-    width: 50px;
-    height: 150px;
+.texto-sobre-nos {
+    margin: 0 80px;
+    font-size: 22px;
 }
-.foto-card{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    
-    height: 25vh;
+
+/* Acessibilidade: Foco Em Ícones */
+.icon-proj:focus {
+    outline: 3px solid rgba(132, 79, 255, 0.2);
 }
-.descricao-card{
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+
+
+/* -------------------------------------------------------- */
+/*                      Fim Sobre Nós                       */
+/*--------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------- */
+/*           Início Responsividade 1 (A Verificar)           */
+/* --------------------------------------------------------- */
+
+
+/* Tablets E Telas Médias (<= 991px) */
+@media (max-width: 991px) {
+
+    /* Ajustar Layout Dos Projetos Para Coluna Em Tablets */
+    .display-projetos {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 10px 0;
+    }
+
+    .detalhes-projetos {
+        height: auto;
+        margin: 30px 0;
+    }
+
+    .div-1-card,
+    .itens-card {
+        width: 90%;
+        height: auto;
+    }
+
+    /* Ajustar Foto De Capa Para Altura Fixa Em Tablets */
+    #foto-capa {
+        height: 220px;
+        border-radius: var(--card-radius);
+        overflow: hidden;
+    }
+
+    /* #img-capa {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    } */
+
+    /* Quando Em Tablet, O Card Volta A Ser Relativo E Empilha */
+    .div-cards {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-radius: 8px;
+    }
+
+    #h2_part-inicial {
+        font-size: clamp(1.4rem, 6vw, 2.2rem);
+        max-width: 48ch;
+    }
+
+    .section_inicial {
+        min-height: 54vh;
+        padding: clamp(2rem, 4.5vw, 4rem) var(--page-horizontal-padding);
+        background-position: center right;
+        background-size: cover;
+        display: block;
+    }
+
+    .section_inicial::before {
+        /* Overlay Alternativo Para Tablets (Vertical) */
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.85) 35%, rgba(255, 255, 255, 0.0) 70%);
+    }
+
+    /* Esconder Imagem Hero Em Telas Médias, Usamos A Versão Com Background-Size:Contain Para Tablets */
+    .hero-img {
+        display: none;
+    }
 }
-.img-card-two{
-    width: 700px;
-    height: 300px;
-    
+
+/* Celular (<= 428px) */
+
+/* Aqui Mantemos O Comportamento Que Você Já Aprovou: O Perfil Fica Em Fluxo (Relative). */
+@media (max-width: 428px) {
+
+    /* Layout De Projetos Em Coluna E Ajustes De Espaçamento */
+    .display-projetos {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* gap: 22px;
+        padding: 20px 0; */
+    }
+
+    .div-1-card,
+    .itens-card {
+        width: 95%;
+    }
+
+    #foto-capa {
+        height: 160px;
+        border-radius: calc(var(--card-radius) * 0.8);
+    }
+
+    /* #img-capa {
+        object-fit: cover;
+    } */
+
+    /* Ajuste Do Perfil Em Mobile: Tornar Relativo Para Evitar Sobreposição Errada */
+    #foto-perfil-proj {
+        position: relative;
+        /* Mobile: Fica No Fluxo Para Centralizar Corretamente */
+        margin: 0 auto;
+        width: 110px;
+        height: 110px;
+        padding: 6px;
+        margin-top: -55px;
+        /* Metade Do Tamanho Para Manter Sobreposição */
+        transform: none;
+        /* Remover TranslateX Para Evitar Dupla Transformação */
+        left: auto;
+        top: auto;
+    }
+
+    #img-proj {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    /* #corpo-card-proj {
+        padding: 16px;
+        margin-top: -20px;
+    } */
+
+    .slides-itens {
+        height: 160px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .slides-itens img {
+        object-fit: cover;
+    }
+
+    .desc-itens {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .container-principal {
+        margin: 30px 16px;
+        gap: 20px;
+    }
+
+    /* Ajustes De Tipografia / Título Para Caber Melhor */
+    .h2-card-1 {
+        font-size: clamp(2rem, 10vw, 4.2rem);
+        text-align: left;
+    }
+
+    #h2_part-inicial {
+        font-size: clamp(1.15rem, 8vw, 1.6rem);
+        padding: 0;
+        line-height: 1.08;
+        max-width: 44ch;
+    }
+
+    .div_part-p {
+        max-width: 92%;
+        padding-left: 0;
+    }
+
+    /* Reduzir Gap Dos Ícones No Mobile Para Evitar Overflow Vertical */
+    .manipular-icons {
+        padding: 0.9rem;
+        gap: 0.8rem;
+    }
+
+    .icon-proj {
+        width: clamp(56px, 20vw, 110px);
+        height: clamp(56px, 20vw, 110px);
+    }
+
+    .img_profile {
+        width: clamp(90px, 30vw, 160px);
+        height: clamp(90px, 30vw, 160px);
+    }
+
+    /* Ajustes No Hero Para Mobile: Esconder Hero-Img E Centralizar O Card */
+    .hero-img {
+        display: none;
+    }
+
+    .section_inicial {
+        background-position: center top;
+        background-size: cover;
+        padding-top: calc(var(--nav-height) + 1rem);
+        display: block;
+    }
+
+    /* Overlay Mais Densa Para Legibilidade No Mobile */
+    .section_inicial::before {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.85) 35%, rgba(255, 255, 255, 0.0) 70%);
+    }
+
+    /* Ajustes Botão Para Não Extrapolar */
+    .div_part-button {
+        font-size: .95rem;
+        padding: .35rem .9rem;
+        gap: .45rem;
+    }
+
+    .div_part-button img {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+
+    /* Ajustes Do Container De Conteúdo Em Mobile (Remover Blur Para Performance) */
+    .div-cards {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-radius: 8px;
+        padding: 1rem;
+        position: relative;
+        top: auto;
+        left: auto;
+        bottom: auto;
+    }
 }
-/**/
-#ver-mais {
-    height: 50px;
+
+/* Tablets (Entre 429px E 991px) - Mostra A Imagem Com Background Fallback */
+@media (min-width: 429px) and (max-width: 991px) {
+    .section_inicial {
+        /* background-image: url('../img/imagem_inicial.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        /* Garante Que A Imagem Inteira Apareça */
+        background-position: center right;
+        /* Ajustar Conforme A Composição */
+        width: 100%;
+        min-height: 54vh;
+        background-color: #ffffff;
+        /* Cor De Fundo Para O Espaço Vazio */
+        display: block;
+    }
+
+    /* Garantir Que O Conteúdo Não Ocupe Toda A Altura (Para A Imagem Aparecer) */
+    .div-cards {
+        min-height: auto;
+        height: auto;
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: none;
+    }
+
+    .hero-img {
+        display: none;
+    }
+}
+
+/* Grandes Monitores (>= 1200px) */
+@media (min-width: 1200px) {
+    .div-cards {
+        padding-left: 6vw;
+    }
+
+    #h2_part-inicial {
+        font-size: clamp(2rem, 4.8vw, 3.6rem);
+    }
+
+    .section_inicial {
+        background-position: right center;
+        background-size: cover;
+    }
+}
+
+/* --------------------------------------------------------- */
+/*              Fim Responsividade 1 (A Verificar)           */
+/* --------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------- */
+/*             Início Responsividade 2 (A Verificar)         */
+/* --------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   Esconde A Imagem De Fundo Entre 400px E 1200px
+   (Mantida Para Compatibilidade) 
+   --------------------------------------------------------- */
+@media (min-width: 400px) and (max-width: 1200px) {
+
+    /* Forçar Esconder A Imagem Hero */
+    .hero-img {
+        /* display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important; */
+        pointer-events: none !important;
+    }
+
+    /* Remover Qualquer Background-Image Da Section Inicial Nessa Faixa */
+    .section_inicial {
+        background-image: none !important;
+        background-color: #ffffff !important;
+    }
+}
+
+/* ---------------------------------------------------------
+   Esconde A Imagem De Fundo Em Larguras
+   De Tela Até 1000px (Inclui 1000px E Abaixo)
+   --------------------------------------------------------- */
+@media (max-width: 1000px) {
+
+    /* Esconde A Imagem Hero Que É Elemento <img> */
+    /* .hero-img {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    } */
+
+    /* Remove Qualquer Background-Image Aplicada À Section Inicial */
+    .section_inicial {
+        background-image: none !important;
+        background-color: #ffffff !important;
+    }
+
+    /*Reduzir Tamanho Do Perfil Em Telas Pequenas */
+    #foto-perfil-proj {
+        width: clamp(90px, 18vw, 180px);
+        height: clamp(90px, 18vw, 180px);
+        top: calc(40% - (clamp(90px, 18vw, 180px) / 2));
+    }
+}
+
+/* Força Centralização Correta Em Telas Pequenas */
+@media (max-width: 428px) {
+    #foto-perfil-proj {
+        position: relative;
+        /* Manter No Fluxo */
+        left: 50%;
+        /* Mover 50% Da Largura Do Contêiner */
+        transform: translateX(-50%);
+        /* E Puxar Metade Do Próprio Elemento -> Centro */
+        margin: 0;
+        /* Remove Margens Laterais Que Possam Atrapalhar */
+        width: 110px;
+        height: 110px;
+        padding: 6px;
+        margin-top: -55px;
+        /* Se Quiser A Sobreposição Visual */
+        top: auto !important;
+        /* Anula Qualquer Top Vindo De Outras Media Queries */
+    }
+}
+
+/* ------------------------------
+   Fix For Mobile Centering
+
+   Essas Regras Abaixo Servem Para Arrumar As Regras Conflitantes No Código Nos Ícones Dos Projetos.
+   ------------------------------ */
+@media (max-width: 428px) {
+
+    .faixa-projetos-fundo {
+        /* Adicionando padding no fundo da faixa de projetos */
+        padding: 30px 0;
+    }
+
+    .faixa-de-projetos {
+        /* Retirando padding da faixa de projetos */
+        padding: 0px;
+    }
+
+    /* Garante Que O Cartão Fique Centralizado No Contêiner */
+    .div-1-card {
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        /* Centraliza Horizontalmente O Filho */
+        width: 95% !important;
+    }
+
+    /* Anula Qualquer Posicionamento Absolute/Top/Left Vindo De Outras Regras */
+    #foto-perfil-proj {
+        position: static !important;
+        /* Remove Top/Left/Translate */
+        margin: auto !important;
+        /* Negative Top Para Sobreposição Visual */
+        width: 110px !important;
+        height: 110px !important;
+        padding: 6px !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+        z-index: 5 !important;
+        display: block !important;
+    }
+
+    /* Garante Que A Própria Imagem Esteja Centralizada Dentro Do Círculo */
+    #img-proj {
+        display: block !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+
+    /* Mudando tamanho das divs dos detalhes do projeto */
+    .detalhes-projetos {
+        height: 100%;
+        margin: 20px 0;
+    }
+
+
+    /* SOBRE NÓS */
+
+    #img-sobre-nos {
+        height: 70px;
+        width: 70px;
+    }
+
+    .texto-sobre-nos {
+        margin: 0 20px;
+        font-size: 18px;
+    }
+}
+
+
+/* --------------------------------------------------------- */
+/*              Fim Responsividade 2 (A Verificar)           */
+/* --------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------- */
+/*                       Regras Finais                       */
+/* --------------------------------------------------------- */
+
+
+/* Pequenas Melhorias Visuais Globais */
+body {
+    background: #fff;
+    color: #111;
+    font-family: 'Open sans light', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Espaçamento Do Footer */
+footer {
+    margin-top: 3rem;
 }
